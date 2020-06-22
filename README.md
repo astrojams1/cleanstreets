@@ -1,6 +1,6 @@
 ## Welcome to Clean Streets
 
-![Clean Streets Header Image](https://astrojams1.github.com/images/header.png)
+![Clean Streets Header Image](https://astrojams1.github.com/header.png)
 
 You can use the [editor on GitHub](https://github.com/astrojams1/cleanstreets/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
