@@ -1,0 +1,78 @@
+body {
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 10px 30px;
+  margin: 130px auto 0 auto;
+  max-width: 860px;
+}
+
+a {
+  color: #D0021B;
+  text-decoration: none;
+  border-bottom: 1px solid #D0021B;
+}
+
+h1 {
+  font-family: 'Futura';
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+p {
+  margin: 0 0 20px 0;
+}
+
+a.app {
+  background-color: black;
+  border-radius: 14px;
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 40px;
+  margin: 10px 38px 44px 0;
+  padding: 8px;
+  text-decoration: none;
+  width: 40px;
+}
+
+a.app:active {
+  margin-top: 33px;
+}
+
+div.divider {
+  border-bottom-style: double;
+  margin: 220px 10px 130px 0;
+}
+
+li span.property-value {
+  font-style: italic;
+  font-weight: bold;
+}
+
+li span.li-parent {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+p.large {
+  font-family: 'Futura';
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+p.small {
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 1.5;
+}
