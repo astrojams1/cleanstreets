@@ -15,7 +15,6 @@ a {
 }
 
 h1 {
-  font-family: 'Futura';
   font-size: 16px;
   margin-top: 40px;
 }
@@ -63,7 +62,6 @@ li span.li-parent {
 }
 
 p.large {
-  font-family: 'Futura';
   font-size: 60px;
   font-weight: bold;
   line-height: 1.3;
