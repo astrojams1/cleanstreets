@@ -29,9 +29,9 @@ h1 {
 
 h1#navbar {
   height: 48px;
+  line-height: 48px;
   margin: 0;
   padding: 8px;
-  text-align: center;
 }
 
 li {
