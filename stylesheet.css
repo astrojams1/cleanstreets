@@ -53,7 +53,7 @@ ul {
   list-style-type: none;
 }
 
-ul#supporters {
+ul.3col {
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
