@@ -10,6 +10,7 @@ body {
 }
 
 img#header {
+  display: block;
 }
 
 a {
