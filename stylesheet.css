@@ -18,6 +18,13 @@ body {
   max-width: 640px;
 }
 
+.small {
+  font-size: 14px;
+}
+.x-small {
+  font-size: 10px;
+}
+
 img#header {
   padding: 120px 0;
   width: 100%;
@@ -72,7 +79,6 @@ p {
   margin: 0 0 20px 0;
 }
 p#footer {
-  font-size: 14px;
   margin-top: 150px;
 }
 
