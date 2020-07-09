@@ -49,6 +49,16 @@ h2#tagline {
   margin-top: 140px;
 }
 
+ul {
+  list-style-type: none;
+}
+
+ul#supporters {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}
+
 li {
   margin-bottom: 6px;
 }
