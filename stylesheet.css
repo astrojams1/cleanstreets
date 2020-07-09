@@ -10,7 +10,8 @@ body {
 }
 
 img#header {
-  display: block;
+  padding: 80px 0;
+  width: 100%;
 }
 
 a {
