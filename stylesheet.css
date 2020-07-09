@@ -25,10 +25,13 @@ h1 {
 }
 
 h1#navbar {
+  position: fixed;
   height: 48px;
   line-height: 48px;
   margin: 0;
   padding: 8px;
+  text-align: center;
+  top: 0;
 }
 
 li {
