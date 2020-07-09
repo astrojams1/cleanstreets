@@ -70,6 +70,9 @@ li {
 p {
   margin: 0 0 20px 0;
 }
+p#footer {
+  margin-top: 150px;
+}
 
 div.divider {
   border-bottom: 1px #D0021B solid;
