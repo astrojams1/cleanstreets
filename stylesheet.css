@@ -6,8 +6,7 @@ body {
   line-height: 1.5;
   padding: 10px 30px;
   margin: 130px auto 0 auto;
-  max-width: 860px;
-  min-width: 200px;
+  width: 640px;
 }
 
 img#logo {
