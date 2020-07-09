@@ -31,3 +31,9 @@ div.divider {
   border-bottom-style: double;
   margin: 220px 10px 130px 0;
 }
+
+div.logo {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+}
