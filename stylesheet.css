@@ -9,7 +9,7 @@ body {
   width: 640px;
 }
 
-img#logo {
+img#header {
   display: block;
   height: 140px;
   width: 140px;
@@ -27,7 +27,7 @@ h1 {
   margin-top: 40px;
 }
 
-h1#header {
+h1#navbar {
   margin-top: 0;
   text-align: center;
 }
