@@ -32,7 +32,7 @@ div.divider {
   margin: 220px 10px 130px 0;
 }
 
-div.logo {
+div#logo {
   height: 100px;
   width: 100px;
   margin: 0 auto;
