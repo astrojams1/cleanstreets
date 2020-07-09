@@ -55,13 +55,13 @@ h2#tagline {
 
 ul {
   list-style-type: none;
+  padding-left: 0;
 }
 
 ul.columns {
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
-  padding-left: 0;
 }
 
 li {
