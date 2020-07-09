@@ -1,5 +1,10 @@
+/*
+rgba(237,231,246,1) light purple
+rgba(253,241,236,1) light orange
+*/
+
 body {
-  background-color: rgba(237,231,246,1);
+  background-color: rgba(253,241,236,1);
   color: black;
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
@@ -26,7 +31,7 @@ h1 {
 }
 
 h1#navbar {
-  background-color: rgba(237,231,246,.7);
+  background-color: rgba(253,241,236,.7);
   position: fixed;
   height: 48px;
   line-height: 48px;
