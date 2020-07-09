@@ -45,6 +45,9 @@ h1#navbar {
   top: 0;
   width: 100%;
 }
+h2#tagline {
+  margin-top: 140px;
+}
 
 li {
   margin-bottom: 6px;
