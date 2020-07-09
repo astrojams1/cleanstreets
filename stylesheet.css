@@ -1,5 +1,5 @@
 body {
-  background-color: #fdf1ec;
+  background-color: rgba(237,231,246,1);
   color: black;
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
@@ -26,6 +26,7 @@ h1 {
 }
 
 h1#navbar {
+  rgba(237,231,246,.7);
   position: fixed;
   height: 48px;
   line-height: 48px;
