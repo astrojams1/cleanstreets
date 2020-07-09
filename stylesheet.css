@@ -28,7 +28,9 @@ h1 {
 }
 
 h1#navbar {
-  margin-top: 0;
+  height: 48;
+  margin: 0;
+  padding: 8px;
   text-align: center;
 }
 
