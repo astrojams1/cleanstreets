@@ -15,8 +15,12 @@ body {
 }
 
 img#header {
-  padding: 80px 0;
+  padding: 120px 0;
   width: 100%;
+}
+
+div#cta {
+  
 }
 
 a {
