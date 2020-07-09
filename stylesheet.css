@@ -3,6 +3,10 @@ rgba(237,231,246,1) light purple
 rgba(253,241,236,1) light orange
 */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: rgba(253,241,236,1);
   color: black;
