@@ -57,10 +57,11 @@ ul {
   list-style-type: none;
 }
 
-ul.3col {
+ul.columns {
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
+  padding-left: 0;
 }
 
 li {
