@@ -34,6 +34,7 @@ h1#navbar {
   background-color: rgba(253,241,236,.7);
   position: fixed;
   height: 48px;
+  left: 0;
   line-height: 48px;
   margin: 0;
   padding: 8px;
