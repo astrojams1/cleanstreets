@@ -62,6 +62,7 @@ ul.columns {
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
+  font-size: 14px;
 }
 
 li {
