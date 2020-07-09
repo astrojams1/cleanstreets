@@ -8,6 +8,12 @@ body {
   max-width: 860px;
 }
 
+#logo {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+}
+
 a {
   color: #D0021B;
   text-decoration: none;
@@ -30,10 +36,4 @@ p {
 div.divider {
   border-bottom-style: double;
   margin: 220px 10px 130px 0;
-}
-
-div#logo {
-  height: 100px;
-  width: 100px;
-  margin: 0 auto;
 }
