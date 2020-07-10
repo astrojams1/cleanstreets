@@ -60,7 +60,6 @@ h1#navbar {
   text-align: center;
   top: 0;
   width: 100%;
-  min-width: 640px;
 }
 
 ul {
@@ -91,4 +90,5 @@ img#footer {
   left: 0;
   right: 0;
   width: 100%;
+  min-width: 640px;
 }
