@@ -15,7 +15,7 @@ body {
   line-height: 1.5;
   padding: 0 10px;
   margin: 0 auto;;
-  max-width: 640px;
+  width: 640px;
 }
 
 .small {
