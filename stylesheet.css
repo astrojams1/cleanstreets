@@ -28,8 +28,11 @@ body {
 #cta {
   background-color: #D0021B;
   border-radius: 17px;
+  border-style: none;
+  color: white;
   font-size: 13px;
   line-height: 34px;
+  outline: none;
   padding: 0 18px;
   width: fit-content;
 }
