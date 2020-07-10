@@ -25,6 +25,15 @@ body {
   font-size: 12px;
 }
 
+#cta {
+  background-color: #D0021B;
+  border-radius: 15px;
+  font-size: 13px;
+  line-height: 30px;
+  padding: 0 18px;
+  width: fit-content;
+}
+
 img#header {
   padding: 120px 0;
   width: 100%;
