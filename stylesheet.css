@@ -30,6 +30,7 @@ body {
   border-radius: 17px;
   border-style: none;
   color: white;
+  cursor: pointer;
   font-size: 13px;
   line-height: 34px;
   outline: none;
