@@ -26,15 +26,7 @@ body {
 }
 
 #cta {
-  background-color: #D0021B;
-  border-radius: 17px;
-  border-style: none;
-  color: white;
-  cursor: pointer;
-  font-size: 13px;
-  line-height: 34px;
-  outline: none;
-  padding: 0 18px;
+  margin: 0 auto;
   width: fit-content;
 }
 
