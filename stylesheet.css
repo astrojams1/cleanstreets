@@ -85,7 +85,7 @@ div.divider {
 }
 
 img#footer {
-  position: fixed;
+  position: absolute;
   top: 1650px;
   left: 0;
   right: 0;
