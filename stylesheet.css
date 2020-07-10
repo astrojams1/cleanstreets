@@ -85,10 +85,7 @@ div.divider {
 }
 
 img#footer {
-  position: absolute;
-  top: 1800px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  min-width: 640px;
+  width: 100vw;
+  margin-left: calc(-100vw / 2 + 500px / 2);
+  margin-right: calc(-100vw / 2 + 500px / 2);
 }
