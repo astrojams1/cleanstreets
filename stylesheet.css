@@ -13,6 +13,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   line-height: 1.5;
+  overflow-x: hidden;
   padding: 0 10px;
   margin: 0 auto;
   max-width: 640px;
