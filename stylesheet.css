@@ -27,6 +27,11 @@ body {
 }
 
 .cta {
+  background-color: rgb(232, 91, 70);
+  border-radius: 15px;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
   margin: 0 auto;
   width: fit-content;
 }
