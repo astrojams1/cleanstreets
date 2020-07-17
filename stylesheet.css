@@ -29,10 +29,12 @@ body {
 .cta {
   background-color: rgb(232, 91, 70);
   border-radius: 15px;
+  color: white;
   font-weight: 500;
   height: 30px;
   line-height: 30px;
   margin: 0 auto;
+  text-decoration: none;
   width: fit-content;
 }
 
