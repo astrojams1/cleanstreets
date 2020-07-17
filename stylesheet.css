@@ -29,14 +29,14 @@ body {
 .cta {
   background-color: rgb(232, 91, 70);
   border: none;
-  border-radius: 16px;
+  border-radius: 18px;
   color: white;
-  display: none;
+  display: block;
   font-weight: 500;
-  height: 32px;
-  line-height: 32px;
+  height: 36px;
+  line-height: 36px;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 18px;
   width: fit-content;
 }
 
