@@ -29,15 +29,15 @@ body {
 .cta {
   background-color: rgb(232, 91, 70);
   border: none;
-  border-radius: 18px;
+  border-radius: 20px;
   color: white;
   cursor: pointer;
   display: block;
-  height: 36px;
-  line-height: 36px;
+  height: 40px;
+  line-height: 40px;
   margin: 30px auto 0 auto;
   outline: none;
-  padding: 0 18px;
+  padding: 0 20px;
   width: fit-content;
 }
 
