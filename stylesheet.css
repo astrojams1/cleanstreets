@@ -79,9 +79,9 @@ h1#navbar {
 }
 
 ul {
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
   font-size: 14px;
   list-style-type: none;
   margin: 0;
