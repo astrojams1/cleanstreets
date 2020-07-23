@@ -42,6 +42,7 @@ body {
 
 img#header {
   padding: 120px 0;
+  pointer-events: none;
   width: 100%;
 }
 
