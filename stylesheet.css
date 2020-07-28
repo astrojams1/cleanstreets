@@ -19,6 +19,9 @@ body {
   max-width: 640px;
 }
 
+.center{
+  text-align: center;
+}
 .small {
   font-size: 14px;
 }
@@ -34,7 +37,7 @@ body {
   display: block;
   height: 40px;
   line-height: 40px;
-  margin: 30px auto;
+  margin: 30px auto 10px;
   outline: none;
   padding: 0 26px;
   width: fit-content;
