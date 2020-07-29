@@ -115,4 +115,5 @@ img#footer {
   margin-left: calc(-100vw / 2 + 100% / 2);
   margin-right: calc(-100vw / 2 + 100% / 2);
   margin-top: calc(-100vw*.3);
+  pointer-event: none;
 }
