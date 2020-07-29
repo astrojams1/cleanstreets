@@ -55,16 +55,16 @@ a {
   border-bottom: 1px solid #D0021B;
 }
 
-h2 {
-  font-size: 20px;
-  margin: 10px 0;
-}
 h1 {
   font-size: 60px;
   margin: 140px 0 20px 0;
 }
-h3 {
+h2 {
   font-size: 30px;
+  margin: 10px 0;
+}
+h3 {
+  font-size: 22px;
   margin: 50px 0 10px 0;
 }
 
