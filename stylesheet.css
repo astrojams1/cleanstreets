@@ -68,7 +68,7 @@ h3 {
   margin: 50px 0 10px 0;
 }
 
-h1#navbar {
+#navbar {
   background-color: rgba(253,241,236,.95);
   position: fixed;
   height: 48px;
