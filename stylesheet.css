@@ -54,6 +54,10 @@ img#header {
   width: 100%;
 }
 
+p {
+  margin-top: 0px;
+}
+
 a {
   color: #D0021B;
   text-decoration: none;
