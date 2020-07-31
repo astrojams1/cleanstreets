@@ -24,9 +24,11 @@ body {
 }
 .small {
   font-size: 14px;
+  margin: 5px 0;
 }
 .x-small {
   font-size: 12px;
+  margin: 5px 0;
 }
 .cta {
   background-color: rgb(232, 91, 70);
@@ -99,10 +101,6 @@ ul {
 
 li {
   margin-bottom: 6px;
-}
-
-p {
-  margin: 0 0 20px 0;
 }
 
 div.divider {
