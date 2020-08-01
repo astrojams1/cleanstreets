@@ -26,10 +26,10 @@ body {
   font-size: 12px;
 }
 li.small {
-  padding: 6px 0;
+  padding: 8px 0;
 }
 li.x-small {
-  padding: 3px 0;
+  padding: 6px 0;
 }
 
 .cta {
@@ -98,7 +98,7 @@ ul {
   -webkit-columns: 3;
   -moz-columns: 3;
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 0 10px;
   padding: 0;
 }
 
