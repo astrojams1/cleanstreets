@@ -102,7 +102,9 @@ ul {
   -moz-columns: 3;
   list-style-type: none;
   margin: 0 0 0 10px;
+  overflow: hidden;
   padding: 0;
+  white-space: nowrap;
 }
 
 div.divider {
