@@ -21,7 +21,6 @@ body {
 }
 .small {
   font-size: 14px;
-  margin: 5px 0;
 }
 .x-small {
   font-size: 12px;
@@ -92,10 +91,9 @@ ul {
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
-  font-size: 14px;
   list-style-type: none;
   margin: 0;
-  padding-left: 0;
+  padding: 6px 0;
 }
 
 div.divider {
