@@ -31,7 +31,6 @@ li.small {
 li.x-small {
   padding: 6px 0;
 }
-
 .cta {
   background-color: rgb(232, 91, 70);
   border: none;
@@ -48,6 +47,9 @@ li.x-small {
 }
 .icon {
   margin-right: 6px;
+}
+.fin {
+  margin-left: 10px;
 }
 
 img#header {
