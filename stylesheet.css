@@ -21,12 +21,17 @@ body {
 }
 .small {
   font-size: 14px;
-  padding: 6px 0;
 }
 .x-small {
   font-size: 12px;
-  padding: 2px 0;
 }
+li.small {
+  padding: 6px 0;
+}
+li.x-small {
+  padding: 3px 0;
+}
+
 .cta {
   background-color: rgb(232, 91, 70);
   border: none;
@@ -42,7 +47,7 @@ body {
   width: fit-content;
 }
 .icon {
-  margin-right: 10px;
+  margin-right: 6px;
 }
 
 img#header {
