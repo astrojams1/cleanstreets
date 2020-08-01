@@ -9,10 +9,7 @@ html {
 
 body {
   background-color: rgba(253,241,236,1);
-  color: black;
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
   overflow-x: hidden;
   padding: 0 10px;
   margin: 0 auto;
