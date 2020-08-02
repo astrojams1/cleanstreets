@@ -59,6 +59,7 @@ img#header {
 }
 
 p {
+  color: rgba(0,0,0,0.84);
   font-size: 18px;
   margin: 6px 0;
 }
