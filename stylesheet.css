@@ -74,7 +74,7 @@ a {
 }
 
 h1 {
-  font-size: calc(min(100vw*.13,88px));
+  font-size: calc(min(100vw*.16,88px));
   margin: 0 0 20px 0;
   padding-top: calc(100vh/6);
   position: relative;
