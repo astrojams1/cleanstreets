@@ -104,13 +104,16 @@ h3 + p {
 }
 
 ul {
+  list-style-type: none;
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+
+ul.col3 {
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
-  list-style-type: none;
-  margin: 0 0 0 10px;
   overflow: hidden;
-  padding: 0;
   white-space: nowrap;
 }
 
