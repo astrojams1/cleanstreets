@@ -65,8 +65,8 @@ a {
 }
 
 h1 {
-  font-size: calc(min(100vw*.15,110px));
-  margin: calc(-100vw*.55) 0 20px 0;
+  font-size: calc(min(100vw*.13,110px));
+  margin: calc(-100vw*.65) 0 20px 0;
 }
 h2 {
   margin: 10px 0;
