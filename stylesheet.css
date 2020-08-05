@@ -71,7 +71,7 @@ a {
 
 h1 {
   font-size: calc(min(100vw*.13,88px));
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
   position: relative;
   z-index: -2;
 }
