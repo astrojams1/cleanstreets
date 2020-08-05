@@ -99,8 +99,8 @@ h3 + p {
   line-height: 28px;
   margin: 0;
   opacity: .66;
+  right: 0;
   text-align: center;
-  width: 100%;
 }
 
 ul {
