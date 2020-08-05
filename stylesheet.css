@@ -110,8 +110,8 @@ div.divider {
 }
 
 img#header {
-  height: 100vh;
-  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  width: 100vw;
   margin-left: calc((-100vw + 100%) / 2);
   margin-top: 50px;
   opacity: 0.4;
