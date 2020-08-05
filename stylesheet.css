@@ -66,7 +66,7 @@ a {
 
 h1 {
   font-size: calc(min(100vw*.15,110px));
-  margin: 100px 0 20px 0;
+  margin: calc(-100vw*.55) 0 20px 0;
 }
 h2 {
   margin: 10px 0;
@@ -108,7 +108,6 @@ div.divider {
 }
 
 img#header {
-  display: none;
   width: 100vw;
   margin-left: calc(-100vw / 2 + 100% / 2);
   margin-right: calc(-100vw / 2 + 100% / 2);
