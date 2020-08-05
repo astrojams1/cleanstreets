@@ -10,6 +10,7 @@ html {
 body {
   background-color: rgba(253,241,236,1);
   font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
   overflow-x: hidden;
   padding: 0 10px;
   margin: 0 auto;
@@ -63,7 +64,6 @@ li.x-small {
 
 p {
   color: rgba(0,0,0,0.84);
-  font-size: 18px;
   margin: 6px 0;
 }
 
