@@ -110,9 +110,9 @@ div.divider {
 }
 
 img#header {
-  width: 100vw;
-  margin-left: calc(-100vw / 2 + 100% / 2);
-  margin-right: calc(-100vw / 2 + 100% / 2);
+  height: 100vh;
+  width: calc(100vw - 100px);
+  margin-left: calc((-100vw + 100%) / 2);
   margin-top: 50px;
   opacity: 0.4;
   pointer-events: none;
@@ -123,7 +123,6 @@ img#header {
 img#footer {
   width: 100vw;
   margin-left: calc(-100vw / 2 + 100% / 2);
-  margin-right: calc(-100vw / 2 + 100% / 2);
   margin-top: calc(-100vw*.3);
   pointer-events: none;
 }
