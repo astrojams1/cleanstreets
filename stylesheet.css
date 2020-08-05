@@ -118,7 +118,7 @@ div.divider {
 img#header {
   height: 100vh;
   width: 100vw;
-  margin-left: -10px;
+  margin-left: calc(-100vw/2 + 100%/2);
   opacity: 0.4;
   pointer-events: none;
   position: relative;
