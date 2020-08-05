@@ -88,15 +88,15 @@ h3 + p {
 }
 
 #navbar {
-  background-color: rgba(253,241,236,.33);
+  background-color: rgb(253,241,236);
+  border: none;
+  padding: 10px;
   position: fixed;
-  height: 48px;
   left: 0;
-  line-height: 48px;
+  line-height: 28px;
   margin: 0;
-  padding: 8px;
+  opacity: .66;
   text-align: center;
-  top: 0;
   width: 100%;
 }
 
