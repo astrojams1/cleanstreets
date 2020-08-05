@@ -17,8 +17,11 @@ body {
 }
 
 #splash {
-  height: 100vh;
+  height: calc(100vh - 10px);
   margin-top: calc(-100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .center{
