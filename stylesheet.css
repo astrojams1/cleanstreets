@@ -18,7 +18,7 @@ body {
 
 #splash {
   height: 100vh;
-  margin-top: -100vh;
+  margin-top: calc(-100vh + 100vh / 4);
 }
 
 .center{
@@ -71,7 +71,7 @@ a {
 
 h1 {
   font-size: calc(min(100vw*.13,88px));
-  margin: calc(100vh / 4) 0 20px 0;
+  margin-bottom: 20px;
   position: relative;
   z-index: -2;
 }
