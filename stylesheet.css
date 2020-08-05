@@ -67,6 +67,8 @@ a {
 h1 {
   font-size: calc(min(100vw*.13,110px));
   margin: calc(-100vw*.65) 0 20px 0;
+  position: relative;
+  z-index: -2;
 }
 h2 {
   margin: 10px 0;
@@ -114,6 +116,8 @@ img#header {
   margin-top: 30px;
   opacity: 0.4;
   pointer-events: none;
+  position: relative;
+  z-index: -1;
 }
 
 img#footer {
