@@ -26,6 +26,7 @@ body {
 }
 .small {
   font-size: 14px;
+  line-height: 1.5;
 }
 .x-small {
   font-size: 12px;
