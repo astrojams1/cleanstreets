@@ -26,10 +26,10 @@ body {
   font-size: 12px;
 }
 li.small {
-  line-height: 24px;
+  line-height: 2;
 }
 li.x-small {
-  padding: 6px 0;
+  line-height: 2;
 }
 .cta {
   background-color: rgb(232, 91, 70);
