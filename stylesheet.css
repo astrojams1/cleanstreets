@@ -126,7 +126,7 @@ img#header {
   height: 100vh;
   width: 100vw;
   margin-left: calc(-100vw/2 + 100%/2);
-  opacity: 0.4;
+  opacity: 50%;
   pointer-events: none;
   position: relative;
   z-index: -1;
