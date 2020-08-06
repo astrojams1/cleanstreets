@@ -61,6 +61,9 @@ li.x-small {
 .fin {
   margin-left: 10px;
 }
+.ind25 {
+  margin: auto 25px;
+}
 
 p {
   color: rgba(0,0,0,0.84);
@@ -85,9 +88,6 @@ h2 {
 }
 h3 {
   margin: 30px 0 6px 10px;
-}
-h3 + p {
-  margin: auto 25px;
 }
 
 #navbar {
