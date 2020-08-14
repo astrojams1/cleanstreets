@@ -78,6 +78,7 @@ a {
 }
 
 h1 {
+  font-family: 'Merriweather', serif;
   font-size: calc(min(100vw*.16,88px));
   margin: 0 0 20px 0;
   padding-top: calc(100vh/6);
@@ -85,23 +86,12 @@ h1 {
   z-index: -2;
 }
 h2 {
+  font-family: 'Merriweather', serif;
   margin: 10px 0;
 }
 h3 {
+  font-family: 'Merriweather', serif;
   margin: 30px 0 6px 10px;
-}
-
-#navbar {
-  background-color: rgb(253,241,236);
-  border: none;
-  padding: 10px;
-  position: fixed;
-  left: 0;
-  line-height: 28px;
-  margin: 0;
-  opacity: .66;
-  right: 0;
-  text-align: center;
 }
 
 ul {
