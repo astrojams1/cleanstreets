@@ -29,6 +29,9 @@ body {
 .center{
   text-align: center;
 }
+.digit {
+  font-family: 'Open Sans', sans-serif;
+}
 .small {
   font-size: .8em;
 }
