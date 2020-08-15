@@ -24,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  text-shadow: #00000033 0.05em 0.05em 0.2em;
+  text-shadow: #00000033 0.05em 0.05em 0.4em;
 }
 
 .center{
@@ -43,7 +43,7 @@ body {
   background-color: rgb(232, 91, 70);
   border: none;
   border-radius: 15px;
-  box-shadow: #00000033 0.05em 0.05em 0.2em;
+  box-shadow: #00000033 0.05em 0.05em 0.4em;
   color: black;
   cursor: pointer;
   display: block;
@@ -52,7 +52,7 @@ body {
   margin: 30px auto 20px;
   outline: none;
   padding: 0 40px;
-  text-shadow: #00000033 0.05em 0.05em 0.2em;
+  text-shadow: none;
   width: fit-content;
 }
 .icon {
