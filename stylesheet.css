@@ -19,7 +19,7 @@ body {
 }
 
 #splash {
-  height: calc(100vh - 20px);
+  height: calc(100vh - 30px);
   margin-top: calc(-100vh);
   display: flex;
   flex-direction: column;
