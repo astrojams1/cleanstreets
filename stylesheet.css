@@ -31,16 +31,9 @@ body {
 }
 .small {
   font-size: 14px;
-  line-height: 1.5;
 }
 .x-small {
   font-size: 12px;
-}
-li.small {
-  line-height: 2;
-}
-li.x-small {
-  line-height: 2;
 }
 .cta {
   background-color: rgb(232, 91, 70);
@@ -99,13 +92,15 @@ ul {
   margin: 0 0 0 10px;
   padding: 0;
 }
-
 ul.col3 {
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
   overflow: hidden;
   white-space: nowrap;
+}
+li {
+  line-height: 2;
 }
 
 div.divider {
