@@ -24,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  text-shadow: #00000050 0.05em 0.05em 0.2em;
+  text-shadow: #00000033 0.05em 0.05em 0.2em;
 }
 
 .center{
