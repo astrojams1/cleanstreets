@@ -43,6 +43,7 @@ body {
   background-color: rgb(232, 91, 70);
   border: none;
   border-radius: 15px;
+  box-shadow: #00000033 0.01em 0.01em 0.2em;
   color: white;
   cursor: pointer;
   display: block;
