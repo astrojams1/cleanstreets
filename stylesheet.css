@@ -24,6 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  text-shadow: #00000050 0.05em 0.05em 0.2em;
 }
 
 .center{
@@ -79,7 +80,6 @@ h1 {
   margin: 0 0 20px 0;
   padding-top: calc(100vh/6);
   position: relative;
-  z-index: -2;
 }
 h2 {
   font-family: 'Merriweather', serif;
