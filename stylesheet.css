@@ -78,10 +78,9 @@ a {
 
 h1 {
   font-family: 'Merriweather', serif;
-  font-size: calc(min(100vw*.16,88px));
-  margin: 0 0 20px 0;
-  padding-top: calc(100vh/6);
-  position: relative;
+  font-size: calc(min(100vw*.16,140px));
+  margin: 0 0 calc(100vw*.03) 0;
+  white-space: nowrap;
 }
 h2 {
   font-family: 'Merriweather', serif;
