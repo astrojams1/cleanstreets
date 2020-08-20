@@ -87,7 +87,7 @@ h2 {
 }
 h3 {
   font-family: 'Merriweather', serif;
-  margin: 30px 0 6px 10px;
+  margin: calc(4vh) 0 calc(2vh) 10px;
 }
 
 ul {
