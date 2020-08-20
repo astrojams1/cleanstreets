@@ -11,15 +11,15 @@ body {
   background-color: rgba(253,241,236,1);
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-size: calc(3vh);
   overflow-x: hidden;
   padding: 0 10px;
   margin: 0 auto;
-  max-width: 640px;
+  max-width: 1240px;
 }
 
 #splash {
-  height: calc(100vh - 100vh*.04);
+  height: calc(100vh);
   margin-top: calc(-100vh);
   display: flex;
   flex-direction: column;
@@ -42,16 +42,15 @@ body {
 .cta {
   background-color: rgb(232, 91, 70);
   border: none;
-  border-radius: 15px;
+  border-radius: calc(2vh);
   box-shadow: #00000033 0.05em 0.05em 0.4em;
   color: white;
   cursor: pointer;
   display: block;
-  height: 50px;
-  line-height: 50px;
-  margin: 30px auto 20px;
+  line-height: calc(6vh);
+  margin: calc(6vh) auto calc(6vh);
   outline: none;
-  padding: 0 40px;
+  padding: 0 calc(4vh);
   text-shadow: none;
   width: fit-content;
 }
@@ -78,7 +77,7 @@ a {
 
 h1 {
   font-family: 'Merriweather', serif;
-  font-size: calc(min(100vw*.16,100vh*.13));
+  font-size: calc(9vh);
   margin: 0 0 calc(100vw*.03) 0;
   white-space: nowrap;
 }
