@@ -19,7 +19,7 @@ body {
 }
 
 #splash {
-  height: calc(100vh);
+  height: calc(97vh);
   margin-top: calc(-100vh);
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@ body {
   cursor: pointer;
   display: block;
   line-height: calc(6vh);
-  margin: calc(6vh) auto calc(6vh);
+  margin: calc(6vh) auto calc(1vh);
   outline: none;
   padding: 0 calc(4vh);
   text-shadow: none;
