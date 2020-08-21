@@ -42,15 +42,15 @@ body {
 .cta {
   background-color: rgb(232, 91, 70);
   border: none;
-  border-radius: calc(2vh);
+  border-radius: calc(2.5vh);
   box-shadow: #00000033 0.05em 0.05em 0.4em;
   color: white;
   cursor: pointer;
   display: block;
-  line-height: calc(6vh);
+  line-height: calc(7vh);
   margin: calc(6vh) auto calc(1vh);
   outline: none;
-  padding: 0 calc(4vh);
+  padding: 0 calc(5vh);
   text-shadow: none;
   width: fit-content;
 }
