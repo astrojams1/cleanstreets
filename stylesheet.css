@@ -40,7 +40,7 @@ body {
   font-size: .7em;
 }
 .cta {
-  background-color: rgb(232, 91, 70);
+  background-color: black;
   border: none;
   border-radius: calc(2.5vh);
   box-shadow: #00000033 0.05em 0.05em 0.4em;
