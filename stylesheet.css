@@ -83,11 +83,13 @@ h1 {
 }
 h2 {
   font-family: 'Merriweather', serif;
+  font-size: 1.3em;
   margin: 10px 0;
 }
 h3 {
   font-family: 'Merriweather', serif;
-  margin: calc(4vh) 0 calc(2vh) 10px;
+  font-size: 1em;
+  margin: calc(5vh) 0 calc(1vh) 10px;
 }
 
 ul {
