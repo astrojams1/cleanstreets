@@ -27,8 +27,11 @@ body {
   text-shadow: #00000033 0.05em 0.05em 0.4em;
 }
 
-.center{
+.center {
   text-align: center;
+}
+.digit {
+  font-family: 'Open Sans', sans-serif;
 }
 .small {
   font-size: .8em;
