@@ -72,7 +72,7 @@ p {
 a {
   color: #D0021B;
   text-decoration: none;
-  border-bottom: 1px solid #D0021B;
+  border-bottom: .13em solid #D0021B;
 }
 
 h1 {
@@ -109,7 +109,7 @@ li {
 }
 
 div.divider {
-  border-bottom: 1px #D0021B solid;
+  border-bottom: .13em #D0021B solid;
   margin: 8vh 10px 4vh 0;
 }
 
