@@ -55,13 +55,13 @@ body {
   width: fit-content;
 }
 .icon {
-  margin-right: 6px;
+  margin-right: .4em;
 }
 .fin {
   margin-left: 10px;
 }
 .ind25 {
-  margin: auto 25px;
+  margin: auto 1em;
 }
 
 p {
@@ -89,7 +89,7 @@ h2 {
 h3 {
   font-family: 'Merriweather', serif;
   font-size: 1em;
-  margin: 5vh 0 1vh 10px;
+  margin: 5vh 0 1vh .5em;
 }
 
 ul {
