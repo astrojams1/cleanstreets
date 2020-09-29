@@ -24,7 +24,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  text-shadow: #FFFFFF4f 0 0 1em;
 }
 
 #splash p, #splash span {
