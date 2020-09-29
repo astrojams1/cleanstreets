@@ -71,7 +71,7 @@ body {
 
 p {
   color: rgba(0,0,0,0.84);
-  margin: 1em 0;
+  margin: 1.5em 0;
 }
 
 a {
@@ -110,7 +110,7 @@ ul.col3 {
   white-space: nowrap;
 }
 li {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 div.divider {
