@@ -54,7 +54,7 @@ body {
   line-height: 7vh;
   margin: 6vh auto 3vh;
   outline: none;
-  padding: 0 calc(5vh);
+  padding: 0 1.5em;
   text-shadow: none;
   width: fit-content;
 }
