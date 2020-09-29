@@ -27,7 +27,7 @@ body {
   text-shadow: #FFFFFF4f 0 0 1em;
 }
 
-#splash p, #splash li {
+#splash p, #splash span {
     background-color: #ffffff7a;
     width: fit-content;
 }
