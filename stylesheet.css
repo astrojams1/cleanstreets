@@ -46,12 +46,12 @@ body {
 .cta {
   background-color: black;
   border: none;
-  border-radius: 1.7vh;
+  border-radius: .7em;
   box-shadow: #00000033 0.05em 0.05em 0.4em;
   color: white;
   cursor: pointer;
   display: block;
-  line-height: 7vh;
+  line-height: 3.5em;
   margin: 6vh auto 3vh;
   outline: none;
   padding: 0 1.5em;
