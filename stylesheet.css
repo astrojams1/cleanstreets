@@ -1,6 +1,8 @@
 /*
-rgba(237,231,246,1) light purple
-rgba(253,241,236,1) light orange
+rgba(237,231,246,1) light purple (not currently used)
+rgba(253,241,236,1) light orange (background color)
+#D0021B bright red (not used)
+#bd46a3 bright purple (links, divider)
 */
 
 html {
@@ -75,9 +77,9 @@ p {
 }
 
 a {
-  color: #D0021B;
+  color: #bd46a3;
   text-decoration: none;
-  border-bottom: .13em solid #D0021B;
+  border-bottom: .13em solid #bd46a3;
 }
 
 h1 {
@@ -114,7 +116,7 @@ li {
 }
 
 div.divider {
-  border-bottom: .13em #D0021B solid;
+  border-bottom: .13em #bd46a3 solid;
   margin: 8vh 10px 4vh 0;
 }
 
