@@ -22,7 +22,7 @@ body {
 }
 
 #splash {
-  height: calc(97vh);
+  height: 97vh;
   margin-top: calc(-100vh);
   display: flex;
   flex-direction: column;
