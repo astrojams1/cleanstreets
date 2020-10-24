@@ -31,7 +31,7 @@ body {
   justify-content: flex-end;
 }
 
-#splash p, #splash span {
+#splash span {
   background-color: #251d23;
   color: #ede8fd;
   font-weight: bold;
