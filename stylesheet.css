@@ -3,6 +3,7 @@ rgba(237,231,246,1) light purple (not currently used)
 rgba(253,241,236,1) light orange (background color)
 #D0021B bright red (not used)
 #bd46a3 bright purple (links, divider)
+#251d23 dark purple (font)
 */
 
 html {
@@ -30,8 +31,10 @@ body {
 }
 
 #splash p, #splash span {
-    background-color: #ffffff7a;
-    width: fit-content;
+  background-color: #251d23;
+  color: white;
+  font-weight: bold;
+  width: fit-content;
 }
 
 .center {
