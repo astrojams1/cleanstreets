@@ -4,6 +4,7 @@ rgba(253,241,236,1) light orange (background color)
 #D0021B bright red (not used)
 #bd46a3 bright purple (links, divider)
 #251d23 dark purple (font)
+#ede8fd near white (font)
 */
 
 html {
@@ -32,7 +33,7 @@ body {
 
 #splash p, #splash span {
   background-color: #251d23;
-  color: white;
+  color: #ede8fd;
   font-weight: bold;
   width: fit-content;
 }
@@ -54,7 +55,7 @@ body {
   border: none;
   border-radius: .7em;
   box-shadow: #00000033 0.05em 0.05em 0.4em;
-  color: white;
+  color: #ede8fd;
   cursor: pointer;
   display: block;
   font-weight: bold;
