@@ -37,6 +37,9 @@ body {
   font-weight: bold;
   width: fit-content;
 }
+#splash li {
+  margin: 0 .5em .5em 0;
+}
 
 .center {
   text-align: center;
