@@ -5,6 +5,7 @@ rgba(253,241,236,1) light orange (background color)
 #bd46a3 bright purple (links, divider)
 #251d23 dark purple (font) (#251d23cc faded)
 #ede8fd near white (font)
+#e44457ba peach pink (cta)
 */
 
 html {
@@ -54,7 +55,7 @@ body {
   font-size: .7em;
 }
 .cta {
-  background-color: #251d23;
+  background-color: #e44457ba;
   border: none;
   border-radius: .7em;
   box-shadow: #00000033 0.05em 0.05em 0.4em;
