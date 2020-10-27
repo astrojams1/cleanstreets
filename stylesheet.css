@@ -94,7 +94,6 @@ a {
 h1 {
   font-family: 'Merriweather', serif;
   font-size: 5em;
-  line-height: 1em;
   margin: 0 0 calc(100vw*.03) 0;
   white-space: nowrap;
 }
