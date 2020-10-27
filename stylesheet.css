@@ -95,7 +95,6 @@ h1 {
   font-family: 'Merriweather', serif;
   font-size: 5em;
   margin: 0 0 calc(100vw*.05) 0;
-  white-space: nowrap;
 }
 h2 {
   font-family: 'Merriweather', serif;
