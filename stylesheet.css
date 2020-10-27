@@ -17,7 +17,7 @@ body {
   box-sizing: border-box;
   color: #251d23;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   overflow-x: hidden;
   margin: 0 auto;
   padding: 0 1em;
@@ -94,7 +94,7 @@ a {
 h1 {
   font-family: 'Merriweather', serif;
   font-size: 5em;
-  margin: 0 0 calc(100vw*.03) 0;
+  margin: 0 0 calc(100vw*.05) 0;
   white-space: nowrap;
 }
 h2 {
