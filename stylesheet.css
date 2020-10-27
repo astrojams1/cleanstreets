@@ -88,9 +88,9 @@ p {
 }
 
 a {
+  background-color: #bd46a33d;
   color: #bd46a3;
   text-decoration: none;
-  border-bottom: .13em solid #bd46a3;
 }
 
 h1 {
