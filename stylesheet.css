@@ -126,6 +126,7 @@ ul.col3 {
   white-space: nowrap;
 }
 li {
+  break-inside: avoid-column;
   margin: 0 1em 1em 0;
 }
 
