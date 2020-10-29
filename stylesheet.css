@@ -56,6 +56,10 @@ body {
 .x-small {
   font-size: .7em;
 }
+.active {
+  background-color: #16c60c30;
+  color: #109809;
+}
 .cta {
   background-color: #d23144a8;
   border: none;
