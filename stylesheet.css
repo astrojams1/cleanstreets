@@ -37,6 +37,7 @@ body {
 #splash span {
   background-color: #251d23db;
   color: #ede8fd;
+  display: block;
   font-weight: bold;
   padding: 2px 6px;
   width: fit-content;
