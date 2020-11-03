@@ -38,6 +38,7 @@ body {
   background-color: #251d23db;
   color: #ede8fd;
   font-weight: bold;
+  padding: 0.1em 0.4em;
   width: fit-content;
 }
 #splash li {
