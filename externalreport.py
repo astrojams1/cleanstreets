@@ -10,85 +10,101 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
+mile = 5280
+patrons = 28
+revenue = 715
+patrons_6mo = [6, 8, 11, 20, 25, 28]
+opp_eff_6mo = [100, 100, 100, 100, 100, 100]
+monthly_miles_6mo = np.divide([5000, 5000, 5000, 7250, 9250, 10750], mile)
+months = ['1: Jun 2020', '2: Jul 2020', '3: Aug 2020', '4: Sep 2020', '5: Oct 2020', '6: Nov 2020']
+
+st.image("reportheader.png", use_column_width=True)
+st.title("Clean Streets — Dec 2020")
 """
-# 🧹 Clean Streets Monthly
-### December 2020
-Starting this month I'm providing more detailed reporting on Clean Streets' activities in the neighborhood. This is meant to provide you a clearer picture of our impact. Please let me know how I can make this information clearer!
-#### Average Contribution:
+**Our Mission:** To reshape San Francisco into the cleanest city in the world by organizing members of the community to sponsor recurring litter pickup on the blocks that need it most.
+"""
+"""
+**How to Help:** Helping us grow our patrons is still the best way to support our work. Please become a patron and help others become patrons as well. More details at [www.cleanstreets.io](https://www.cleanstreets.io).
+"""
+"""
+**🌟 Special Note:** Moving forward, Clean Streets will provide monthly updates on its activities using a new tool that lets me easily assemble data and visualizations to better communicate important changes and trends with the project. I am excited to provide you richer information moving forward, and I look forward to your feedback on this report!
 """
 
-avg_contribution = 715/28
-avg_contribution
+st.header("Metrics")
 
+avg_payment = round(revenue / patrons, 2)
+st.write("### Our " + str(patrons) + " patrons each contribute an average of $" + str(avg_payment) + " monthly.")
 """
-#### Operational Efficiency:
+Number of patrons contributing at different levels:
+- **A** - Less than $10
+- **B** - Between $10 and $24
+- **C** - More than $25
 """
-operational_efficiency = 100
-operational_efficiency
-
-df = pd.DataFrame({
-  'Month': ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
-  'Miles Serviced Weekly': [5000/5280, 5000/5280, 5000/5280, 7250/5280, 9250/5280, 10750/5280],
-  'Patrons': [6, 8, 11, 20, 25, 28],
-  'Operational Efficiency': [100, 100, 100, 100, 100, 100],
-})
-
-df
-
-st.write("### Amount Cleaned Per Week")
-st.write("How many feet of sidewalk get cleaned by Clean Streets weekly?")
 
 chart_data = pd.DataFrame(
-     [[1,1,1],[2,2,2]],
-     columns=['a', 'b', 'c'])
+     [4, 15, 9],
+     columns=['# Patrons'],
+     index=['A', 'B', 'C'])
 
 st.bar_chart(chart_data)
 
-st.write("### Revenue v Expenses")
-st.write("What percent of revenue is paid to workers to clean streets?")
+"""
+### Clean Streets gained another 3 patrons last month!
+The chart below shows our patron growth over time.
+"""
 
 chart_data = pd.DataFrame(
-     np.random.randn(20, 3),
-     columns=['a', 'b', 'c'])
+     patrons_6mo,
+     columns=['# Patrons'],
+     index=months)
+
+st.area_chart(chart_data)
+
+"""
+### Clean Streets now services over 2 miles of sidewalk each week.
+"""
+chart_data = pd.DataFrame(
+     monthly_miles_6mo,
+     columns=['Miles'],
+     index=months)
+
+st.area_chart(chart_data)
+
+"""
+### Clean Streets continues to operate at 100% efficiency.
+This means that 100% of patrons' contributions funds litter pickup.
+"""
+chart_data = pd.DataFrame(
+     opp_eff_6mo,
+     columns=['Efficiency'],
+     index=months)
 
 st.line_chart(chart_data)
 
-st.write("## Coverage")
+st.header("Coverage")
 
 col1, col2, col3 = st.beta_columns(3)
 
 with col1:
-    st.header("A cat")
-    st.image("https://static.streamlit.io/examples/cat.jpg", use_column_width=True)
+    st.header("Area A")
+    map_data = pd.DataFrame(
+        [[37.75, -122.42]],
+        columns=['lat', 'lon'])
+
+    st.map(map_data)
 
 with col2:
-    st.header("A dog")
-    st.image("https://static.streamlit.io/examples/dog.jpg", use_column_width=True)
+    st.header("Area B")
+    map_data = pd.DataFrame(
+        [[37.75, -122.42]],
+        columns=['lat', 'lon'])
+
+    st.map(map_data)
 
 with col3:
-    st.header("An owl")
-    st.image("https://static.streamlit.io/examples/owl.jpg", use_column_width=True)
+    st.header("Area C")
+    map_data = pd.DataFrame(
+        [[37.76, -122.42]],
+        columns=['lat', 'lon'])
 
-st.write("### Blob 1")
-
-map_data = pd.DataFrame(
-    np.random.randn(1000, 2) / [5000, 5000] + [37.76, -122.4],
-    columns=['lat', 'lon'])
-
-st.map(map_data)
-
-st.write("### Blob 2")
-
-map_data = pd.DataFrame(
-    np.random.randn(1000, 2) / [500, 500] + [37.76, -122.4],
-    columns=['lat', 'lon'])
-
-st.map(map_data)
-
-st.write("### Blob 3")
-
-map_data = pd.DataFrame(
-    np.random.randn(1000, 2) / [50000, 50000] + [37.76, -122.4],
-    columns=['lat', 'lon'])
-
-st.map(map_data)
+    st.map(map_data)
