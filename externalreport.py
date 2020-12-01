@@ -80,31 +80,3 @@ chart_data = pd.DataFrame(
      index=months)
 
 st.line_chart(chart_data)
-
-st.header("Coverage")
-
-col1, col2, col3 = st.beta_columns(3)
-
-with col1:
-    st.header("Area A")
-    map_data = pd.DataFrame(
-        [[37.75, -122.42]],
-        columns=['lat', 'lon'])
-
-    st.map(map_data)
-
-with col2:
-    st.header("Area B")
-    map_data = pd.DataFrame(
-        [[37.75, -122.42]],
-        columns=['lat', 'lon'])
-
-    st.map(map_data)
-
-with col3:
-    st.header("Area C")
-    map_data = pd.DataFrame(
-        [[37.76, -122.42]],
-        columns=['lat', 'lon'])
-
-    st.map(map_data)
