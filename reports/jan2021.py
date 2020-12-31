@@ -49,7 +49,7 @@ for row in result:
     patrons_pledge_distro.append([row[5], row[6], row[7]])
 
 # Header
-st.image("jan2021_header.png", use_column_width=True)
+st.image("reports/jan2021_header.png", use_column_width=True)
 
 # Introduction
 st.title("Clean Streets — Jan 2021")
