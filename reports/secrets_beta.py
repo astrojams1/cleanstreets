@@ -3,7 +3,7 @@ import os
 import datetime
 import streamlit as st
 SECRETS_LOCATION = os.path.join(
-    '.', '/.streamlit', 'secrets.toml'
+    '.', '../.streamlit', 'secrets.toml'
 )
 def _parse():
     secrets = {}
