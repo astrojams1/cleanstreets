@@ -18,7 +18,7 @@ opp_eff_6mo = [100, 100, 100, 100, 100, 100]
 monthly_miles_6mo = np.divide([5000, 5000, 5000, 7250, 9250, 10750], mile)
 months = ['1: Jun 2020', '2: Jul 2020', '3: Aug 2020', '4: Sep 2020', '5: Oct 2020', '6: Nov 2020']
 
-st.image("dec2020_header.png", use_column_width=True)
+st.image("reports/dec2020_header.png", use_column_width=True)
 st.title("Clean Streets — Dec 2020")
 """
 **Our Mission:** To reshape San Francisco into the cleanest city in the world by organizing members of the community to sponsor recurring litter pickup on the blocks that need it most.
