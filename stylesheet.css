@@ -131,7 +131,7 @@ li {
 }
 ul.top_patrons li::before {
     content: "🌟 ";
-    margin-left: 15px;
+    margin-left: -16px;
 }
 
 div.divider {
