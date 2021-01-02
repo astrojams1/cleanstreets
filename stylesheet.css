@@ -129,6 +129,10 @@ li {
   break-inside: avoid-column;
   margin: 0 1em 1em 0;
 }
+ul.top_patrons li::before {
+    content: "🌟 ";
+    margin-left: 15px;
+}
 
 div.divider {
   border-bottom: .13em #bd46a3 solid;
