@@ -59,6 +59,9 @@ st.title("Clean Streets — Jan 2021")
 """
 **How to Help:** Helping us grow our patrons is still the best way to support our work. Please become a patron and help others become patrons as well. More details at [www.cleanstreets.io](https://www.cleanstreets.io).
 """
+"""
+Happy New Year! I feel so happy to bring Clean Streets into its second (calendar year) and seventh month of operation. I have learned so much these last 7 months, and look forward to building on all that we have created together, to shape Clean Streets to be as effective and pro-worker as possible.
+"""
 
 st.header("Metrics")
 
