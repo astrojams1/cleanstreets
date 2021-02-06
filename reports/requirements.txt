@@ -1,0 +1,4 @@
+streamlit
+moz-sql-parser==4.9.21002
+gsheetsdb===0.1.12
+toml
