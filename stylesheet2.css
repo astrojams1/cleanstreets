@@ -26,6 +26,22 @@ h1 {
   margin: 0 0 5vw 0;
 }
 
+.cta {
+  border: .1em solid var(--main-accent-color);
+  box-shadow: #00000033 0.05em 0.05em 0.4em;
+  color: var(--main-accent-color);
+  cursor: pointer;
+  display: inline-block;
+  line-height: 3em;
+  margin: 6vh auto 3vh;
+  outline: none;
+  padding: 0 1em;
+  text-shadow: none;
+  width: fit-content;
+}
+
+/*from the old stylehseet*/
+
 .center {
   text-align: center;
 }
