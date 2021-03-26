@@ -32,11 +32,6 @@ h1 {
   text-align: center;
 }
 
-p {
-  color: rgba(0,0,0,0.84);
-  line-height: 175%;
-}
-
 .cta {
   border: .1em solid var(--main-accent-color);
   color: var(--main-accent-color);
@@ -72,6 +67,7 @@ p {
 }
 
 #brief {
+  line-height: 175%;
   text-align: center;
 }
 
