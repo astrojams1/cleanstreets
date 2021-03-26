@@ -47,13 +47,6 @@ img {
   width: 150%;
 }
 
-li {
-  border: .1em solid var(--main-accent-color);
-  break-inside: avoid-column;
-  padding: 1em;
-  margin: 0 0 1em 0;
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -81,11 +74,18 @@ ul {
 }
 
 .col3 {
+  break-inside: avoid-column;
   column-gap: 1em;
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
+  margin: 0 0 1em 0;
   white-space: nowrap;
+}
+
+.outline {
+  border: .1em solid var(--main-accent-color);
+  padding: 1em;
 }
 
 #logo {
