@@ -1,7 +1,12 @@
 :root {
+  /*colors*/
   --main-bg-color: rgba(253,241,236,1);
   --main-text-color: #251d23;
   --main-accent-color: #F99985;
+  /*fonts*/
+  --main-serif-font: 'Merriweather', serif;
+  --main-script-font: 'Merriweather', serif;
+  --main-sans-font: 'Open Sans', sans-serif;
 }
 
 html {
@@ -32,6 +37,7 @@ h1 {
   color: var(--main-accent-color);
   cursor: pointer;
   display: inline-block;
+  font-family: var(--main-sans-font);
   line-height: 3em;
   margin: 6vh auto 3vh;
   outline: none;
