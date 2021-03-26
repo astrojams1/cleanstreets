@@ -34,6 +34,8 @@ h1 {
 
 img {
   opacity: 80%;
+  outline: 4px solid var(--main-bg-color);
+  outline-offset: -4px;
   margin: 0 0 1em -25%;
   width: 150%;
 }
