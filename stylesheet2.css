@@ -21,7 +21,7 @@ body {
   font-size: 24px;
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0;
   max-width: 720px;
 }
 
@@ -38,6 +38,17 @@ img {
   outline-offset: -4px;
   margin: 0 0 1em -25%;
   width: 150%;
+}
+
+li {
+  break-inside: avoid-column;
+  margin: 0 1em 1em 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .cta {
@@ -58,6 +69,13 @@ img {
   font-size: 2em;
   line-height: 1;
   transform: rotate(-16deg);
+}
+
+.col3 {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  white-space: nowrap;
 }
 
 #logo {
@@ -129,21 +147,6 @@ h3 {
   margin: 5vh 0 1vh .5em;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0 1em;
-  padding: 0;
-}
-ul.col3 {
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
-  white-space: nowrap;
-}
-li {
-  break-inside: avoid-column;
-  margin: 0 1em 1em 0;
-}
 ul.top_patrons li::before {
     content: "🌟 ";
     margin-left: -16px;
