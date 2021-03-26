@@ -83,7 +83,7 @@ ul {
   white-space: nowrap;
 }
 
-.outline {
+.outline li {
   border: .1em solid var(--main-accent-color);
   padding: 1em;
 }
