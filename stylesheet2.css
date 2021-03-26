@@ -49,6 +49,18 @@ h1 {
 
 .script {
   font-family: var(--main-script-font);
+  font-size: 2em;
+  line-height: 1;
+  transform: rotate(-16deg);
+
+}
+
+#logo {
+  width: 4em;
+}
+
+#or {
+  width: 2em;
 }
 
 /*from the old stylehseet*/
