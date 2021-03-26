@@ -33,9 +33,9 @@ h1 {
 }
 
 img {
-  height: 75vh;
   opacity: 80%;
-  margin-left: calc(-100vw/2 + 100%/2);
+  margin-left: -25%;
+  width: 150%;
 }
 
 .cta {
@@ -45,7 +45,6 @@ img {
   display: inline-block;
   font-family: var(--main-sans-font);
   line-height: 3em;
-  margin: 6vh auto 3vh;
   outline: none;
   padding: 0 1em;
   text-shadow: none;
@@ -78,6 +77,7 @@ img {
 }
 
 #ctas {
+  margin: 2em 0;
   text-align: center;
 }
 
