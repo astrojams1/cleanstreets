@@ -5,7 +5,7 @@
   --main-accent-color: #F99985;
   /*fonts*/
   --main-serif-font: 'Merriweather', serif;
-  --main-script-font: 'Merriweather', serif;
+  --main-script-font: 'Sacramento', cursive;
   --main-sans-font: 'Open Sans', sans-serif;
 }
 
@@ -46,6 +46,10 @@ h1 {
   width: fit-content;
 }
 
+.script {
+  font-family: var(--main-font-script);
+}
+
 /*from the old stylehseet*/
 
 .center {
@@ -64,21 +68,7 @@ h1 {
   background-color: #16c60c30;
   color: #109809;
 }
-.cta {
-  background-color: #d23144a8;
-  border: none;
-  border-radius: .7em;
-  box-shadow: #00000033 0.05em 0.05em 0.4em;
-  color: #ede8fd;
-  cursor: pointer;
-  display: block;
-  line-height: 3em;
-  margin: 6vh auto 3vh;
-  outline: none;
-  padding: 0 1em;
-  text-shadow: none;
-  width: fit-content;
-}
+
 .icon {
   margin-right: .4em;
 }
