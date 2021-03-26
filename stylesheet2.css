@@ -32,6 +32,11 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-size: 2em;
+  margin: 0;
+}
+
 img {
   opacity: 80%;
   outline: 4px solid var(--main-bg-color);
@@ -136,11 +141,6 @@ a {
   text-decoration: none;
 }
 
-h2 {
-  font-family: 'Merriweather', serif;
-  font-size: 2em;
-  margin: 10px 0;
-}
 h3 {
   font-family: 'Merriweather', serif;
   font-size: 1em;
