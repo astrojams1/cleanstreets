@@ -1,15 +1,3 @@
-/*
-rgba(237,231,246,1) light purple (not currently used)
-rgba(253,241,236,1) light orange (background color)
-#D0021B bright red (not used)
-#bd46a3 bright purple (links, divider)
-#251d23 dark purple (font) (#251d23db faded)
-#ede8fd near white (font)
-#e44457ba peach pink (cta, not used)
-#ad2636ba darker pink (cta, not used)
-#d23144a8 brighter pink (cta)
-*/
-
 html {
   scroll-behavior: smooth;
 }
@@ -19,31 +7,17 @@ body {
   box-sizing: border-box;
   color: #251d23;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 24px;
   overflow-x: hidden;
   margin: 0 auto;
   padding: 0 1em;
-  max-width: 690px;
+  max-width: 720px;
 }
 
-#splash {
-  height: 97vh;
-  margin-top: calc(-100vh);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-#splash span {
-  background-color: #251d23db;
-  color: #ede8fd;
-  display: block;
-  font-weight: bold;
-  padding: 2px 6px;
-  width: fit-content;
-}
-#splash li {
-  margin: 0 .5em .5em 0;
+h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 5em;
+  margin: 0 0 5vw 0;
 }
 
 .center {
@@ -98,11 +72,6 @@ a {
   text-decoration: none;
 }
 
-h1 {
-  font-family: 'Merriweather', serif;
-  font-size: 5em;
-  margin: 0 0 5vw 0;
-}
 h2 {
   font-family: 'Merriweather', serif;
   font-size: 2em;
