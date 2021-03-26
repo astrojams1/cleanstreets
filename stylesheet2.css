@@ -56,11 +56,18 @@ h1 {
 }
 
 #logo {
+  position: fixed;
+  left: 0.5em;
+  top: 0;
   width: 4em;
 }
 
 #or {
   width: 2em;
+}
+
+#brief {
+  text-align: center;
 }
 
 /*from the old stylehseet*/
