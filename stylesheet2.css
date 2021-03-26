@@ -17,7 +17,7 @@ body {
   background-color: var(--main-bg-color);
   box-sizing: border-box;
   color: var(--main-text-color);
-  font-family: 'Merriweather', serif;
+  font-family: var(--main-serif-font);
   font-size: 24px;
   overflow-x: hidden;
   margin: 0 auto;
@@ -47,7 +47,7 @@ h1 {
 }
 
 .script {
-  font-family: var(--main-font-script);
+  font-family: var(--main-script-font);
 }
 
 /*from the old stylehseet*/
