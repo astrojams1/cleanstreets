@@ -50,6 +50,7 @@ img {
 li {
   border: .1em solid var(--main-accent-color);
   break-inside: avoid-column;
+  padding: 1em;
   margin: 0 0 1em 0;
 }
 
