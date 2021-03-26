@@ -29,6 +29,7 @@ h1 {
   color: var(--main-accent-color);
   font-size: 2.4em;
   margin: 0 0 5vw 0;
+  text-align: center;
 }
 
 .cta {
