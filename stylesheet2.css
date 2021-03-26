@@ -32,6 +32,11 @@ h1 {
   text-align: center;
 }
 
+p {
+  color: rgba(0,0,0,0.84);
+  line-height: 175%;
+}
+
 .cta {
   border: .1em solid var(--main-accent-color);
   color: var(--main-accent-color);
@@ -51,7 +56,6 @@ h1 {
   font-size: 2em;
   line-height: 1;
   transform: rotate(-16deg);
-
 }
 
 #logo {
@@ -98,11 +102,6 @@ h1 {
 }
 .ind25 {
   margin: 1em;
-}
-
-p {
-  color: rgba(0,0,0,0.84);
-  margin: 1.5em 0;
 }
 
 a {
