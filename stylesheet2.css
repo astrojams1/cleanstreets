@@ -34,7 +34,7 @@ h1 {
 
 img {
   opacity: 80%;
-  margin-left: -25%;
+  margin: -25% 0 1em 0;
   width: 150%;
 }
 
