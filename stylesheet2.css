@@ -32,6 +32,12 @@ h1 {
   text-align: center;
 }
 
+img {
+  height: 75vh;
+  opacity: 80%;
+  margin-left: calc(-100vw/2 + 100%/2);
+}
+
 .cta {
   border: .1em solid var(--main-accent-color);
   color: var(--main-accent-color);
