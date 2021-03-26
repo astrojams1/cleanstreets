@@ -79,7 +79,7 @@ ul {
 }
 
 .col3 {
-  background-color: #00000010;
+  background-color: var(--main-accent-color);
   column-gap: 1em;
   columns: 3;
   -webkit-columns: 3;
