@@ -115,8 +115,14 @@ ul {
 
 /*experiment*/
 
-.top_patrons {
+#top_supporters {
   font-family: var(--main-script-font);
+  text-align: center;
+}
+
+#supporters {
+  font-family: var(--main-script-font);
+  text-align: center;
 }
 
 /*from the old stylehseet*/
