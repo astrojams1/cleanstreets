@@ -55,6 +55,11 @@ ul {
   padding: 0;
 }
 
+a {
+  color: var(--main-accent-color);
+  text-decoration: none;
+}
+
 .cta {
   border: .1em solid var(--main-accent-color);
   color: var(--main-accent-color);
@@ -155,12 +160,6 @@ ul {
 }
 .ind25 {
   margin: 1em;
-}
-
-a {
-  background-color: #bd46a33d;
-  color: #bd46a3;
-  text-decoration: none;
 }
 
 h3 {
