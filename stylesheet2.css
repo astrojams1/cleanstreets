@@ -46,6 +46,10 @@ h3 {
   margin: 0 0 .5em 0;
 }
 
+p {
+  line-height: 175%;
+}
+
 img {
   opacity: 80%;
   outline: 4px solid var(--main-bg-color);
@@ -58,6 +62,10 @@ ul {
   list-style-type: none;
   margin: 1.5em 0;
   padding: 0;
+}
+
+ul p {
+  font-size: 0.75em;
 }
 
 a {
@@ -114,7 +122,6 @@ a {
 }
 
 #brief {
-  line-height: 175%;
   text-align: center;
 }
 
