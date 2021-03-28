@@ -148,13 +148,13 @@ a {
 #top-supporters {
   font-family: var(--main-script-font);
   font-size: 1.25em;
-  line-height: 3em;
+  line-height: 2em;
   text-align: center;
 }
 
 #supporters {
   font-family: var(--main-script-font);
-  line-height: 3em;
+  line-height: 2em;
   text-align: center;
 }
 
