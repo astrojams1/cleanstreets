@@ -41,6 +41,11 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-size: .9em;
+  margin: 0 0 .5em 0;
+}
+
 img {
   opacity: 80%;
   outline: 4px solid var(--main-bg-color);
@@ -160,12 +165,6 @@ a {
 }
 .ind25 {
   margin: 1em;
-}
-
-h3 {
-  font-family: 'Merriweather', serif;
-  font-size: 1em;
-  margin: 5vh 0 1vh .5em;
 }
 
 ul.top_patrons li::before {
