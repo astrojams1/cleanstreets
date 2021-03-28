@@ -58,6 +58,10 @@ img {
   width: 150%;
 }
 
+li {
+  margin: 0 0 1em 0;
+}
+
 ul {
   list-style-type: none;
   margin: 1.5em 0;
@@ -66,6 +70,7 @@ ul {
 
 ul p {
   font-size: 0.75em;
+  margin: 0;
 }
 
 a {
@@ -105,7 +110,6 @@ a {
   border: .1em solid var(--main-accent-color);
   break-inside: avoid-column;
   padding: 1em;
-  margin: 0 0 1em 0;
 }
 
 #logo {
