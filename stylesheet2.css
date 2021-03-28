@@ -138,6 +138,10 @@ a {
   text-align: center;
 }
 
+.small {
+  font-size: .75em;
+}
+
 /*from the old stylehseet*/
 
 .center {
@@ -145,9 +149,6 @@ a {
 }
 .digit {
   font-family: 'Open Sans', sans-serif;
-}
-.small {
-  font-size: .8em;
 }
 .x-small {
   font-size: .7em;
