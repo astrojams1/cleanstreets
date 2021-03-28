@@ -75,11 +75,6 @@ ul p {
   opacity: .8;
 }
 
-ul li {
-  list-style-type: none;
-  margin: 0 0 0 1em;
-}
-
 a {
   color: var(--main-accent-color);
   text-decoration: none;
