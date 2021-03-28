@@ -42,7 +42,7 @@ h2 {
 }
 
 h3 {
-  font-size: .9em;
+  font-size: .75em;
   margin: 0 0 .5em 0;
 }
 
@@ -59,6 +59,7 @@ img {
 }
 
 li {
+  break-inside: avoid-column;
   margin: 0 0 1em 0;
 }
 
@@ -71,6 +72,7 @@ ul {
 ul p {
   font-size: 0.75em;
   margin: 0;
+  opacity: .8;
 }
 
 a {
@@ -98,6 +100,14 @@ a {
   transform: rotate(-16deg);
 }
 
+.col2 {
+  column-gap: 1em;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  white-space: nowrap;
+}
+
 .col3 {
   column-gap: 1em;
   columns: 3;
@@ -108,7 +118,6 @@ a {
 
 .outline li {
   border: .1em solid var(--main-accent-color);
-  break-inside: avoid-column;
   padding: 1em;
 }
 
