@@ -101,7 +101,7 @@ a {
 }
 
 .col2 {
-  column-gap: 1em;
+  column-gap: 2em;
   columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
