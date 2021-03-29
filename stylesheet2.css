@@ -9,7 +9,7 @@
   --main-sans-font: 'Open Sans', sans-serif;
 }
 
-@media (width < 300px) {
+@media screen and (max-width: 720px) {
   html {
     font-size: 14px;
   }
