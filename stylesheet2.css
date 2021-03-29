@@ -9,6 +9,12 @@
   --main-sans-font: 'Open Sans', sans-serif;
 }
 
+@media (width < 300px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 html {
   font-size: 24px;
   scroll-behavior: smooth;
