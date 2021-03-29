@@ -29,7 +29,7 @@ h1 {
   color: var(--main-accent-color);
   font-size: 2.5rem;
   font-style: italic;
-  margin: 2em 0 0 0;
+  margin: 5rem 0 0 0;
   text-align: center;
 }
 
@@ -160,10 +160,6 @@ a {
   background-color: var(--main-accent-color);
   margin: 0 0 0 -25%;
   width: 150%;
-}
-
-.small {
-  font-size: .75em;
 }
 
 /*from the old stylehseet*/
