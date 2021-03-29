@@ -9,6 +9,12 @@
   --main-sans-font: 'Open Sans', sans-serif;
 }
 
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 9px;
+  }
+}
+
 @media screen and (max-width: 720px) {
   html {
     font-size: 14px;
