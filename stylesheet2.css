@@ -176,10 +176,10 @@ a {
 
 #footer h2 {
   color: var(--main-bg-color);
-  padding: 1rem;
 }
 
 #footer .col2 {
+  color: var(--main-bg-color);
   margin: 0 auto;
   max-width: 30rem;
   text-align: center;
