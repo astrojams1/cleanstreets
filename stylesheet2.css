@@ -178,16 +178,19 @@ a {
   color: var(--main-bg-color);
 }
 
-#footer .col2 {
+#footer p {
   color: var(--main-bg-color);
+  font-size: .5rem;
   margin: 0 auto;
   max-width: 30rem;
   text-align: center;
 }
 
-#footer p {
+#footer li {
   color: var(--main-bg-color);
-  font-size: .5rem;
+}
+
+#footer .col2 {
   margin: 0 auto;
   max-width: 30rem;
   text-align: center;
