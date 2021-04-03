@@ -189,6 +189,7 @@ a {
 
 #footer a {
   color: var(--main-bg-color);
+  font-size: .75rem;
 }
 
 #footer .col2 {
@@ -199,53 +200,7 @@ a {
 
 /*from the old stylehseet*/
 
-.center {
-  text-align: center;
-}
-.digit {
-  font-family: 'Open Sans', sans-serif;
-}
-.x-small {
-  font-size: .7em;
-}
 .active {
   background-color: #16c60c30;
   color: #109809;
-}
-
-.icon {
-  margin-right: .4em;
-}
-.fin {
-  margin-left: 10px;
-}
-.ind25 {
-  margin: 1em;
-}
-
-ul.top_patrons li::before {
-    content: "🌟 ";
-    margin-left: -16px;
-}
-
-div.divider {
-  border-bottom: .13em #bd46a3 solid;
-  margin: 8vh 10px 4vh 0;
-}
-
-img#header {
-  height: 100vh;
-  width: 100vw;
-  margin-left: calc(-100vw/2 + 100%/2);
-  opacity: 80%;
-  pointer-events: none;
-  position: relative;
-  z-index: -1;
-}
-
-img#footer {
-  width: 100vw;
-  margin-left: calc(-100vw / 2 + 100% / 2);
-  margin-top: calc(-100vw*.3);
-  pointer-events: none;
 }
