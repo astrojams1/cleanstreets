@@ -1,8 +1,8 @@
 :root {
   /*colors*/
-  --main-bg-color: rgba(253,241,236,1);
+  --main-bg-color: #fdf1ec;
   --main-text-color: #251d23;
-  --main-accent-color: #F99985;
+  --main-accent-color: #f27598;
   /*fonts*/
   --main-serif-font: 'Merriweather', serif;
   --main-script-font: 'Sacramento', cursive;
