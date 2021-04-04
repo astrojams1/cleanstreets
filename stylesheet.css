@@ -15,7 +15,7 @@
   }
 
   img, #footer {
-    margin-left: calc(100%/2 - 100vw/2);
+    margin: 0 0 1rem calc(100%/2 - 100vw/2);
     width: 100vw;
   }
 }
@@ -23,6 +23,11 @@
 @media screen and (min-width: 720px) {
   html {
     font-size: 24px;
+  }
+
+  img, #footer {
+    margin: 0 0 1rem -25%;
+    width: 150%;
   }
 }
 
@@ -71,8 +76,6 @@ img {
   opacity: 80%;
   outline: 4px solid var(--main-bg-color);
   outline-offset: -4px;
-  margin: 0 0 1rem -25%;
-  width: 150%;
 }
 
 li {
@@ -174,8 +177,6 @@ a {
 
 #footer {
   background-color: var(--main-accent-color);
-  margin: 0 0 0 -25%;
-  width: 150%;
 }
 
 #footer h2 {
