@@ -13,6 +13,11 @@
   html {
     font-size: 3vw;
   }
+
+  img, #footer {
+    margin-left: calc(100%/2 - 100vw/2);
+    width: 100vw;
+  }
 }
 
 @media screen and (min-width: 720px) {
