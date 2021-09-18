@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: gsheetsdb
+Version: 0.1.12
+Summary: Python DB-API and SQLAlchemy interface for Google Spreadsheets.
+Home-page: https://github.com/betodealmeida/gsheets-db-api
+Author: Beto Dealmeida
+Author-email: beto@dealmeida.net
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: google-auth
+Requires-Dist: moz-sql-parser
+Requires-Dist: requests (>=2.20.0)
+Requires-Dist: six
+Provides-Extra: cli
+Requires-Dist: docopt ; extra == 'cli'
+Requires-Dist: pygments ; extra == 'cli'
+Requires-Dist: prompt-toolkit (>=2) ; extra == 'cli'
+Requires-Dist: tabulate ; extra == 'cli'
+Provides-Extra: dev
+Requires-Dist: coverage ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: nose ; extra == 'dev'
+Requires-Dist: pipreqs ; extra == 'dev'
+Requires-Dist: pytest (>=2.8) ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: requests-mock ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Provides-Extra: sqlalchemy
+Requires-Dist: sqlalchemy ; extra == 'sqlalchemy'
+
+UNKNOWN
+
+
