@@ -1,0 +1,6 @@
+[console_scripts]
+gsheetsdb = gsheetsdb.console:main
+
+[sqlalchemy.dialects]
+gsheets = gsheetsdb.dialect:GSheetsDialect
+
