@@ -1,12 +1,14 @@
 :root {
   /*colors*/
-  --main-bg-color: #fdf1ec;
-  --main-text-color: #251d23;
-  --main-accent-color: #f27598;
+  --main-bg-color: #F5F5F7;
+  --main-text-color: #1A237E;
+  --main-accent-color: #D81B60;
+  --secondary-accent-color: #FFC107;
+  --inverse-text-color: #FFFFFF;
   /*fonts*/
   --main-serif-font: 'Merriweather', serif;
   --main-script-font: 'Sacramento', cursive;
-  --main-sans-font: 'Open Sans', sans-serif;
+  --main-sans-font: 'Public Sans', sans-serif;
 }
 
 @media screen and (max-width: 720px) {
@@ -39,7 +41,7 @@ body {
   background-color: var(--main-bg-color);
   box-sizing: border-box;
   color: var(--main-text-color);
-  font-family: var(--main-serif-font);
+  font-family: var(--main-sans-font);
   overflow-x: hidden;
   margin: 0 auto;
   padding: 0;
@@ -48,16 +50,18 @@ body {
 
 h1 {
   color: var(--main-accent-color);
+  font-family: var(--main-serif-font);
+  font-weight: 900;
   font-size: 4rem;
-  font-style: italic;
   margin: 5rem 0 0 0;
   text-align: center;
 }
 
 h2 {
-  color: var(--main-accent-color);
+  color: var(--main-text-color);
+  font-family: var(--main-serif-font);
+  font-weight: 700;
   font-size: 1.5rem;
-  font-style: italic;
   margin: 3rem 0 2rem 0;
   text-align: center;
 }
@@ -113,16 +117,26 @@ a {
 }
 
 .cta {
-  border: .1rem solid var(--main-accent-color);
-  color: var(--main-accent-color);
   cursor: pointer;
   display: inline-block;
   font-family: var(--main-sans-font);
+  font-weight: 700;
   line-height: 3rem;
   outline: none;
   padding: 0 1rem;
   text-shadow: none;
   width: fit-content;
+  border: none;
+}
+
+#btn-donate {
+  background-color: var(--main-accent-color);
+  color: var(--inverse-text-color);
+}
+
+#btn-activate {
+  background-color: var(--secondary-accent-color);
+  color: var(--main-text-color);
 }
 
 .script {
@@ -161,10 +175,13 @@ a {
   display: inline-block;
   text-align: center;
   width: 4rem;
+  font-family: var(--main-sans-font);
 }
 
 #brief {
   text-align: center;
+  font-family: var(--main-sans-font);
+  color: var(--main-text-color);
 }
 
 #ctas {
@@ -175,29 +192,30 @@ a {
 /*experiment*/
 
 #top-supporters {
-  font-family: var(--main-script-font);
+  font-family: var(--main-sans-font);
   font-size: 1.25rem;
   line-height: 3rem;
-  text-align: center;
+  text-align: left;
 }
 
 #supporters {
-  font-family: var(--main-script-font);
+  font-family: var(--main-sans-font);
   line-height: 3rem;
-  text-align: center;
+  text-align: left;
 }
 
 #footer {
-  background-color: var(--main-accent-color);
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
 }
 
 #footer h2 {
-  color: var(--main-bg-color);
+  color: var(--main-text-color);
   padding-top: 2rem;
 }
 
 #footer p {
-  color: var(--main-bg-color);
+  color: var(--main-text-color);
   font-size: .5rem;
   margin: 0 auto;
   max-width: 30rem;
@@ -206,7 +224,7 @@ a {
 }
 
 #footer a {
-  color: var(--main-bg-color);
+  color: var(--main-text-color);
   font-size: .75rem;
 }
 
