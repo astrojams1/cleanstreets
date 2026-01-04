@@ -125,6 +125,12 @@ a {
   width: fit-content;
 }
 
+.cta.primary {
+  background-color: #D81B60;
+  color: #FFFFFF;
+  border-color: #D81B60;
+}
+
 .script {
   font-family: var(--main-script-font);
   font-size: 2rem;
