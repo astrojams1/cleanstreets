@@ -4,6 +4,8 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
 
+concurrency: preview-${{ github.ref }}
+
 permissions:
   contents: write
   pull-requests: write
@@ -16,3 +18,5 @@ jobs:
       - uses: rossjrw/pr-preview-action@v1
         with:
           source_dir: .
+          wait-for-pages-deployment: true
+          umbrella-dir: pr-preview
