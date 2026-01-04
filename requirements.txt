@@ -4,3 +4,4 @@ gsheetsdb===0.1.12
 toml
 beautifulsoup4
 pytest
+requests
