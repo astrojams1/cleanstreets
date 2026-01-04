@@ -132,13 +132,6 @@ a {
   width: fit-content;
 }
 
-#story .cta {
-  background-color: var(--main-accent-color);
-  color: #fff;
-  margin: 2rem 0;
-  padding: 0 1.5rem;
-}
-
 #story {
   border-bottom: 1px solid var(--main-accent-color);
   margin-bottom: 3rem;
