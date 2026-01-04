@@ -34,7 +34,7 @@ body {
 /* Layout */
 header, main {
     width: 100%;
-    max-width: 800px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -80,8 +80,9 @@ h2 {
     font-style: italic;
     text-align: center;
     margin-bottom: 2rem;
-    border-bottom: 1px solid var(--accent-color-light);
-    padding-bottom: 1rem;
+    border-top: 1px solid var(--accent-color-light);
+    padding-top: 2rem;
+    margin-top: 3rem;
 }
 
 h3 {
@@ -188,10 +189,23 @@ img {
 .col3 li {
     break-inside: avoid-column;
     margin-bottom: 0.5rem;
-    font-family: var(--font-script);
-    font-size: 1.25rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
     line-height: 1.6;
     text-align: center;
+}
+
+#top-supporters {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--accent-color-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#top-supporters li {
+    font-weight: 600;
+    color: var(--accent-color);
 }
 
 #last-updated {
@@ -230,7 +244,9 @@ img {
 
 #footer h2 {
     color: var(--bg-color);
+    border-top: none;
     border-bottom: none;
+    padding-top: 0;
     margin-top: 0;
 }
 
