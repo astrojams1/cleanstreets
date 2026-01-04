@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import io
 from datetime import datetime
+import re
 
 # URL of the published Google Sheet CSV
 CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxt3SXANj2NU-2UHlFRHhJLVJOdx1HBVxekMcHtkhAMzwp5E4ftBJ1DPlx7LMelBYd7d800_PmShJi/pub?gid=1418573323&single=true&output=csv"
@@ -44,31 +45,24 @@ def update_supporters():
         else:
             supporters.append(name)
 
+    # Combine lists, top supporters first
+    all_supporters = top_supporters + supporters
+
     # 3. Update index.html
-    # We use a specific formatter to try and preserve some structure,
-    # though BS4 often reformats significantly.
     with open('index.html', 'r', encoding='utf-8') as f:
         html_content = f.read()
 
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    # Update Top Supporters
-    top_list = soup.find('ul', id='top-supporters')
-    if top_list:
-        top_list.clear()
-        for name in top_supporters:
-            li = soup.new_tag('li')
-            li.string = name
-            top_list.append(li)
-
-    # Update Supporters
-    supporters_list = soup.find('ul', id='supporters')
+    # Update Supporters Grid
+    supporters_list = soup.find('div', id='supporters-list')
     if supporters_list:
         supporters_list.clear()
-        for name in supporters:
-            li = soup.new_tag('li')
-            li.string = name
-            supporters_list.append(li)
+        for name in all_supporters:
+            # Create a div for each supporter
+            div = soup.new_tag('div')
+            div.string = name
+            supporters_list.append(div)
 
     # Update Last Updated timestamp
     last_updated_p = soup.find('p', id='last-updated')
@@ -89,8 +83,6 @@ def update_supporters():
 
     # Post-process to fix inline spacing for the dynamic year count
     # Prettify often adds newlines around tags, which creates unwanted whitespace in text.
-    import re
-    # Collapse the entire span and surrounding text to a single line to avoid whitespace issues
     # Matches: "For over", whitespace, <span...>, whitespace, "X years", whitespace, </span>, whitespace, ", we"
     pattern = r'For over\s*<span id="years-operating">\s*(\d+ years)\s*</span>\s*, we'
     replacement = r'For over <span id="years-operating">\1</span>, we'
