@@ -185,6 +185,12 @@ a {
   text-align: center;
 }
 
+.membership-info {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
 #last-updated {
   font-size: 0.8rem;
   font-style: italic;

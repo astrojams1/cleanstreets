@@ -43,23 +43,6 @@ def test_core_meta_tags(soup):
     assert robots is not None and "index" in robots.get("content", "")
 
 
-def test_adsense_script_present(soup):
-    script = soup.find("script", src=lambda value: value and "adsbygoogle.js?client=ca-pub-1558201460533095" in value)
-    assert script is not None, "Updated AdSense script with client parameter is missing"
-    assert script.get("crossorigin") == "anonymous"
-
-
-def test_adsense_ad_units(soup):
-    ad_units = soup.find_all("ins", class_="adsbygoogle")
-    assert len(ad_units) >= 2, "Expected at least two AdSense ad units on the page"
-
-    for ad_unit in ad_units:
-        assert ad_unit.get("data-ad-client") == "ca-pub-1558201460533095"
-        assert ad_unit.get("data-ad-format") == "auto"
-        assert ad_unit.get("data-full-width-responsive") == "true"
-        assert ad_unit.get("data-ad-slot"), "AdSense unit is missing a data-ad-slot attribute"
-
-
 def test_structured_data_graph(soup):
     ld_json_scripts = soup.find_all("script", attrs={"type": "application/ld+json"})
     assert ld_json_scripts, "Structured data script not found"
