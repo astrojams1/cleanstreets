@@ -2,8 +2,8 @@
   /* Colors */
   --bg-color: #fdf1ec;
   --text-color: #251d23;
-  --accent-color: #9e3251; /* Darkened for better text contrast */
-  --accent-color-light: #f27598; /* Original accent for borders/decorations */
+  --accent-color: #9e3251;
+  --accent-color-light: #f27598;
   --link-color: #b0355a;
 
   /* Fonts */
@@ -173,39 +173,45 @@ img {
 
 /* Supporters List */
 .supporters-lists {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* Minimal gap to merge visually */
 }
 
 .col3 {
-    column-count: 2; /* Mobile default */
-    column-gap: 1.5rem;
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem; /* row gap, col gap */
 }
 
 .col3 li {
-    break-inside: avoid-column;
-    margin-bottom: 0.5rem;
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-family: var(--font-serif);
+    line-height: 1.4;
     text-align: center;
 }
 
+/* Top Supporters: Premium, Distinct, Organic */
 #top-supporters {
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid var(--accent-color-light);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem; /* Flow into the next list */
 }
 
 #top-supporters li {
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-style: italic;
     color: var(--accent-color);
+}
+
+/* Standard Supporters */
+#supporters li {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.9;
 }
 
 #last-updated {
@@ -277,8 +283,6 @@ img {
 @media (min-width: 768px) {
     h1 { font-size: 4rem; margin-top: 5rem; }
 
-    .col3 { column-count: 3; }
-
     .faq-list {
         grid-template-columns: 1fr 1fr;
     }
@@ -287,11 +291,5 @@ img {
         width: 120%;
         max-width: 120%;
         margin-left: -10%;
-    }
-}
-
-@media (min-width: 1024px) {
-    .supporters-lists {
-        /* If we want side by side, but maybe stacking is fine */
     }
 }
