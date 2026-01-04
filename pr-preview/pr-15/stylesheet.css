@@ -96,16 +96,6 @@ h3 {
     margin-top: 2rem;
 }
 
-h4 {
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
-    margin-top: 0;
-    line-height: 1.4;
-}
-
 p {
     margin-bottom: 1.5rem;
 }
@@ -237,15 +227,58 @@ img {
 }
 
 /* FAQ */
-.faq-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+.faq-group {
+    margin-bottom: 2rem;
 }
 
-.faq-list li {
+.faq-group details {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 0.5rem;
+}
+
+.faq-group details:last-child {
+    border-bottom: none;
+}
+
+.faq-group summary {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--accent-color);
+    cursor: pointer;
+    list-style: none; /* Remove default triangle in some browsers */
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.4;
+    transition: color 0.2s;
+}
+
+.faq-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-group summary::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.faq-group details[open] summary::before {
+    content: '−';
+}
+
+.faq-group summary:hover {
+    color: var(--link-color);
+}
+
+.faq-group details p {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
