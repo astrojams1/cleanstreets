@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Clean Streets | Community-Powered Litter Cleanup in SF
+  </title>
+  <meta content="Clean Streets is a community-supported movement keeping San Francisco blocks clean through resident-funded litter removal and neighborhood stewardship." name="description"/>
+  <meta content="Clean Streets, San Francisco litter cleanup, neighborhood trash removal, donate" name="keywords"/>
+  <meta content="#1d3a2f" name="theme-color"/>
+  <meta content="Clean Streets | Community-Powered Litter Cleanup in San Francisco" property="og:title"/>
+  <meta content="Join San Francisco neighbors funding targeted litter removal and community cleanup coverage across the Mission District." property="og:description"/>
+  <meta content="https://www.cleanstreets.io/IMG_2283.JPG" property="og:image"/>
+  <meta content="https://www.cleanstreets.io/" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Clean Streets | Community-Powered Litter Cleanup in San Francisco" name="twitter:title"/>
+  <meta content="https://www.cleanstreets.io/IMG_2283.JPG" name="twitter:image"/>
+  <link rel="canonical" href="https://www.cleanstreets.io/">
+  <link rel="alternate" href="https://www.cleanstreets.io/" hreflang="en">
+  <meta name="robots" content="index, follow">
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&amp;family=Open+Sans:wght@600;700&amp;family=Sacramento&amp;display=swap" rel="stylesheet"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-169845821-2">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-169845821-2');
+  </script>
+  <style>
+   :root {
+      /* Palette */
+      --bg-color: #fdf1ec;
+      --text-color: #251d23;
+      /* Darkened slightly for accessibility/readability */
+      --accent-color: #d65a7e;
+      --accent-hover: #b54060;
+
+      /* Fonts */
+      --font-serif: 'Merriweather', serif;
+      --font-script: 'Sacramento', cursive;
+      --font-sans: 'Open Sans', sans-serif;
+    }
+
+    /* Global Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 18px; /* Better base readability */
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-serif);
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    h1 {
+      color: var(--accent-color);
+      font-size: clamp(3rem, 5vw, 4.5rem); /* Responsive font sizing */
+      font-style: italic;
+      text-align: center;
+      margin: 4rem 0 1rem 0;
+      line-height: 1.2;
+    }
+
+    h2 {
+      color: var(--accent-color);
+      font-size: 2rem;
+      font-style: italic;
+      text-align: center;
+      margin: 3rem 0 2rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    /* Layout Containers */
+    .container {
+      width: 90%;
+      max-width: 48rem; /* Increased from 30rem for better desktop use */
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header & Logo */
+    header {
+      position: relative;
+      padding-top: 1rem;
+    }
+
+    .logo-badge {
+      font-family: var(--font-script);
+      font-size: 2rem;
+      line-height: 0.8;
+      transform: rotate(-16deg);
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      color: var(--text-color);
+      z-index: 10;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero-brief {
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 36rem;
+      margin: 0 auto 2rem auto;
+    }
+
+    /* Buttons / CTAs */
+    .cta-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .cta-divider {
+      font-family: var(--font-script);
+      font-size: 1.5rem;
+      color: var(--text-color);
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.9rem;
+    }
+
+    /* Primary Button (Donate) - Solid for higher conversion */
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: white;
+      border: 2px solid var(--accent-color);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Secondary Button (Activate) - Outline */
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--accent-color);
+      border: 2px solid var(--accent-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(214, 90, 126, 0.1);
+      color: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    /* Images */
+    .featured-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* Stylistic border */
+      border: 4px solid var(--bg-color);
+      outline: 1px solid var(--accent-color);
+      margin-bottom: 3rem;
+    }
+
+    /* Story Section */
+    #story {
+      border-bottom: 1px solid rgba(214, 90, 126, 0.3);
+      padding-bottom: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Grid layout for Desktop */
+    @media (min-width: 768px) {
+      .split-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      /* Make the container wider only on desktop */
+      .container-wide {
+        max-width: 60rem;
+      }
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    /* Press Section */
+    .press-link {
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .press-date {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Supporters Grid - A Wall of Fame */
+    .supporters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+      text-align: center;
+      font-family: var(--font-script);
+      font-size: 1.3rem;
+      margin-bottom: 3rem;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .faq-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      padding: 3rem 0;
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    footer h2 {
+      color: var(--bg-color);
+      border-bottom: none;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 1rem;
+      display: inline-block;
+    }
+
+    footer .copyright {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+  </style>
+  <script type="application/ld+json">
+   {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.cleanstreets.io/#website",
+            "url": "https://www.cleanstreets.io/",
+            "name": "Clean Streets",
+            "potentialAction": {
+              "@type": "DonateAction",
+              "target": "https://www.patreon.com/join/cleanstreets?",
+              "name": "Donate to Clean Streets"
+            }
+          },
+          {
+            "@type": "NGO",
+            "@id": "https://www.cleanstreets.io/#organization",
+            "name": "Clean Streets",
+            "url": "https://www.cleanstreets.io/",
+            "description": "Community-supported litter removal and stewardship program serving San Francisco neighborhoods.",
+            "image": "https://www.cleanstreets.io/IMG_2283.JPG",
+            "logo": "https://www.cleanstreets.io/favicon.ico",
+            "areaServed": "San Francisco, California",
+            "keywords": ["litter removal", "San Francisco", "trash cleanup"],
+            "sameAs": [
+              "https://www.patreon.com/join/cleanstreets?",
+              "https://www.facebook.com/cleanstreets3",
+              "https://www.twitter.com/cleanstreets3"
+            ]
+          }
+        ]
+      }
+  </script>
+ </head>
+ <body>
+  <header>
+   <a class="logo-badge" href="/">
+    Clean
+    <br/>
+    Streets
+   </a>
+  </header>
+  <main class="container">
+   <h1>
+    Let's fix this litter problem
+   </h1>
+   <p class="hero-brief">
+    Join San Francisco&rsquo;s fastest growing community-funded effort to clean up the litter from our streets.
+   </p>
+   <div class="cta-container">
+    <a class="btn btn-primary" href="https://www.patreon.com/join/cleanstreets?" target="_blank">
+     Donate
+    </a>
+    <span class="cta-divider">
+     or
+    </span>
+    <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSejrpY-LR2LP6w8ZZPNf2FkjNCyrYRlGPCTKXBLzqw4cR2bhw/viewform?usp=sf_link" target="_blank">
+     Activate Block
+    </a>
+   </div>
+   <img alt="Clean Streets volunteers removing litter from a San Francisco sidewalk" class="featured-img" height="600" src="IMG_2283.JPG" width="800"/>
+   <section id="story">
+    <h2>
+     Our Story
+    </h2>
+    <p>
+     I founded Clean Streets in 2020, right at the onset of the pandemic. The streets were a mess back then&mdash;trash literally piled at intersections 24/7&mdash;and I just wanted to help.
+    </p>
+    <p>
+     At first, I assumed this was the city&rsquo;s job. But I soon learned the policy: the city cleans the roadways (street sweepers), but residents and businesses are responsible for cleaning the sidewalks.
+    </p>
+    <p>
+     I didn&rsquo;t love that policy then, and I don&rsquo;t love it now. But until it changes, community action is the only way to keep our neighborhoods livable.
+    </p>
+    <div class="split-layout">
+     <div>
+      <h3>
+       The Model
+      </h3>
+      <p>
+       After trying everything from buying extra trash cans to cleaning corners myself, I landed on a simple model: neighbors chipping in small monthly amounts to pay crews to pick up litter.
+      </p>
+      <h3>
+       The Results
+      </h3>
+      <p>
+       It worked. For over <span id="years-operating">5 years</span>, we&rsquo;ve had crews running routes in the Mission and beyond. We&rsquo;ve been featured by Mission Local, rallied with neighborhood action groups, and seen real, visible improvements on the blocks we cover.
+      </p>
+     </div>
+     <div>
+      <h3>
+       The Mission
+      </h3>
+      <p>
+       We aren't a big agency. We are a community of neighbors who believe that if we all pitch in a few dollars, we don't have to live with trash on our doorsteps.
+      </p>
+      <p>
+       Whether you can contribute $5 or $50, your support goes directly to paying people to do the work that keeps our sidewalks clean.
+      </p>
+      <div style="text-align: center; margin-top: 2rem;">
+       <a class="btn btn-primary" href="https://www.patreon.com/join/cleanstreets?" target="_blank">
+        Support the Cause
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="press">
+    <h2>
+     Press Coverage
+    </h2>
+    <div style="text-align: center;">
+     <a class="press-link" href="https://missionlocal.org/2021/09/the-people-taking-san-franciscos-trash-into-their-own-hands/" target="_blank">
+      The people taking San Francisco&rsquo;s trash into their own hands
+     </a>
+     <div class="press-date">
+      Mission Local &mdash; September 7, 2021
+     </div>
+    </div>
+   </section>
+   <section id="supporters">
+    <h2>
+     Community Supporters
+    </h2>
+    <p id="last-updated" style="text-align: center; font-style: italic; opacity: 0.7; font-size: 0.9rem;">
+     Last updated: January 04, 2026
+    </p>
+    <div class="supporters-grid" id="supporters-list">
+     <div>
+      Aisling F.
+     </div>
+     <div>
+      Stephanie C.
+     </div>
+     <div>
+      Hartford Properties
+     </div>
+     <div>
+      James T.
+     </div>
+     <div>
+      Mark R.
+     </div>
+     <div>
+      Tom G.
+     </div>
+     <div>
+      Nicolette B.
+     </div>
+     <div>
+      Marc B.
+     </div>
+     <div>
+      Adam D.
+     </div>
+     <div>
+      Beckie W.
+     </div>
+     <div>
+      Melissa B.
+     </div>
+     <div>
+      Stephanie M.
+     </div>
+     <div>
+      Vicky L.
+     </div>
+     <div>
+      Lettie M.
+     </div>
+     <div>
+      James F.
+     </div>
+     <div>
+      Zig C.
+     </div>
+     <div>
+      Wei L.
+     </div>
+     <div>
+      Andreas B.
+     </div>
+     <div>
+      Alexandria B.
+     </div>
+     <div>
+      Tom C.
+     </div>
+     <div>
+      Dave C.
+     </div>
+     <div>
+      Kimberly O.
+     </div>
+     <div>
+      Maurice B.
+     </div>
+     <div>
+      Mira
+     </div>
+     <div>
+      Jeff M.
+     </div>
+     <div>
+      Oliver Z.
+     </div>
+     <div>
+      Jennifer W.
+     </div>
+     <div>
+      Connie
+     </div>
+     <div>
+      Royal
+     </div>
+     <div>
+      Grant S.
+     </div>
+     <div>
+      Amy H.
+     </div>
+    </div>
+   </section>
+   <img alt="Before and after of a cleaned street corner" class="featured-img" height="600" src="IMG_2265.JPG" width="800"/>
+   <section id="faq">
+    <h2>
+     FAQ
+    </h2>
+    <div class="faq-grid">
+     <div>
+      <h3>
+       Doesn't the city pick up litter?
+      </h3>
+      <p>
+       While the city sweeps streets, empties city trashcans, and removes large items (like mattresses) reported to SF311, businesses and residents are responsible for maintaining sidewalks.
+      </p>
+     </div>
+     <div>
+      <h3>
+       How much does service cost?
+      </h3>
+      <p>
+       It depends on the specific services requested, but typical weekly litter removal on a typical block in San Francisco costs $75 per month per side of the street.
+      </p>
+     </div>
+     <div>
+      <h3>
+       How are donated contributions used?
+      </h3>
+      <p>
+       If you make a donation, 100% of your contribution funds litter pickup. I work with the community to identify hard hit areas and channel any unused funds to cleaning those areas.
+      </p>
+     </div>
+     <div>
+      <h3>
+       How are workers paid?
+      </h3>
+      <p>
+       Workers are independent contractors who get paid 1 month in advance via Paypal at a rate approximately 2 times the minimum wage. We take no profit.
+      </p>
+     </div>
+     <div>
+      <h3>
+       Do you remove encampments?
+      </h3>
+      <p>
+       No, we do not remove encampments or disturb the homeless. We strictly enforce this policy without exception.
+      </p>
+     </div>
+     <div>
+      <h3>
+       Why did you start Clean Streets?
+      </h3>
+      <p>
+       I am a long time San Francisco resident who has always been bothered by the litter on our streets. I envisioned Clean Streets as an opportunity to have a positive impact on the community I love.
+      </p>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="container">
+    <h2>
+     Connect
+    </h2>
+    <nav>
+     <a href="https://www.patreon.com/bePatron?u=7366223" target="_blank">
+      Patreon
+     </a>
+     <a href="https://www.facebook.com/cleanstreets3" target="_blank">
+      Facebook
+     </a>
+     <a href="https://www.twitter.com/cleanstreets3" target="_blank">
+      Twitter
+     </a>
+     <a href="mailto:james@cleanstreets.io">
+      Email Us
+     </a>
+    </nav>
+    <div class="copyright">
+     Made in the Mission. Copyright 2026 Clean Streets LLC.
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>
