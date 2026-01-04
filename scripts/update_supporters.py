@@ -2,6 +2,7 @@ import csv
 import requests
 from bs4 import BeautifulSoup
 import io
+from datetime import datetime
 
 # URL of the published Google Sheet CSV
 CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxt3SXANj2NU-2UHlFRHhJLVJOdx1HBVxekMcHtkhAMzwp5E4ftBJ1DPlx7LMelBYd7d800_PmShJi/pub?gid=1418573323&single=true&output=csv"
@@ -68,6 +69,12 @@ def update_supporters():
             li = soup.new_tag('li')
             li.string = name
             supporters_list.append(li)
+
+    # Update Last Updated
+    last_updated_p = soup.find('p', id='last-updated')
+    if last_updated_p:
+        today_str = datetime.now().strftime("%B %d, %Y")
+        last_updated_p.string = f"Last updated {today_str}"
 
     # 4. Save the file
     # specific prettier to minimize damage
