@@ -67,8 +67,15 @@ h3 {
   margin: 0 0 .5rem 0;
 }
 
+#story h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+
 p {
-  line-height: 175%;
+  line-height: 1.7;
   margin: 1rem 0;
 }
 
@@ -125,6 +132,12 @@ a {
   width: fit-content;
 }
 
+#story {
+  border-bottom: 1px solid var(--main-accent-color);
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+}
+
 .script {
   font-family: var(--main-script-font);
   font-size: 2rem;
@@ -169,6 +182,15 @@ a {
 
 #ctas {
   margin: 2rem 0;
+  text-align: center;
+}
+
+#last-updated {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.6;
   text-align: center;
 }
 

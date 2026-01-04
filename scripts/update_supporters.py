@@ -2,6 +2,7 @@ import csv
 import requests
 from bs4 import BeautifulSoup
 import io
+from datetime import datetime
 
 # URL of the published Google Sheet CSV
 CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxt3SXANj2NU-2UHlFRHhJLVJOdx1HBVxekMcHtkhAMzwp5E4ftBJ1DPlx7LMelBYd7d800_PmShJi/pub?gid=1418573323&single=true&output=csv"
@@ -69,10 +70,34 @@ def update_supporters():
             li.string = name
             supporters_list.append(li)
 
+    # Update Last Updated timestamp
+    last_updated_p = soup.find('p', id='last-updated')
+    if last_updated_p:
+        current_date = datetime.now().strftime("%B %d, %Y")
+        last_updated_p.string = f"Last updated: {current_date}"
+
+    # Update years operating
+    years_operating_span = soup.find('span', id='years-operating')
+    if years_operating_span:
+        start_date = datetime(2020, 6, 18)
+        years = (datetime.now() - start_date).days / 365.25
+        years_operating_span.string = f"{int(years)} years"
+
     # 4. Save the file
     # specific prettier to minimize damage
+    html_output = soup.prettify(formatter="html")
+
+    # Post-process to fix inline spacing for the dynamic year count
+    # Prettify often adds newlines around tags, which creates unwanted whitespace in text.
+    import re
+    # Collapse the entire span and surrounding text to a single line to avoid whitespace issues
+    # Matches: "For over", whitespace, <span...>, whitespace, "X years", whitespace, </span>, whitespace, ", we"
+    pattern = r'For over\s*<span id="years-operating">\s*(\d+ years)\s*</span>\s*, we'
+    replacement = r'For over <span id="years-operating">\1</span>, we'
+    html_output = re.sub(pattern, replacement, html_output)
+
     with open('index.html', 'w', encoding='utf-8') as f:
-        f.write(soup.prettify(formatter="html"))
+        f.write(html_output)
 
 if __name__ == "__main__":
     update_supporters()
