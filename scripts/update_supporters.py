@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import io
 from datetime import datetime
+import pytz
 
 # URL of the published Google Sheet CSV
 CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxt3SXANj2NU-2UHlFRHhJLVJOdx1HBVxekMcHtkhAMzwp5E4ftBJ1DPlx7LMelBYd7d800_PmShJi/pub?gid=1418573323&single=true&output=csv"
@@ -73,7 +74,9 @@ def update_supporters():
     # Update Last Updated timestamp
     last_updated_p = soup.find('p', id='last-updated')
     if last_updated_p:
-        current_date = datetime.now().strftime("%B %d, %Y")
+        # Use US/Pacific time
+        pacific = pytz.timezone('US/Pacific')
+        current_date = datetime.now(pacific).strftime("%B %d, %Y")
         last_updated_p.string = f"Last updated: {current_date}"
 
     # Update years operating

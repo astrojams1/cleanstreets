@@ -5,3 +5,4 @@ toml
 beautifulsoup4
 pytest
 requests
+pytz
