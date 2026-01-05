@@ -21,9 +21,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build Site
+        run: bash scripts/build_site.sh
+
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: .
+          source-dir: _site
           umbrella-dir: pr-preview
           action: auto

@@ -15,10 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build Site
+        run: bash scripts/build_site.sh
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .
+          folder: _site
           branch: gh-pages
           clean: true
           clean-exclude: pr-preview
