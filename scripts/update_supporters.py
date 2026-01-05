@@ -91,9 +91,9 @@ def update_supporters():
     # Prettify often adds newlines around tags, which creates unwanted whitespace in text.
     import re
     # Collapse the entire span and surrounding text to a single line to avoid whitespace issues
-    # Matches: "For over", whitespace, <span...>, whitespace, "X years", whitespace, </span>, whitespace, ", we"
-    pattern = r'For over\s*<span id="years-operating">\s*(\d+ years)\s*</span>\s*, we'
-    replacement = r'For over <span id="years-operating">\1</span>, we'
+    # Matches: "For over", whitespace, <span...>, whitespace, "X years", whitespace, </span>, whitespace, comma
+    pattern = r'For over\s*<span id="years-operating">\s*(\d+ years)\s*</span>\s*,'
+    replacement = r'For over <span id="years-operating">\1</span>,'
     html_output = re.sub(pattern, replacement, html_output)
 
     with open('index.html', 'w', encoding='utf-8') as f:
