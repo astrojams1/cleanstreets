@@ -20,7 +20,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requests beautifulsoup4
+        pip install requests beautifulsoup4 pytz
 
     - name: Run update script
       run: python scripts/update_supporters.py
