@@ -701,13 +701,15 @@
             if (window.scrollY > 20) {
                 // Shrink
                 navInner.classList.replace('py-4', 'py-2');
-                logoClean.classList.replace('text-3xl', 'text-2xl');
-                logoStreets.classList.replace('text-xl', 'text-base');
+                logoClean.classList.replace('text-3xl', 'text-xl');
+                logoStreets.classList.replace('text-xl', 'text-sm');
+                logoStreets.classList.add('-mt-1.5');
             } else {
                 // Expand
                 navInner.classList.replace('py-2', 'py-4');
-                logoClean.classList.replace('text-2xl', 'text-3xl');
-                logoStreets.classList.replace('text-base', 'text-xl');
+                logoClean.classList.replace('text-xl', 'text-3xl');
+                logoStreets.classList.replace('text-sm', 'text-xl');
+                logoStreets.classList.remove('-mt-1.5');
             }
         }
 
