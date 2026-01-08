@@ -206,12 +206,12 @@
   <!-- End Google Tag Manager (noscript) -->
   <!-- NAVIGATION -->
   <nav class="sticky top-0 z-50 w-full bg-brand-bg/95 backdrop-blur-sm border-b border-orange-200/50 mb-16 transition-all duration-300">
-   <div class="max-w-5xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center">
+   <div id="nav-inner" class="max-w-5xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center transition-all duration-300">
     <div class="flex flex-col leading-none">
-     <span class="script-font text-3xl text-brand-dark transform -rotate-6">
+     <span id="logo-clean" class="script-font text-3xl text-brand-dark transform -rotate-6 transition-all duration-300 origin-left">
       Clean
      </span>
-     <span class="font-bold text-xl tracking-tight text-brand-dark ml-4">
+     <span id="logo-streets" class="font-bold text-xl tracking-tight text-brand-dark ml-4 transition-all duration-300 origin-left">
       STREETS
      </span>
     </div>
@@ -691,6 +691,28 @@
                 icon.style.transform = 'rotate(180deg)';
             }
         }
+
+        // Sticky Header Shrink Logic
+        const navInner = document.getElementById('nav-inner');
+        const logoClean = document.getElementById('logo-clean');
+        const logoStreets = document.getElementById('logo-streets');
+
+        function updateHeader() {
+            if (window.scrollY > 20) {
+                // Shrink
+                navInner.classList.replace('py-4', 'py-2');
+                logoClean.classList.replace('text-3xl', 'text-2xl');
+                logoStreets.classList.replace('text-xl', 'text-base');
+            } else {
+                // Expand
+                navInner.classList.replace('py-2', 'py-4');
+                logoClean.classList.replace('text-2xl', 'text-3xl');
+                logoStreets.classList.replace('text-base', 'text-xl');
+            }
+        }
+
+        window.addEventListener('scroll', updateHeader);
+        updateHeader(); // Init on load
   </script>
  </body>
 </html>
