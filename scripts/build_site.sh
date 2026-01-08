@@ -18,9 +18,10 @@ for file in "${files[@]}"; do
   fi
 done
 
-# Copy root images (JPGs)
+# Copy root images (JPGs and PNGs)
 # Use find or shell expansion carefully
 cp *.JPG _site/ 2>/dev/null || true
+cp *.png _site/ 2>/dev/null || true
 
 # Copy images directory
 if [ -d "images" ]; then
