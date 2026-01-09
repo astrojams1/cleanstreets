@@ -205,13 +205,13 @@
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- NAVIGATION -->
-  <nav class="sticky top-0 z-50 w-full bg-brand-bg/95 backdrop-blur-sm border-b border-orange-200/50 mb-16 transition-all duration-300">
-   <div class="max-w-5xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center transition-all duration-300" id="nav-inner">
+  <nav class="sticky top-0 z-50 w-full bg-brand-bg/95 backdrop-blur-sm border-b border-orange-200/50 mb-16">
+   <div class="max-w-5xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center" id="nav-inner">
     <div class="flex flex-col leading-none">
-     <span class="script-font text-3xl text-brand-dark transform -rotate-6 transition-all duration-300 origin-left" id="logo-clean">
+     <span class="script-font text-3xl text-brand-dark transform -rotate-6 origin-left" id="logo-clean">
       Clean
      </span>
-     <span class="font-bold text-xl tracking-tight text-brand-dark ml-4 transition-all duration-300 origin-left" id="logo-streets">
+     <span class="font-bold text-xl tracking-tight text-brand-dark ml-4 -mt-3 origin-left" id="logo-streets">
       STREETS
      </span>
     </div>
@@ -749,13 +749,13 @@
                 navInner.classList.replace('py-4', 'py-2');
                 logoClean.classList.replace('text-3xl', 'text-xl');
                 logoStreets.classList.replace('text-xl', 'text-sm');
-                logoStreets.classList.add('-mt-1.5');
+                logoStreets.classList.replace('-mt-3', '-mt-1.5');
             } else {
                 // Expand
                 navInner.classList.replace('py-2', 'py-4');
                 logoClean.classList.replace('text-xl', 'text-3xl');
                 logoStreets.classList.replace('text-sm', 'text-xl');
-                logoStreets.classList.remove('-mt-1.5');
+                logoStreets.classList.replace('-mt-1.5', '-mt-3');
             }
         }
 
