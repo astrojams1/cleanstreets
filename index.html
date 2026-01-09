@@ -211,7 +211,7 @@
      <span class="script-font text-3xl text-brand-dark transform -rotate-6 transition-all duration-300 origin-left" id="logo-clean">
       Clean
      </span>
-     <span class="font-bold text-xl tracking-tight text-brand-dark ml-4 transition-all duration-300 origin-left" id="logo-streets">
+     <span class="font-bold text-xl tracking-tight text-brand-dark ml-4 -mt-3 transition-all duration-300 origin-left" id="logo-streets">
       STREETS
      </span>
     </div>
@@ -696,20 +696,25 @@
         const navInner = document.getElementById('nav-inner');
         const logoClean = document.getElementById('logo-clean');
         const logoStreets = document.getElementById('logo-streets');
+        let isShrunk = false;
 
         function updateHeader() {
-            if (window.scrollY > 20) {
+            const shouldShrink = window.scrollY > 20;
+
+            if (shouldShrink && !isShrunk) {
                 // Shrink
                 navInner.classList.replace('py-4', 'py-2');
                 logoClean.classList.replace('text-3xl', 'text-xl');
                 logoStreets.classList.replace('text-xl', 'text-sm');
-                logoStreets.classList.add('-mt-1.5');
-            } else {
+                logoStreets.classList.replace('-mt-3', '-mt-1.5');
+                isShrunk = true;
+            } else if (!shouldShrink && isShrunk) {
                 // Expand
                 navInner.classList.replace('py-2', 'py-4');
                 logoClean.classList.replace('text-xl', 'text-3xl');
                 logoStreets.classList.replace('text-sm', 'text-xl');
-                logoStreets.classList.remove('-mt-1.5');
+                logoStreets.classList.replace('-mt-1.5', '-mt-3');
+                isShrunk = false;
             }
         }
 
