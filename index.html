@@ -207,7 +207,8 @@
   <!-- NAVIGATION -->
   <nav class="sticky top-0 z-50 w-full bg-brand-bg/95 backdrop-blur-sm border-b border-orange-200/50 mb-16 transition-all duration-300">
    <div class="max-w-5xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center transition-all duration-300" id="nav-inner">
-    <div class="flex flex-col leading-none">
+    <!-- Logo -->
+    <div class="flex flex-col leading-none z-50">
      <span class="script-font text-3xl text-brand-dark transform -rotate-6 transition-all duration-300 origin-left" id="logo-clean">
       Clean
      </span>
@@ -215,23 +216,52 @@
       STREETS
      </span>
     </div>
+
+    <!-- Desktop Menu -->
     <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
-     <a class="hover:text-brand-action transition-colors" href="#">
-      Home
-     </a>
-     <a class="hover:text-brand-action transition-colors" href="#story">
-      Our Story
-     </a>
-     <a class="hover:text-brand-action transition-colors" href="#faq">
-      FAQ
+     <!-- About Dropdown -->
+     <div class="relative group">
+       <button class="hover:text-brand-action transition-colors flex items-center gap-1 focus:outline-none">
+         About <i data-lucide="chevron-down" class="w-4 h-4"></i>
+       </button>
+       <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-orange-100 overflow-hidden">
+         <a href="#story" class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action transition-colors">Our Story</a>
+         <a href="#faq" class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action transition-colors">FAQ</a>
+       </div>
+     </div>
+
+     <a class="hover:text-brand-action transition-colors" href="#impact">
+      Our Impact
      </a>
      <a class="hover:text-brand-action transition-colors" href="#footer">
-      Supporters
+      Partners
      </a>
-     <a class="px-5 py-2 bg-brand-action text-white font-bold rounded-full hover:bg-brand-action-dark transition-colors" href="https://www.patreon.com/join/cleanstreets?" target="_blank">
-      Fund the Workforce
+     <!-- Donate Button -->
+     <a class="px-5 py-2 bg-brand-dark text-white font-bold rounded-full hover:bg-black transition-colors" href="https://www.patreon.com/join/cleanstreets?" target="_blank">
+      Donate
      </a>
     </div>
+
+    <!-- Mobile Hamburger Button -->
+    <button id="mobile-menu-btn" class="md:hidden z-50 text-brand-dark focus:outline-none" onclick="toggleMobileMenu()">
+      <i data-lucide="menu" class="w-8 h-8"></i>
+    </button>
+   </div>
+
+   <!-- Mobile Menu Overlay -->
+   <div id="mobile-menu" class="fixed inset-0 bg-brand-bg z-40 flex flex-col items-center justify-center space-y-8 text-xl opacity-0 pointer-events-none transition-opacity duration-300">
+      <div class="flex flex-col items-center space-y-6">
+        <div class="flex flex-col items-center space-y-4">
+            <span class="font-bold text-brand-action uppercase tracking-widest text-sm">About</span>
+            <a href="#story" class="text-brand-dark" onclick="toggleMobileMenu()">Our Story</a>
+            <a href="#faq" class="text-brand-dark" onclick="toggleMobileMenu()">FAQ</a>
+        </div>
+        <a href="#impact" class="text-brand-dark font-medium" onclick="toggleMobileMenu()">Our Impact</a>
+        <a href="#footer" class="text-brand-dark font-medium" onclick="toggleMobileMenu()">Partners</a>
+      </div>
+      <a class="px-8 py-3 bg-brand-dark text-white font-bold rounded-full text-lg" href="https://www.patreon.com/join/cleanstreets?" target="_blank">
+      Donate
+      </a>
    </div>
   </nav>
   <!-- HEADER / HERO -->
@@ -260,8 +290,12 @@
    </div>
   </header>
   <!-- OUR IMPACT -->
-  <section class="bg-brand-bg py-12 border-b border-orange-200/50 mb-24">
+  <section id="impact" class="bg-brand-bg py-12 border-b border-orange-200/50 mb-24">
    <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark serif-font mb-4">Our Impact</h2>
+        <p class="text-gray-600 text-lg">Building impact since 2020</p>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
      <!-- Metric 1 -->
      <div class="p-8 bg-white rounded-2xl shadow-sm border border-orange-100 transform hover:-translate-y-1 transition-transform duration-300 flex flex-col items-start">
@@ -736,6 +770,23 @@
                 content.classList.add('active');
                 icon.style.transform = 'rotate(180deg)';
             }
+        }
+
+        // Mobile Menu Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+
+            if (menu.classList.contains('opacity-0')) {
+                // Open
+                menu.classList.remove('opacity-0', 'pointer-events-none');
+                btn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
+            } else {
+                // Close
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                btn.innerHTML = '<i data-lucide="menu" class="w-8 h-8"></i>';
+            }
+            lucide.createIcons();
         }
 
         // Sticky Header Shrink Logic
