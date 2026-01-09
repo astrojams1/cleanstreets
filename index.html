@@ -14,12 +14,12 @@
   <!-- Open Graph -->
   <meta content="en_US" property="og:locale"/>
   <meta content="website" property="og:type"/>
-  <meta content="Clean Streets" property="og:site_name">
-   <meta content="Clean Streets | Community-Powered Litter Cleanup in San Francisco" property="og:title">
-    <meta content="Clean Streets is a community-supported movement keeping San Francisco blocks clean through resident-funded litter removal and neighborhood stewardship." property="og:description"/>
-    <meta content="https://www.cleanstreets.io/" property="og:url"/>
-    <meta content="https://www.cleanstreets.io/images/worker.png" property="og:image"/>
-    <meta content="https://www.cleanstreets.io/images/worker.png" property="og:image:secure_url"/>
+  <meta content="Clean Streets" property="og:site_name"/>
+  <meta content="Clean Streets | Community-Powered Litter Cleanup in San Francisco" property="og:title"/>
+  <meta content="Clean Streets is a community-supported movement keeping San Francisco blocks clean through resident-funded litter removal and neighborhood stewardship." property="og:description"/>
+  <meta content="https://www.cleanstreets.io/" property="og:url"/>
+  <meta content="https://www.cleanstreets.io/images/worker.png" property="og:image">
+   <meta content="https://www.cleanstreets.io/images/worker.png" property="og:image:secure_url">
     <meta content="image/png" property="og:image:type"/>
     <meta content="Clean Streets volunteers removing litter from a San Francisco sidewalk" property="og:image:alt"/>
     <!-- Twitter Card -->
@@ -206,12 +206,12 @@
   <!-- End Google Tag Manager (noscript) -->
   <!-- NAVIGATION -->
   <nav class="sticky top-0 z-50 w-full bg-brand-bg/95 backdrop-blur-sm border-b border-orange-200/50 mb-16 transition-all duration-300">
-   <div id="nav-inner" class="max-w-5xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center transition-all duration-300">
+   <div class="max-w-5xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center transition-all duration-300" id="nav-inner">
     <div class="flex flex-col leading-none">
-     <span id="logo-clean" class="script-font text-3xl text-brand-dark transform -rotate-6 transition-all duration-300 origin-left">
+     <span class="script-font text-3xl text-brand-dark transform -rotate-6 transition-all duration-300 origin-left" id="logo-clean">
       Clean
      </span>
-     <span id="logo-streets" class="font-bold text-xl tracking-tight text-brand-dark ml-4 transition-all duration-300 origin-left">
+     <span class="font-bold text-xl tracking-tight text-brand-dark ml-4 transition-all duration-300 origin-left" id="logo-streets">
       STREETS
      </span>
     </div>
@@ -259,6 +259,52 @@
     <img alt="Volunteers cleaning a street in San Francisco" class="relative rounded-2xl shadow-2xl w-full h-64 md:h-96 object-cover border-4 border-white" height="768" loading="lazy" src="images/worker.png" width="1408"/>
    </div>
   </header>
+  <!-- OUR IMPACT -->
+  <section class="bg-brand-bg py-12 border-b border-orange-200/50 mb-24">
+   <div class="max-w-5xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <!-- Metric 1 -->
+     <div class="p-8 bg-white rounded-2xl shadow-sm border border-orange-100 transform hover:-translate-y-1 transition-transform duration-300 flex flex-col items-start">
+      <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-brand-action mb-4">
+       <i class="w-6 h-6" data-lucide="clock">
+       </i>
+      </div>
+      <span class="block text-4xl md:text-5xl font-bold text-brand-action mb-1" id="impact-hours">
+       1,236
+      </span>
+      <span class="text-gray-600 font-medium uppercase tracking-wide text-xs">
+       Hours Funded
+      </span>
+     </div>
+     <!-- Metric 2 -->
+     <div class="p-8 bg-white rounded-2xl shadow-sm border border-orange-100 transform hover:-translate-y-1 transition-transform duration-300 flex flex-col items-start">
+      <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-brand-action mb-4">
+       <i class="w-6 h-6" data-lucide="trash-2">
+       </i>
+      </div>
+      <span class="block text-4xl md:text-5xl font-bold text-brand-action mb-1" id="impact-pounds">
+       30,887
+      </span>
+      <span class="text-gray-600 font-medium uppercase tracking-wide text-xs">
+       Pounds Collected
+      </span>
+     </div>
+     <!-- Metric 3 -->
+     <div class="p-8 bg-white rounded-2xl shadow-sm border border-orange-100 transform hover:-translate-y-1 transition-transform duration-300 flex flex-col items-start">
+      <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-brand-action mb-4">
+       <i class="w-6 h-6" data-lucide="route">
+       </i>
+      </div>
+      <span class="block text-4xl md:text-5xl font-bold text-brand-action mb-1" id="impact-miles">
+       617
+      </span>
+      <span class="text-gray-600 font-medium uppercase tracking-wide text-xs">
+       Miles Cleaned
+      </span>
+     </div>
+    </div>
+   </div>
+  </section>
   <!-- SECTION 1: THE STORY -->
   <section class="max-w-2xl mx-auto px-6 mb-32" id="story">
    <div class="text-center mb-16">
@@ -644,7 +690,7 @@
       </li>
      </ul>
      <p class="text-sm text-gray-500 mt-16" id="last-updated">
-      Last updated: January 07, 2026
+      Last updated: January 08, 2026
      </p>
     </div>
     <!-- Visual Divider -->
