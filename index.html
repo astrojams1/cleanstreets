@@ -251,13 +251,15 @@
     </button>
    </div>
 
-   <!-- Mobile Menu Overlay -->
-   <div id="mobile-menu" class="fixed inset-0 bg-brand-bg z-40 flex flex-col items-center justify-center space-y-8 text-xl opacity-0 pointer-events-none transition-opacity duration-300">
-      <div class="flex flex-col items-center space-y-6">
-        <div class="flex flex-col items-center space-y-4">
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-bg flex flex-col items-start justify-start pt-32 pb-10 px-8 overflow-y-auto space-y-8 text-xl opacity-0 pointer-events-none transition-opacity duration-300">
+      <div class="flex flex-col items-start space-y-6 w-full">
+        <div class="flex flex-col items-start space-y-4 w-full">
             <span class="font-bold text-brand-action uppercase tracking-widest text-sm">About</span>
-            <a href="#story" class="text-brand-dark" onclick="toggleMobileMenu()">Our Story</a>
-            <a href="#faq" class="text-brand-dark" onclick="toggleMobileMenu()">FAQ</a>
+            <a href="#story" class="text-brand-dark pl-6" onclick="toggleMobileMenu()">Our Story</a>
+            <a href="#faq" class="text-brand-dark pl-6" onclick="toggleMobileMenu()">FAQ</a>
         </div>
         <a href="#impact" class="text-brand-dark font-medium" onclick="toggleMobileMenu()">Our Impact</a>
         <a href="#footer" class="text-brand-dark font-medium" onclick="toggleMobileMenu()">Partners</a>
@@ -267,7 +269,6 @@
       Donate
       </a>
    </div>
-  </nav>
   <!-- HEADER / HERO -->
   <header class="max-w-4xl mx-auto px-6 text-center mb-24">
    <h1 class="text-5xl md:text-6xl font-bold text-brand-dark mb-8 leading-tight">
