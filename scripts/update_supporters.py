@@ -115,6 +115,13 @@ def update_supporters():
         years = (datetime.now() - start_date).days / 365.25
         years_operating_span.string = f"{int(years)} years"
 
+    # Update Impact Header Years
+    impact_years_span = soup.find('span', id='impact-years')
+    if impact_years_span:
+        start_date = datetime(2020, 6, 18)
+        years = (datetime.now() - start_date).days / 365.25
+        impact_years_span.string = f"{int(years)}+ Years"
+
     # 4. Save the file
     html_output = soup.prettify(formatter="html")
     html_output = html_output.replace('</meta>', '')
@@ -123,6 +130,11 @@ def update_supporters():
     pattern = r'For over\s*<span id="years-operating">\s*(\d+ years)\s*</span>\s*,'
     replacement = r'For over <span id="years-operating">\1</span>,'
     html_output = re.sub(pattern, replacement, html_output)
+
+    # Fix Impact Header spacing
+    pattern_impact = r'Celebrating\s*<span id="impact-years">\s*(\d+\+ Years)\s*</span>\s*of Impact'
+    replacement_impact = r'Celebrating <span id="impact-years">\1</span> of Impact'
+    html_output = re.sub(pattern_impact, replacement_impact, html_output)
 
     with open('index.html', 'w', encoding='utf-8') as f:
         f.write(html_output)
