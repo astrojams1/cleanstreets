@@ -489,7 +489,7 @@
       About Clean Streets
      </h3>
      <div class="border-b border-gray-200">
-      <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-start" aria-expanded="false" id="faq-btn-start" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Why did you start Clean Streets?
        </span>
@@ -498,14 +498,14 @@
         </i>
        </span>
       </button>
-      <div class="accordion-content">
+      <div aria-labelledby="faq-btn-start" class="accordion-content" id="faq-answer-start" role="region">
        <div class="pb-6 text-gray-600 leading-relaxed text-lg">
         I am a long-time San Francisco resident who has always been bothered by the litter on our streets. During the pandemic in 2020, after the city temporarily halted cleaning services, the problem got far worse. I envisioned Clean Streets as an opportunity to have a positive impact on the community I love, by helping address our long-standing litter problem and providing high-paying jobs.
        </div>
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-non-profit" aria-expanded="false" id="faq-btn-non-profit" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Are you a non-profit organization?
        </span>
@@ -514,14 +514,14 @@
         </i>
        </span>
       </button>
-      <div class="accordion-content">
+      <div aria-labelledby="faq-btn-non-profit" class="accordion-content" id="faq-answer-non-profit" role="region">
        <div class="pb-6 text-gray-600 leading-relaxed text-lg">
         No. While we operate on a model where 100% of contributions go toward litter pickup and we do not take a profit ourselves, we have not gone through the formal legal process to establish 501(c)(3) status.
        </div>
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-funds" aria-expanded="false" id="faq-btn-funds" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         How are donated contributions used?
        </span>
@@ -530,7 +530,7 @@
         </i>
        </span>
       </button>
-      <div class="accordion-content">
+      <div aria-labelledby="faq-btn-funds" class="accordion-content" id="faq-answer-funds" role="region">
        <div class="pb-6 text-gray-600 leading-relaxed text-lg">
         If you make a donation, 100% of your contribution funds litter pickup. We do not take a profit. I work with the community to identify hard-hit areas and channel funds directly to cleaning those zones.
        </div>
@@ -543,7 +543,7 @@
       Service &amp; Operations
      </h3>
      <div class="border-b border-gray-200">
-      <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-city" aria-expanded="false" id="faq-btn-city" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Doesn't the city pick up litter?
        </span>
@@ -552,14 +552,14 @@
         </i>
        </span>
       </button>
-      <div class="accordion-content">
+      <div aria-labelledby="faq-btn-city" class="accordion-content" id="faq-answer-city" role="region">
        <div class="pb-6 text-gray-600 leading-relaxed text-lg">
         While the city sweeps streets, empties city trashcans, and removes large items reported to SF311, businesses and residents are technically responsible for maintaining sidewalks.
        </div>
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-specific-block" aria-expanded="false" id="faq-btn-specific-block" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         If I contribute, will my specific block be cleaned?
        </span>
@@ -568,14 +568,14 @@
         </i>
        </span>
       </button>
-      <div class="accordion-content">
+      <div aria-labelledby="faq-btn-specific-block" class="accordion-content" id="faq-answer-specific-block" role="region">
        <div class="pb-6 text-gray-600 leading-relaxed text-lg">
         Not necessarily. Contributions are pooled into a general fund used to clean areas that need it most. Rather than restricting funds to a single block, we direct resources to "hard hit" zones.
        </div>
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-guarantee" aria-expanded="false" id="faq-btn-guarantee" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Is there any way to guarantee service for my block?
        </span>
@@ -584,7 +584,7 @@
         </i>
        </span>
       </button>
-      <div class="accordion-content">
+      <div aria-labelledby="faq-btn-guarantee" class="accordion-content" id="faq-answer-guarantee" role="region">
        <div class="pb-6 text-gray-600 leading-relaxed text-lg">
         Yes, but this requires a Sponsorship level contribution. Because activating a dedicated route requires more logistics, we can only guarantee service if the contribution covers the full cost of that route. Contact us for a quote.
        </div>
@@ -597,7 +597,7 @@
       Scope of Work
      </h3>
      <div class="border-b border-gray-200">
-      <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-encampments" aria-expanded="false" id="faq-btn-encampments" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Do you remove encampments?
        </span>
@@ -606,14 +606,14 @@
         </i>
        </span>
       </button>
-      <div class="accordion-content">
+      <div aria-labelledby="faq-btn-encampments" class="accordion-content" id="faq-answer-encampments" role="region">
        <div class="pb-6 text-gray-600 leading-relaxed text-lg">
         No, we do not remove encampments or disturb the homeless. We strictly enforce this policy without exception.
        </div>
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-large-items" aria-expanded="false" id="faq-btn-large-items" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Do you remove large items?
        </span>
@@ -622,14 +622,14 @@
         </i>
        </span>
       </button>
-      <div class="accordion-content">
+      <div aria-labelledby="faq-btn-large-items" class="accordion-content" id="faq-answer-large-items" role="region">
        <div class="pb-6 text-gray-600 leading-relaxed text-lg">
         We don't remove large items ourselves, but we do report large items we encounter to SF311. SF311 typically addresses the issue within a couple of hours.
        </div>
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-alcoves" aria-expanded="false" id="faq-btn-alcoves" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Do you clean private alcoves?
        </span>
@@ -638,7 +638,7 @@
         </i>
        </span>
       </button>
-      <div class="accordion-content">
+      <div aria-labelledby="faq-btn-alcoves" class="accordion-content" id="faq-answer-alcoves" role="region">
        <div class="pb-6 text-gray-600 leading-relaxed text-lg">
         Our service is strictly for the public right-of-way (sidewalks and curbs). We do not enter private property lines, recessed doorways, or gated alcoves to ensure safety and avoid liability.
        </div>
@@ -651,7 +651,7 @@
       Our Workers
      </h3>
      <div class="border-b border-gray-200">
-      <button class="w-full py-6 flex justify-between items-center text-left focus:outline-none group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-workers" aria-expanded="false" id="faq-btn-workers" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         How are workers paid?
        </span>
@@ -660,7 +660,7 @@
         </i>
        </span>
       </button>
-      <div class="accordion-content">
+      <div aria-labelledby="faq-btn-workers" class="accordion-content" id="faq-answer-workers" role="region">
        <div class="pb-6 text-gray-600 leading-relaxed text-lg">
         Workers are independent contractors who get paid 1 month in advance via PayPal at a rate approximately 2 times the minimum wage. Despite this generous pay, because we take no profit, our services cost way less than other options.
        </div>
@@ -778,6 +778,9 @@
         function toggleAccordion(button) {
             const content = button.nextElementSibling;
             const icon = button.querySelector('span:last-child');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            button.setAttribute('aria-expanded', !isExpanded);
 
             if (content.style.maxHeight) {
                 // Close
