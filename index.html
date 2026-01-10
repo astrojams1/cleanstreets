@@ -220,12 +220,13 @@
     <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
      <!-- About Dropdown -->
      <div class="relative group">
-      <button class="hover:text-brand-action transition-colors flex items-center gap-1 focus:outline-none">
-       About
-       <i class="w-4 h-4" data-lucide="chevron-down">
+      <button class="flex items-center gap-1 focus:outline-none text-gray-600 transition-colors">
+       <span class="group-hover:text-brand-action group-hover:underline decoration-brand-action decoration-2 underline-offset-4 transition-colors">About</span>
+       <i class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" data-lucide="chevron-down">
        </i>
       </button>
-      <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-orange-100 overflow-hidden">
+      <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out group-hover:delay-200 border border-orange-100 overflow-hidden">
+       <div class="px-6 pt-4 pb-2 text-sm font-medium text-gray-500">About</div>
        <a class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action transition-colors" href="#story">
         Our Story
        </a>
