@@ -18,10 +18,10 @@
   <meta content="Clean Streets | Community-Powered Litter Cleanup in San Francisco" property="og:title"/>
   <meta content="Clean Streets is a community-supported movement keeping San Francisco blocks clean through resident-funded litter removal and neighborhood stewardship." property="og:description"/>
   <meta content="https://www.cleanstreets.io/" property="og:url"/>
-  <meta content="https://www.cleanstreets.io/images/worker.png" property="og:image">
-   <meta content="https://www.cleanstreets.io/images/worker.png" property="og:image:secure_url">
-    <meta content="image/png" property="og:image:type"/>
-    <meta content="Clean Streets volunteers removing litter from a San Francisco sidewalk" property="og:image:alt"/>
+  <meta content="https://www.cleanstreets.io/images/worker.png" property="og:image"/>
+  <meta content="https://www.cleanstreets.io/images/worker.png" property="og:image:secure_url"/>
+  <meta content="image/png" property="og:image:type">
+   <meta content="Clean Streets volunteers removing litter from a San Francisco sidewalk" property="og:image:alt">
     <!-- Twitter Card -->
     <meta content="summary_large_image" name="twitter:card"/>
     <meta content="Clean Streets | Community-Powered Litter Cleanup in San Francisco" name="twitter:title"/>
@@ -216,20 +216,24 @@
       STREETS
      </span>
     </div>
-
     <!-- Desktop Menu -->
     <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
      <!-- About Dropdown -->
      <div class="relative group">
-       <button class="hover:text-brand-action transition-colors flex items-center gap-1 focus:outline-none">
-         About <i data-lucide="chevron-down" class="w-4 h-4"></i>
-       </button>
-       <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-orange-100 overflow-hidden">
-         <a href="#story" class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action transition-colors">Our Story</a>
-         <a href="#faq" class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action transition-colors">FAQ</a>
-       </div>
+      <button class="hover:text-brand-action transition-colors flex items-center gap-1 focus:outline-none">
+       About
+       <i class="w-4 h-4" data-lucide="chevron-down">
+       </i>
+      </button>
+      <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-orange-100 overflow-hidden">
+       <a class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action transition-colors" href="#story">
+        Our Story
+       </a>
+       <a class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action transition-colors" href="#faq">
+        FAQ
+       </a>
+      </div>
      </div>
-
      <a class="hover:text-brand-action transition-colors" href="#impact">
       Our Impact
      </a>
@@ -244,31 +248,41 @@
       Donate
      </a>
     </div>
-
     <!-- Mobile Hamburger Button -->
-    <button id="mobile-menu-btn" class="md:hidden z-50 text-brand-dark focus:outline-none" onclick="toggleMobileMenu()">
-      <i data-lucide="menu" class="w-8 h-8"></i>
+    <button class="md:hidden z-50 text-brand-dark focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+     <i class="w-8 h-8" data-lucide="menu">
+     </i>
     </button>
    </div>
-
   </nav>
-
   <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-bg flex flex-col items-start justify-start pt-32 pb-10 px-8 overflow-y-auto space-y-8 text-xl opacity-0 pointer-events-none transition-opacity duration-300">
-      <div class="flex flex-col items-start space-y-6 w-full">
-        <div class="flex flex-col items-start space-y-4 w-full">
-            <span class="font-bold text-brand-action uppercase tracking-widest text-sm">About</span>
-            <a href="#story" class="text-brand-dark pl-6" onclick="toggleMobileMenu()">Our Story</a>
-            <a href="#faq" class="text-brand-dark pl-6" onclick="toggleMobileMenu()">FAQ</a>
-        </div>
-        <a href="#impact" class="text-brand-dark font-medium" onclick="toggleMobileMenu()">Our Impact</a>
-        <a href="#footer" class="text-brand-dark font-medium" onclick="toggleMobileMenu()">Partners</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSejrpY-LR2LP6w8ZZPNf2FkjNCyrYRlGPCTKXBLzqw4cR2bhw/viewform?usp=dialog" class="text-brand-dark font-medium" target="_blank" onclick="toggleMobileMenu()">Contact</a>
-      </div>
-      <a class="px-8 py-3 bg-brand-dark text-white font-bold rounded-full text-lg" href="https://www.patreon.com/join/cleanstreets?" target="_blank">
-      Donate
-      </a>
+  <div class="fixed inset-0 z-40 bg-brand-bg flex flex-col items-start justify-start pt-32 pb-10 px-8 overflow-y-auto space-y-8 text-xl opacity-0 pointer-events-none transition-opacity duration-300" id="mobile-menu">
+   <div class="flex flex-col items-start space-y-6 w-full">
+    <div class="flex flex-col items-start space-y-4 w-full">
+     <span class="font-bold text-brand-action uppercase tracking-widest text-sm">
+      About
+     </span>
+     <a class="text-brand-dark pl-6" href="#story" onclick="toggleMobileMenu()">
+      Our Story
+     </a>
+     <a class="text-brand-dark pl-6" href="#faq" onclick="toggleMobileMenu()">
+      FAQ
+     </a>
+    </div>
+    <a class="text-brand-dark font-medium" href="#impact" onclick="toggleMobileMenu()">
+     Our Impact
+    </a>
+    <a class="text-brand-dark font-medium" href="#footer" onclick="toggleMobileMenu()">
+     Partners
+    </a>
+    <a class="text-brand-dark font-medium" href="https://docs.google.com/forms/d/e/1FAIpQLSejrpY-LR2LP6w8ZZPNf2FkjNCyrYRlGPCTKXBLzqw4cR2bhw/viewform?usp=dialog" onclick="toggleMobileMenu()" target="_blank">
+     Contact
+    </a>
    </div>
+   <a class="px-8 py-3 bg-brand-dark text-white font-bold rounded-full text-lg" href="https://www.patreon.com/join/cleanstreets?" target="_blank">
+    Donate
+   </a>
+  </div>
   <!-- HEADER / HERO -->
   <header class="max-w-4xl mx-auto px-6 text-center mb-24">
    <h1 class="text-5xl md:text-6xl font-bold text-brand-dark mb-8 leading-tight">
@@ -295,11 +309,15 @@
    </div>
   </header>
   <!-- OUR IMPACT -->
-  <section id="impact" class="bg-brand-bg py-12 border-b border-orange-200/50 mb-24 scroll-mt-32">
+  <section class="bg-brand-bg py-12 border-b border-orange-200/50 mb-24 scroll-mt-32" id="impact">
    <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark serif-font mb-4">Our Impact</h2>
-        <p class="text-gray-600 text-lg">Building impact since 2020</p>
+     <h2 class="text-3xl md:text-4xl font-bold text-brand-dark serif-font mb-4">
+      Our Impact
+     </h2>
+     <p class="text-gray-600 text-lg">
+      Building impact since 2020
+     </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
      <!-- Metric 1 -->
@@ -345,7 +363,7 @@
    </div>
   </section>
   <!-- SECTION 1: THE STORY -->
-  <section class="max-w-2xl mx-auto px-6 mb-32 scroll-mt-32" id="story">
+  <section class="max-w-lg mx-auto px-6 mb-32 scroll-mt-32" id="story">
    <div class="text-center mb-16">
     <span class="uppercase tracking-widest text-brand-action text-xs font-bold mb-4 block">
      Since 2020
@@ -362,41 +380,26 @@
      The reason is structural. The City maintains the streets, but property owners are generally responsible for the sidewalks in front of their buildings. That split leaves many blocks without consistent, day-to-day care for basic litter.
     </p>
     <p class="mb-8">
-     On my own block, the first response was what most neighbors try. We added a trash can. We organized volunteer cleanups. It helped&mdash;for a short time. But the trash always came back.
+     On my own block, the first response was what most neighbors try. We added a trash can and organized volunteer cleanups. It helped&mdash;for a short time&mdash;but the trash always came back. That&rsquo;s when one simple truth became clear: a daily problem needs a daily solution.
     </p>
     <p class="mb-8">
-     That&rsquo;s when one simple truth became clear: a daily problem needs a daily solution.
-    </p>
-    <p class="mb-8">
-     So we tried something different. A professional cleaner was hired to sweep the sidewalks every day and report dumped items to the City. The change was immediate. The block looked better. People treated it with more respect. Neighbors felt better walking their street.
-    </p>
-    <p class="mb-8">
-     For the first time in years, the sidewalk stayed clean.
-    </p>
-    <p class="mb-8">
-     Word spread. Neighbors started asking how the same thing could be done on their blocks. Clean Streets was created to make that possible.
+     So we tried something different. A professional cleaner was hired to sweep the sidewalks every day and report dumped items to the City. The change was immediate. The block looked better, people treated it with more respect, and neighbors felt better walking their street. For the first time in years, the sidewalk stayed clean.
     </p>
     <p class="mb-12">
-     Clean Streets is a community-funded way to keep sidewalks clean through regular, professional service&mdash;not occasional volunteer efforts. It gives neighborhoods a simple, reliable way to care for their shared spaces and keep them clean, every day.
+     Word spread. Neighbors started asking how the same thing could be done on their blocks, and Clean Streets was created to make that possible. It is a community-funded way to keep sidewalks clean through regular, professional service&mdash;not occasional volunteer efforts. It gives neighborhoods a simple, reliable way to care for their shared spaces and keep them clean, every day.
     </p>
-    <!-- Signature -->
-    <div class="mt-12 mb-16 flex items-center gap-4">
-     <div class="h-px bg-orange-200 flex-1 max-w-[50px]">
-     </div>
-     <div>
-      <span class="script-font text-4xl text-brand-action block mb-1">
-       James Thompson
-      </span>
-      <span class="text-xs font-bold uppercase tracking-widest text-gray-600 block">
-       Founder, Clean Streets
-      </span>
-     </div>
+    <!-- Humble Signature -->
+    <div class="mt-12 mb-16">
+     <p class="font-bold text-brand-dark text-base m-0 leading-tight">
+      James Thompson
+     </p>
+     <p class="text-sm text-gray-500 m-0 leading-tight mt-1">
+      Founder, Clean Streets
+     </p>
     </div>
     <!-- Pull Quote -->
-    <div class="my-20 relative py-12 border-t border-b border-orange-200/60">
-     <i class="absolute top-6 left-1/2 transform -translate-x-1/2 text-orange-200 w-12 h-12 -z-10 fill-current" data-lucide="quote">
-     </i>
-     <blockquote class="text-3xl md:text-4xl font-bold text-center serif-font text-brand-dark leading-tight italic">
+    <div class="my-20 pl-6 border-l-4 border-brand-action">
+     <blockquote class="text-3xl md:text-4xl font-serif font-bold italic text-brand-dark leading-tight text-left">
       &ldquo;For the first time in years, the sidewalk stayed clean.&rdquo;
      </blockquote>
     </div>
@@ -741,7 +744,7 @@
       </li>
      </ul>
      <p class="text-sm text-gray-400 mt-16" id="last-updated">
-      Last updated: January 08, 2026
+      Last updated: January 09, 2026
      </p>
     </div>
     <!-- Visual Divider -->
