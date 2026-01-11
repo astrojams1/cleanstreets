@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -249,7 +249,7 @@
      </a>
     </div>
     <!-- Mobile Hamburger Button -->
-    <button class="md:hidden z-50 text-brand-dark focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+    <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle mobile menu" class="md:hidden z-50 text-brand-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg" id="mobile-menu-btn" onclick="toggleMobileMenu()">
      <i class="w-8 h-8" data-lucide="menu">
      </i>
     </button>
@@ -799,8 +799,11 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const btn = document.getElementById('mobile-menu-btn');
+            const isClosed = menu.classList.contains('opacity-0');
 
-            if (menu.classList.contains('opacity-0')) {
+            btn.setAttribute('aria-expanded', isClosed);
+
+            if (isClosed) {
                 // Open
                 menu.classList.remove('opacity-0', 'pointer-events-none');
                 btn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
