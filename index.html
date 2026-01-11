@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -20,11 +20,11 @@
   <meta content="https://www.cleanstreets.io/" property="og:url"/>
   <meta content="https://www.cleanstreets.io/images/worker.png" property="og:image"/>
   <meta content="https://www.cleanstreets.io/images/worker.png" property="og:image:secure_url"/>
-  <meta content="image/png" property="og:image:type">
-   <meta content="Clean Streets volunteers removing litter from a San Francisco sidewalk" property="og:image:alt">
-    <!-- Twitter Card -->
-    <meta content="summary_large_image" name="twitter:card"/>
-    <meta content="Clean Streets | Community-Powered Litter Cleanup in San Francisco" name="twitter:title"/>
+  <meta content="image/png" property="og:image:type"/>
+  <meta content="Clean Streets volunteers removing litter from a San Francisco sidewalk" property="og:image:alt"/>
+  <!-- Twitter Card -->
+  <meta content="summary_large_image" name="twitter:card">
+   <meta content="Clean Streets | Community-Powered Litter Cleanup in San Francisco" name="twitter:title">
     <meta content="Join San Francisco neighbors funding targeted litter removal and community cleanup coverage across the Mission District." name="twitter:description"/>
     <meta content="https://www.cleanstreets.io/images/worker.png" name="twitter:image"/>
     <meta content="Clean Streets volunteers removing litter from a San Francisco sidewalk" name="twitter:image:alt"/>
@@ -249,7 +249,7 @@
      </a>
     </div>
     <!-- Mobile Hamburger Button -->
-    <button class="md:hidden z-50 text-brand-dark focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+    <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle mobile menu" class="md:hidden z-50 text-brand-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg" id="mobile-menu-btn" onclick="toggleMobileMenu()">
      <i class="w-8 h-8" data-lucide="menu">
      </i>
     </button>
@@ -489,7 +489,7 @@
       About Clean Streets
      </h3>
      <div class="border-b border-gray-200">
-      <button aria-controls="faq-answer-start" aria-expanded="false" id="faq-btn-start" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-start" aria-expanded="false" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" id="faq-btn-start" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Why did you start Clean Streets?
        </span>
@@ -505,7 +505,7 @@
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button aria-controls="faq-answer-non-profit" aria-expanded="false" id="faq-btn-non-profit" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-non-profit" aria-expanded="false" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" id="faq-btn-non-profit" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Are you a non-profit organization?
        </span>
@@ -521,7 +521,7 @@
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button aria-controls="faq-answer-funds" aria-expanded="false" id="faq-btn-funds" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-funds" aria-expanded="false" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" id="faq-btn-funds" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         How are donated contributions used?
        </span>
@@ -543,7 +543,7 @@
       Service &amp; Operations
      </h3>
      <div class="border-b border-gray-200">
-      <button aria-controls="faq-answer-city" aria-expanded="false" id="faq-btn-city" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-city" aria-expanded="false" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" id="faq-btn-city" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Doesn't the city pick up litter?
        </span>
@@ -559,7 +559,7 @@
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button aria-controls="faq-answer-specific-block" aria-expanded="false" id="faq-btn-specific-block" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-specific-block" aria-expanded="false" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" id="faq-btn-specific-block" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         If I contribute, will my specific block be cleaned?
        </span>
@@ -575,7 +575,7 @@
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button aria-controls="faq-answer-guarantee" aria-expanded="false" id="faq-btn-guarantee" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-guarantee" aria-expanded="false" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" id="faq-btn-guarantee" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Is there any way to guarantee service for my block?
        </span>
@@ -597,7 +597,7 @@
       Scope of Work
      </h3>
      <div class="border-b border-gray-200">
-      <button aria-controls="faq-answer-encampments" aria-expanded="false" id="faq-btn-encampments" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-encampments" aria-expanded="false" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" id="faq-btn-encampments" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Do you remove encampments?
        </span>
@@ -613,7 +613,7 @@
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button aria-controls="faq-answer-large-items" aria-expanded="false" id="faq-btn-large-items" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-large-items" aria-expanded="false" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" id="faq-btn-large-items" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Do you remove large items?
        </span>
@@ -629,7 +629,7 @@
       </div>
      </div>
      <div class="border-b border-gray-200">
-      <button aria-controls="faq-answer-alcoves" aria-expanded="false" id="faq-btn-alcoves" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-alcoves" aria-expanded="false" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" id="faq-btn-alcoves" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         Do you clean private alcoves?
        </span>
@@ -651,7 +651,7 @@
       Our Workers
      </h3>
      <div class="border-b border-gray-200">
-      <button aria-controls="faq-answer-workers" aria-expanded="false" id="faq-btn-workers" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" onclick="toggleAccordion(this)">
+      <button aria-controls="faq-answer-workers" aria-expanded="false" class="w-full py-6 flex justify-between items-center text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2 rounded-lg group" id="faq-btn-workers" onclick="toggleAccordion(this)">
        <span class="text-lg font-medium text-gray-900 group-hover:text-brand-action transition-colors">
         How are workers paid?
        </span>
@@ -744,7 +744,7 @@
       </li>
      </ul>
      <p class="text-sm text-gray-400 mt-16" id="last-updated">
-      Last updated: January 09, 2026
+      Last updated: January 10, 2026
      </p>
     </div>
     <!-- Visual Divider -->
@@ -799,8 +799,11 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const btn = document.getElementById('mobile-menu-btn');
+            const isClosed = menu.classList.contains('opacity-0');
 
-            if (menu.classList.contains('opacity-0')) {
+            btn.setAttribute('aria-expanded', isClosed);
+
+            if (isClosed) {
                 // Open
                 menu.classList.remove('opacity-0', 'pointer-events-none');
                 btn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
