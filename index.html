@@ -220,16 +220,16 @@
     <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
      <!-- About Dropdown -->
      <div class="relative group">
-      <button class="hover:text-brand-action transition-colors flex items-center gap-1 focus:outline-none">
+      <button class="hover:text-brand-action transition-colors flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action rounded-md" aria-expanded="false" aria-haspopup="true">
        About
        <i class="w-4 h-4" data-lucide="chevron-down">
        </i>
       </button>
-      <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-orange-100 overflow-hidden">
-       <a class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action transition-colors" href="#story">
+      <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 border border-orange-100 overflow-hidden">
+       <a class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action focus:bg-orange-50 focus:text-brand-action focus:outline-none transition-colors" href="#story">
         Our Story
        </a>
-       <a class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action transition-colors" href="#faq">
+       <a class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action focus:bg-orange-50 focus:text-brand-action focus:outline-none transition-colors" href="#faq">
         FAQ
        </a>
       </div>
@@ -249,7 +249,7 @@
      </a>
     </div>
     <!-- Mobile Hamburger Button -->
-    <button class="md:hidden z-50 text-brand-dark focus:outline-none" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+    <button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden z-50 text-brand-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-action rounded-md" id="mobile-menu-btn" onclick="toggleMobileMenu()">
      <i class="w-8 h-8" data-lucide="menu">
      </i>
     </button>
@@ -799,15 +799,18 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const btn = document.getElementById('mobile-menu-btn');
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
 
             if (menu.classList.contains('opacity-0')) {
                 // Open
                 menu.classList.remove('opacity-0', 'pointer-events-none');
                 btn.innerHTML = '<i data-lucide="x" class="w-8 h-8"></i>';
+                btn.setAttribute('aria-expanded', 'true');
             } else {
                 // Close
                 menu.classList.add('opacity-0', 'pointer-events-none');
                 btn.innerHTML = '<i data-lucide="menu" class="w-8 h-8"></i>';
+                btn.setAttribute('aria-expanded', 'false');
             }
             lucide.createIcons();
         }
