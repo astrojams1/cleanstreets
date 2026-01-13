@@ -220,12 +220,12 @@
     <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
      <!-- About Dropdown -->
      <div class="relative group">
-      <button class="hover:text-brand-action transition-colors flex items-center gap-1 focus:outline-none">
+      <button aria-haspopup="true" class="hover:text-brand-action transition-colors flex items-center gap-1 focus:outline-none rounded-md focus-visible:ring-2 focus-visible:ring-brand-action focus-visible:ring-offset-2">
        About
        <i class="w-4 h-4" data-lucide="chevron-down">
        </i>
       </button>
-      <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-orange-100 overflow-hidden">
+      <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 border border-orange-100 overflow-hidden">
        <a class="block px-6 py-3 hover:bg-orange-50 hover:text-brand-action transition-colors" href="#story">
         Our Story
        </a>
