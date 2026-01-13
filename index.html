@@ -153,7 +153,7 @@
                     },
                     fontFamily: {
                         'serif': ['Merriweather', 'Georgia', 'Times New Roman', 'serif'],
-                        'sans': ['Mulish', 'system-ui', '-apple-system', 'sans-serif'],
+                        'body': ['Maitree', 'Georgia', 'Times New Roman', 'serif'],
                         'script': ['Sacramento', 'cursive'],
                     }
                 }
@@ -162,7 +162,7 @@
     </script>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=Mulish:wght@300;400;500;600;700&amp;family=Sacramento&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family=Maitree:wght@300;400;500;600;700&amp;family=Sacramento&amp;display=swap" rel="stylesheet"/>
     <script src="https://unpkg.com/lucide@latest">
     </script>
     <style>
@@ -172,7 +172,7 @@
         :root {
             /* Font Families */
             --font-serif: 'Merriweather', Georgia, 'Times New Roman', serif;
-            --font-sans: 'Mulish', system-ui, -apple-system, sans-serif;
+            --font-body: 'Maitree', Georgia, 'Times New Roman', serif;
             --font-script: 'Sacramento', cursive;
 
             /* Font Weights */
@@ -203,7 +203,7 @@
 
         /* Base Typography */
         body {
-            font-family: var(--font-sans);
+            font-family: var(--font-body);
             color: #1a1a1a;
         }
 
@@ -217,9 +217,9 @@
             font-family: var(--font-script);
         }
 
-        /* Utility class for sans-serif */
-        .sans-font {
-            font-family: var(--font-sans);
+        /* Utility class for body font */
+        .body-font {
+            font-family: var(--font-body);
         }
 
         /* Custom Drop Cap */
