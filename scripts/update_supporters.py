@@ -102,11 +102,11 @@ def update_supporters():
         impact_miles_span.string = f"{int(total_miles):,}"
 
     # Update Last Updated timestamp
-    last_updated_p = soup.find('p', id='last-updated')
-    if last_updated_p:
+    last_updated_el = soup.find(id='last-updated')
+    if last_updated_el:
         pacific = pytz.timezone('US/Pacific')
         current_date = datetime.now(pacific).strftime("%B %d, %Y")
-        last_updated_p.string = f"Last updated: {current_date}"
+        last_updated_el.string = f"Updated {current_date}"
 
     # Update years operating
     years_operating_span = soup.find('span', id='years-operating')
