@@ -403,7 +403,7 @@
     </div>
     <!-- Pull Quote -->
     <div class="my-20 pl-6 border-l-4 border-brand-action max-w-lg">
-     <blockquote class="text-3xl md:text-4xl font-serif font-bold italic text-brand-dark leading-tight text-left">
+     <blockquote class="text-3xl md:text-4xl font-normal italic text-brand-dark leading-tight text-left maitree-font">
       &ldquo;For the first time in years, the sidewalk stayed clean.&rdquo;
      </blockquote>
     </div>
@@ -678,11 +678,14 @@
    <div class="max-w-4xl mx-auto px-6">
     <!-- Supporters Block -->
     <div class="mb-20">
+     <span class="uppercase tracking-widest text-gray-500 text-xs font-medium mb-4 block" id="last-updated">
+      Last updated: January 12, 2026
+     </span>
      <h2 class="text-3xl md:text-4xl font-bold text-white mb-16 serif-font">
       Made possible by neighbors like you
      </h2>
      <!-- Top Contributors -->
-     <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 text-supporter-gold text-base font-light text-center list-none p-0 maitree-font" id="top-supporters">
+     <ul class="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-10 text-supporter-gold text-sm tracking-wide text-center list-none p-0" id="top-supporters">
       <li>
        Aisling F
       </li>
@@ -700,7 +703,7 @@
       </li>
      </ul>
      <!-- Community Members -->
-     <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-gray-400 text-base font-light text-center list-none p-0 maitree-font" id="supporters">
+     <ul class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-gray-500 text-sm text-center list-none p-0" id="supporters">
       <li>
        Alexandria B
       </li>
@@ -747,9 +750,6 @@
        Zig C
       </li>
      </ul>
-     <p class="text-sm text-gray-400 mt-16" id="last-updated">
-      Last updated: January 12, 2026
-     </p>
     </div>
     <!-- Visual Divider -->
     <div class="w-16 h-px bg-gray-800 mx-auto mb-16">
@@ -846,6 +846,48 @@
 
         window.addEventListener('scroll', updateHeader);
         updateHeader(); // Init on load
+
+        // Count-up Animation for Metrics
+        function animateCounter(element, target, duration = 1500) {
+            let start = 0;
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic for smooth deceleration
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(easeOut * target);
+                element.textContent = current.toLocaleString();
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = target.toLocaleString();
+                }
+            }
+            requestAnimationFrame(update);
+        }
+
+        // Observe metrics section
+        const metricsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const hours = document.getElementById('impact-hours');
+                    const pounds = document.getElementById('impact-pounds');
+                    const miles = document.getElementById('impact-miles');
+
+                    if (hours) animateCounter(hours, 1236);
+                    if (pounds) animateCounter(pounds, 30887);
+                    if (miles) animateCounter(miles, 617);
+
+                    metricsObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const impactSection = document.getElementById('impact');
+        if (impactSection) metricsObserver.observe(impactSection);
   </script>
  </body>
 </html>
