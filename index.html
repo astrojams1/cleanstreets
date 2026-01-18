@@ -197,6 +197,16 @@
         .accordion-content.active {
             opacity: 1;
         }
+
+        /* Partner Logo Styling */
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.8;
+        }
+        .group:hover .partner-logo {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
   </style>
  </head>
  <body class="bg-brand-bg antialiased">
@@ -239,7 +249,7 @@
      <a class="hover:text-brand-action transition-colors" href="#impact">
       Our Impact
      </a>
-     <a class="hover:text-brand-action transition-colors" href="#footer">
+     <a class="hover:text-brand-action transition-colors" href="#partners">
       Partners
      </a>
      <a class="hover:text-brand-action transition-colors" href="https://docs.google.com/forms/d/e/1FAIpQLSejrpY-LR2LP6w8ZZPNf2FkjNCyrYRlGPCTKXBLzqw4cR2bhw/viewform?usp=dialog" target="_blank">
@@ -277,7 +287,7 @@
     <a class="text-brand-dark font-medium" href="#impact" onclick="toggleMobileMenu()">
      Our Impact
     </a>
-    <a class="text-brand-dark font-medium" href="#footer" onclick="toggleMobileMenu()">
+    <a class="text-brand-dark font-medium" href="#partners" onclick="toggleMobileMenu()">
      Partners
     </a>
     <a class="text-brand-dark font-medium" href="https://docs.google.com/forms/d/e/1FAIpQLSejrpY-LR2LP6w8ZZPNf2FkjNCyrYRlGPCTKXBLzqw4cR2bhw/viewform?usp=dialog" onclick="toggleMobileMenu()" target="_blank">
@@ -680,6 +690,42 @@
        </div>
       </div>
      </div>
+    </div>
+   </div>
+  </section>
+  <!-- PARTNERS SECTION -->
+  <section class="bg-brand-bg py-24 border-t border-orange-200/50 scroll-mt-32" id="partners">
+   <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-16">
+     <span class="uppercase tracking-widest text-brand-action text-xs font-bold mb-4 block">
+      Working Together
+     </span>
+     <h2 class="text-3xl md:text-4xl font-bold text-brand-dark serif-font">
+      Our Partners
+     </h2>
+    </div>
+    <!-- Partner Cards -->
+    <div class="grid grid-cols-1 gap-12" id="partner-list">
+     <!-- Refuse Refuse -->
+     <a href="https://refuserefusesf.org/" target="_blank" rel="noopener noreferrer" class="group block bg-white p-8 rounded-2xl shadow-sm border border-orange-100 hover:shadow-xl hover:border-orange-200 transition-all duration-300">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+       <div class="flex-shrink-0">
+        <img src="images/partners/refuserefuse.png" alt="Refuse Refuse logo" class="w-32 h-32 object-contain partner-logo transition-all duration-300" />
+       </div>
+       <div class="text-center md:text-left">
+        <h3 class="text-xl font-bold text-brand-dark group-hover:text-brand-action transition-colors mb-3">
+         Refuse Refuse
+        </h3>
+        <p class="text-gray-600 leading-relaxed">
+         Refuse Refuse is a grassroots campaign dedicated to tackling the problem we have with trash on our streets in San Francisco. We organize neighborhood cleanups citywide and educate residents on how they can help to keep our city clean.
+        </p>
+        <span class="inline-flex items-center gap-1 text-brand-action font-medium mt-4 group-hover:underline">
+         Visit website
+         <i data-lucide="external-link" class="w-4 h-4"></i>
+        </span>
+       </div>
+      </div>
+     </a>
     </div>
    </div>
   </section>
