@@ -89,17 +89,43 @@ def update_supporters():
             supporters_list.append(li)
 
     # Update Impact Metrics
+    rounded_hours = round(total_hours)
+    rounded_pounds = round(total_pounds)
+    rounded_miles = round(total_miles)
+
     impact_hours_span = soup.find('span', id='impact-hours')
     if impact_hours_span:
-        impact_hours_span.string = f"{int(total_hours):,}"
+        impact_hours_span.string = f"{rounded_hours:,}"
 
     impact_pounds_span = soup.find('span', id='impact-pounds')
     if impact_pounds_span:
-        impact_pounds_span.string = f"{int(total_pounds):,}"
+        impact_pounds_span.string = f"{rounded_pounds:,}"
 
     impact_miles_span = soup.find('span', id='impact-miles')
     if impact_miles_span:
-        impact_miles_span.string = f"{int(total_miles):,}"
+        impact_miles_span.string = f"{rounded_miles:,}"
+
+    # Update JavaScript animation targets
+    for script in soup.find_all('script'):
+        if script.string and 'animateCounter' in script.string:
+            updated_script = script.string
+            updated_script = re.sub(
+                r'animateCounter\(hours,\s*\d+\)',
+                f'animateCounter(hours, {rounded_hours})',
+                updated_script
+            )
+            updated_script = re.sub(
+                r'animateCounter\(pounds,\s*\d+\)',
+                f'animateCounter(pounds, {rounded_pounds})',
+                updated_script
+            )
+            updated_script = re.sub(
+                r'animateCounter\(miles,\s*\d+\)',
+                f'animateCounter(miles, {rounded_miles})',
+                updated_script
+            )
+            script.string = updated_script
+            break
 
     # Update Last Updated timestamp
     last_updated_el = soup.find(id='last-updated')
