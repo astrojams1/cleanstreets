@@ -1,4 +1,5 @@
 import csv
+import os
 import requests
 from bs4 import BeautifulSoup
 import io
@@ -13,11 +14,15 @@ IMPACT_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxt3SXANj2NU-
 def fetch_csv(url):
     response = requests.get(url)
     response.raise_for_status()
-    return csv.reader(io.StringIO(response.content.decode('utf-8')))
+    return response.content.decode('utf-8')
+
+def parse_csv(text):
+    return csv.reader(io.StringIO(text))
 
 def update_supporters():
     # 1. Fetch and Parse Supporters Data
-    csv_reader = fetch_csv(SUPPORTERS_CSV_URL)
+    supporters_csv_text = fetch_csv(SUPPORTERS_CSV_URL)
+    csv_reader = parse_csv(supporters_csv_text)
 
     # Skip header
     next(csv_reader, None)
@@ -44,7 +49,8 @@ def update_supporters():
             supporters.append(name)
 
     # 2. Fetch and Parse Impact Data
-    impact_reader = fetch_csv(IMPACT_CSV_URL)
+    impact_csv_text = fetch_csv(IMPACT_CSV_URL)
+    impact_reader = parse_csv(impact_csv_text)
 
     # Skip header
     next(impact_reader, None)
@@ -64,7 +70,14 @@ def update_supporters():
         except ValueError:
             continue
 
-    # 3. Update index.html
+    # 3. Write raw CSV files for static download
+    os.makedirs('data', exist_ok=True)
+    with open('data/supporters.csv', 'w', encoding='utf-8') as f:
+        f.write(supporters_csv_text)
+    with open('data/impact.csv', 'w', encoding='utf-8') as f:
+        f.write(impact_csv_text)
+
+    # 4. Update index.html
     with open('index.html', 'r', encoding='utf-8') as f:
         html_content = f.read()
 
@@ -141,7 +154,7 @@ def update_supporters():
         years = (datetime.now() - start_date).days / 365.25
         years_operating_span.string = f"{int(years)} years"
 
-    # 4. Save the file
+    # 5. Save the file
     html_output = soup.prettify(formatter="html")
     html_output = html_output.replace('</meta>', '')
 

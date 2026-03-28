@@ -23,4 +23,9 @@ if [ -d "images" ]; then
   cp -r images _site/
 fi
 
+# Copy data directory
+if [ -d "data" ]; then
+  cp -r data _site/
+fi
+
 echo "Build complete in _site/"
