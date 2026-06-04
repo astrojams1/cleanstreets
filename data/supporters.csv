@@ -1,9 +1,9 @@
 Supporter,Top Supporter
 Patricia M,FALSE
 Aisling F,TRUE
-Katie G,FALSE
 Melissa B,FALSE
 Benjamin B,FALSE
+Katie G,FALSE
 Taylor G,FALSE
 Emin I,FALSE
 Mystic,FALSE
@@ -78,7 +78,7 @@ Daniel G,FALSE
 Ryan D,FALSE
 Ally,FALSE
 Royal,FALSE
-Douglas P,TRUE
+Douglas P,FALSE
 Scott B,FALSE
 Adam D,FALSE
 Beckie Wood,FALSE
@@ -104,3 +104,4 @@ Greg K,FALSE
 Caroline,FALSE
 Meg O,FALSE
 Liv M,FALSE
+El D,FALSE
