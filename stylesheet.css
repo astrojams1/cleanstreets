@@ -42,7 +42,6 @@ header, main {
 /* Header */
 .site-header {
     padding-top: 1rem;
-    position: relative;
     text-align: center;
     margin-bottom: 3rem;
     min-height: 120px; /* Ensure space for absolute logo */
@@ -55,14 +54,14 @@ header, main {
     line-height: 0.9;
     transform: rotate(-10deg);
     position: absolute;
-    left: 0;
+    left: 1rem;
     top: 1rem;
 }
 
 h1 {
     font-family: var(--font-serif);
     color: var(--accent-color);
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-style: italic;
     margin-top: 4rem;
     text-align: center;
@@ -134,6 +133,11 @@ img {
 .cta-container {
     text-align: center;
     margin: 2rem 0;
+}
+
+#brief {
+    font-size: 1.5rem;
+    line-height: 1.4;
 }
 
 #intro #ctas {
@@ -324,7 +328,7 @@ img {
 
 /* Media Queries */
 @media (min-width: 768px) {
-    h1 { font-size: 4rem; margin-top: 5rem; }
+    h1 { margin-top: 5rem; }
 
     .faq-list {
         grid-template-columns: 1fr 1fr;
