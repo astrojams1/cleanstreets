@@ -29,6 +29,34 @@ to the bottom with the reason they were retired.
   lookups need this fixed platform-side (valid token, network egress to
   1Password, or the `op` CLI installed) before this skill can measure active
   counts or email specific patrons from that environment.
+- 2026-09-12 (run 0003): the vault mismatch above is fixed. `op vault list`
+  showed this service account can only see a vault named `API Tokens`, not
+  `Clean Streets Automation`; while diagnosing that, two PRs landed on master
+  mid-run: #80 repointed the reference and added the token item to that
+  vault, then #81 corrected a casing mismatch (`API Tokens`, capital T) so
+  `op://API Tokens/Patreon creator token/credential` is now the live
+  reference. Re-running `patreon_stats.py` after pulling both resolved
+  cleanly: `active_patrons=26, mrr_usd=1111.0, former_patrons=82,
+  total_members=114, token_source=1password`. Live per-patron data
+  (fields[member]=full_name,email,patron_status,last_charge_status,
+  last_charge_date,pledge_relationship_start) is now reachable from this
+  platform too.
+- 2026-09-12 (run 0003): checked the top re-engagement/referral candidates
+  from live per-patron data against Gmail before sending anything, and every
+  one of them already had prior correspondence on this exact topic (a
+  declined-card notice already sent to the one currently-declined patron; a
+  "six years, here's your referral link" email already sent in the last two
+  months to each of the three longest-tenured active patrons; a cancellation
+  check-in already sent to the top lapsed candidate). None of those sends are
+  in this skill's ledger — they came from a sender identity `jane@` (not
+  `james@`, and not this skill's persona) that this skill has never used.
+  Something else already runs Patreon patron outreach against this list
+  (likely `patron-reactivation` and/or `cold-lead-followup`), outside this
+  ledger's dedup. Sending again from here risked a second or third message to
+  the same people in one summer. This run skipped all sends rather than
+  duplicate that outreach; the fix is a shared dedup (or a single owner) for
+  patron-facing email between patreon-growth and whichever skill sent the
+  `jane@` messages, not a per-run workaround.
 
 ## Ref-code registry
 
@@ -47,6 +75,7 @@ Every Patreon link we put anywhere: `https://www.patreon.com/cleanstreets?ref=<s
 | `reengage` | Lapsed-patron emails |
 | `post-<yyyymm>` | Monthly impact update post |
 | `exp-<id>` | A site experiment; one code per experiment |
+| `exp-004` | CTA button below the impact-numbers grid (started 2026-09-12) |
 | `organic` | Attribution fallback when nothing matches |
 
 Add a row before using a new code. Never reuse an experiment code.
@@ -70,8 +99,6 @@ Add a row before using a new code. Never reuse an experiment code.
 ## Backlog of ideas (promote into experiments.md one at a time)
 
 - Add a "$5 = 7.5 minutes of cleaning" line under the entry-tier mention.
-- A short "Where your money goes" strip near the hero with the three impact
-  numbers and a ref-coded button.
 - A referral line in the monthly Patreon post ("forward this to one neighbor").
 - Block sponsorship one-pager for merchants: what $200/month covers on their
   block, in their words.

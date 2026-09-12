@@ -28,3 +28,20 @@ Format and privacy rules: `.claude/skills/README.md`.
   - note | OP_SERVICE_ACCOUNT_TOKEN present but 1Password SDK resolve raised and no op CLI on PATH; patreon_stats.py and per-patron email lookups unavailable this run
   - handoffs | none from inbox-processor this run
 - next: Get a resolvable Patreon token (fix 1Password SDK auth/network or install op CLI) so active_patrons and per-patron emails are measurable; on 2026-09-25 decide exp-001; on 2026-09-26 decide exp-002
+
+## 2026-09-11T23:14-07:00 | run 0003 | success
+- actions: 3
+- summary: First working token resolution (active_patrons=26, mrr_usd=1111, source=api) after PR #80 fixed the vault mid-run; started exp-004 (CTA below impact grid); skipped all sends after finding every top candidate already contacted by an untracked sender
+- metrics: active_patrons=26 roll_total=106 total_members=114 former_patrons=82 joined_7d=0 left_7d=1 mrr_usd=1111 sends=0 experiments_running=3 source=api
+- details:
+  - experiment:exp-004 | started | CTA button below impact-numbers grid; decide 2026-09-26
+  - action | index.html: exp-004 CTA added below impact grid
+  - action | references/playbook.md: recorded that PR #80 (landed mid-run) fixed the vault mismatch; patreon_stats.py and per-patron lookups now resolve from this platform
+  - action | references/playbook.md: recorded that the top re-engagement/referral candidates (1 declined, top lapsed, 3 longest-tenured active) were all already emailed on this exact topic by a `jane@` sender this skill has never used and that is not in this ledger -- flagged as a cross-skill dedup gap, no emails sent
+  - candidate:mego | skipped | already re-engaged by jane@cleanstreets.io (declined-card thread, last 2026-06-18)
+  - candidate:chet | skipped | already re-engaged by jane@cleanstreets.io (no-pressure close-out, last 2026-07-17)
+  - candidate:aislingf | skipped | already sent a referral ask (2026-06-26 and 2026-07-24)
+  - candidate:melissab | skipped | already sent a referral ask (2026-06-26 and 2026-07-24)
+  - candidate:stephaniec | skipped | already sent a referral ask (2026-06-26 and 2026-07-24)
+  - handoffs | none from inbox-processor this run
+- next: Find and coordinate with whichever skill sends from jane@cleanstreets.io (likely patron-reactivation or cold-lead-followup) so patron outreach shares one dedup record; once that's resolved, patreon-growth can safely pick re-engagement/referral targets from live API data. On 2026-09-25 decide exp-001, on 2026-09-26 decide exp-002 and exp-004.
