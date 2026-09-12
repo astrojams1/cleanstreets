@@ -4,3 +4,11 @@ _site/
 .venv/
 venv/
 .env
+
+# Skill-local secrets and caches (Patreon tokens, Gmail state). Ledgers are
+# committed; anything under .claude/data is not.
+.claude/data/
+.claude/settings.local.json
+
+# Per-run scratch directory used by scheduled skills
+tmp-build/
