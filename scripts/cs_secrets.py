@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -43,10 +44,28 @@ def repo_root() -> Path:
         return Path(__file__).resolve().parents[1]
 
 
+def _op_cli() -> str | None:
+    """Path to the op CLI: on PATH, or where bootstrap_run.sh installs it."""
+    found = shutil.which("op")
+    if found:
+        return found
+    local = Path.home() / ".local" / "bin" / "op"
+    return str(local) if local.is_file() and os.access(local, os.X_OK) else None
+
+
 def _from_onepassword(ref: str) -> str | None:
     token = os.environ.get("OP_SERVICE_ACCOUNT_TOKEN")
     if not token:
         return None
+    # The op CLI first: it honors SSL_CERT_FILE and HTTPS_PROXY, which the
+    # sandboxed Routine environment needs; the SDK ships its own roots.
+    cli = _op_cli()
+    if cli:
+        proc = subprocess.run([cli, "read", ref], capture_output=True, text=True,
+                              env={**os.environ, "OP_SERVICE_ACCOUNT_TOKEN": token})
+        if proc.returncode == 0 and proc.stdout.strip():
+            return proc.stdout.strip()
+        print(f"secrets: op read failed: {proc.stderr.strip()[:300]}", file=sys.stderr)
     try:  # 1Password SDK (pip install onepassword-sdk)
         import asyncio
         from onepassword import Client  # type: ignore
@@ -60,13 +79,10 @@ def _from_onepassword(ref: str) -> str | None:
     except ImportError:
         pass
     except Exception as exc:  # auth or lookup failure: fall through to the CLI
-        print(f"secrets: 1Password SDK failed: {type(exc).__name__}", file=sys.stderr)
-    if shutil.which("op"):
-        proc = subprocess.run(["op", "read", ref], capture_output=True, text=True,
-                              env={**os.environ, "OP_SERVICE_ACCOUNT_TOKEN": token})
-        if proc.returncode == 0 and proc.stdout.strip():
-            return proc.stdout.strip()
-        print(f"secrets: op read failed: {proc.stderr.strip()[:200]}", file=sys.stderr)
+        # The message names the cause (bad token, unknown vault/item, TLS,
+        # network); it never contains the secret. Redact anything token-like.
+        msg = re.sub(r"ops_[A-Za-z0-9_-]+", "[token]", str(exc))[:300]
+        print(f"secrets: 1Password SDK failed: {msg}", file=sys.stderr)
     return None
 
 
@@ -99,7 +115,10 @@ def main(argv: list[str] | None = None) -> int:
     if source:
         print(f"OK: {args[1]} secret available from {source}")
         return 0
-    print(f"WARN: {args[1]} secret not available (no {REGISTRY[args[1]]['env']}, no OP_SERVICE_ACCOUNT_TOKEN, no {REGISTRY[args[1]]['file']})")
+    spec = REGISTRY[args[1]]
+    op_state = ("OP_SERVICE_ACCOUNT_TOKEN present but the 1Password lookup failed (see lines above)"
+                if os.environ.get("OP_SERVICE_ACCOUNT_TOKEN") else "no OP_SERVICE_ACCOUNT_TOKEN")
+    print(f"WARN: {args[1]} secret not available: no {spec['env']}; {op_state}; no {spec['file']}")
     return 1
 
 

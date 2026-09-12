@@ -44,8 +44,25 @@ for s in inbox-processor patreon-growth; do
   [ -f ".claude/skills/$s/SKILL.md" ] && echo "OK: skill $s present" || echo "WARN: skill $s missing"
 done
 if [ -n "${OP_SERVICE_ACCOUNT_TOKEN:-}" ]; then
+  # The op CLI honors the sandbox's SSL_CERT_FILE and proxy settings, so it is
+  # the primary resolver; the Python SDK is the fallback.
+  OP_VERSION="${OP_CLI_VERSION:-v2.31.1}"
+  mkdir -p "$HOME/.local/bin"
+  if ! command -v op >/dev/null 2>&1 && [ ! -x "$HOME/.local/bin/op" ]; then
+    if curl -sSfL -o "$HOME/.local/bin/op.zip" \
+        "https://cache.agilebits.com/dist/1P/op2/pkg/$OP_VERSION/op_linux_amd64_$OP_VERSION.zip" \
+       && python3 -c "import zipfile,sys; zipfile.ZipFile(sys.argv[1]).extract('op', sys.argv[2])" \
+            "$HOME/.local/bin/op.zip" "$HOME/.local/bin" \
+       && chmod +x "$HOME/.local/bin/op"; then
+      echo "OK: installed op CLI $OP_VERSION to $HOME/.local/bin"
+    else
+      echo "WARN: could not install the op CLI; falling back to the 1Password SDK"
+    fi
+    rm -f "$HOME/.local/bin/op.zip"
+  fi
+  export PATH="$HOME/.local/bin:$PATH"
   python3 -c "import onepassword" 2>/dev/null || python3 -m pip install -q onepassword-sdk >/dev/null 2>&1 \
-    || echo "WARN: could not install onepassword-sdk; 1Password lookups need the op CLI"
+    || echo "WARN: could not install onepassword-sdk"
 fi
 python3 scripts/cs_secrets.py check patreon || true
 git ls-remote -q --exit-code origin HEAD >/dev/null 2>&1 && echo "OK: remote reachable for push" \
