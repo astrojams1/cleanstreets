@@ -39,8 +39,11 @@ Concurrent experiments: at most 3.
 
 Sources, best first. Record which one was used in the `source=` metric.
 
-1. **Patreon API** when `.claude/data/patreon-config.json` exists (git-ignored;
-   holds `creator_access_token` and `campaign_id`). One request:
+1. **Patreon API** when a creator token is available: the `PATREON_ACCESS_TOKEN`
+   environment variable (scheduled runs), or `.claude/data/patreon-config.json`
+   (git-ignored; holds `creator_access_token` and `campaign_id`). The campaign
+   id is `4769349` unless the config says otherwise. Never print the token.
+   One request:
    ```
    GET https://www.patreon.com/api/oauth2/v2/campaigns/<campaign_id>/members
      ?fields[member]=full_name,patron_status,currently_entitled_amount_cents,pledge_relationship_start,last_charge_status
@@ -161,11 +164,11 @@ almost always offer an action.
 Then:
 
 ```bash
-python3 -m pytest tests/ -q
+bash scripts/run_tests.sh
 python3 scripts/ledger.py check
 git add .claude/skills/patreon-growth/ index.html
 git commit -m "ledger(patreon-growth): <summary>"
-git push -u origin <current branch>
+git push origin HEAD
 ```
 
 If the push fails (no credentials in the sandbox), do not retry in a loop.

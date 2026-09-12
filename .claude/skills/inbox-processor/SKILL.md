@@ -149,9 +149,10 @@ Then validate and commit:
 
 ```bash
 python3 scripts/ledger.py check
-git add .claude/skills/inbox-processor/LEDGER.md
+bash scripts/run_tests.sh
+git add .claude/skills/inbox-processor/
 git commit -m "ledger(inbox-processor): <summary>"
-git push -u origin <current branch>
+git push origin HEAD
 ```
 
 If the push fails (no credentials in the sandbox), do not retry in a loop.
