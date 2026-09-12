@@ -46,6 +46,7 @@ Every Patreon link we put anywhere: `https://www.patreon.com/cleanstreets?ref=<s
 | `merchant` | Block merchants (channel 4) |
 | `neighborhood` | Neighborhood groups (channel 5) |
 | `property` | Property managers and HOAs (channel 6) |
+| `creator-<slug>` | A creator's tracked link in their cleanup post (channel 7) |
 | `post-<yyyymm>` | Monthly impact update post |
 | `exp-<id>` | An experiment; one code per experiment |
 | `organic` | Attribution fallback when nothing matches |

@@ -124,6 +124,25 @@ Subject: `Sidewalks on [street]: a neighbor-funded option`
 > https://www.patreon.com/cleanstreets?ref=property; happy to answer
 > questions by email.
 
+## Creator shift offer (channel 7)
+
+Subject: `Paid hour cleaning your block, and a post about it`
+
+> Hi [First name], I run Clean Streets, a small crew paid a living wage to
+> clean sidewalks in the Mission, funded by neighbors. I've seen your
+> [account or newsletter] and figured you know [their neighborhood] better
+> than we do. The offer: pick a block near you, we pay you our normal crew
+> rate ($30 for one hour, paid the same day), we bring the gear, and you
+> post one before-and-after of what you did with this link so your people
+> can back the crew: https://www.patreon.com/cleanstreets?ref=creator-[slug].
+> If that sounds fun, reply with a block and a week that works and James
+> will sort the details by email.
+
+Follow-up (10+ days): one line, a recent before-and-after of our own, same
+offer. Close-out (21+ days): one line. Acceptance: ledger the prospect as
+`accepted` and put it under "For James" in the report with the block and
+week they proposed; James schedules, supplies, and pays.
+
 ## Monthly impact post (for Patreon, James publishes)
 
 Title: `[Month] on the ground`

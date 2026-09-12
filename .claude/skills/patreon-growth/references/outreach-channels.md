@@ -20,8 +20,18 @@ run from the same household or business; no meetings proposed; no prices.
 | 4 | Block merchants | Storefronts on blocks the crew cleans | Pick one block per run from `data/impact.csv` streets or the last Patreon post; web search `"<street> and <cross street>" San Francisco` plus directory sites for storefront names; find a public email on the business site; skip chains | merchant first touch, "we cleaned your block" | 3 | Historical: "we cleaned your block this week" from hello@ got warm replies from Black & Gold, Vive la Tarte, Heath Ceramics, VIP Grooming; sponsorship conversion 0 so far | Reply rate under 10% over 30 sends |
 | 5 | Neighborhood groups | Block clubs, resident associations, Fix26-style lists, watch groups in the Mission | Web search `Mission District "neighborhood association" OR "block club" OR "residents" site:*.org OR groups.google.com`; SF Planning and SFPD community group lists | neighborhood peer | 2 | Historical: this frame had the best reply rate of any channel, about 30%, when it named a specific location and asked nothing in the first email | Reply rate under 10% over 20 sends |
 | 6 | Property managers and HOAs | Buildings on cleaned blocks | Web search for the building's management company; contact the office email, never a resident | property first touch | 1 | Historical: low reply rate, occasional meeting requests (declined per policy) | Reply rate under 5% over 20 sends |
+| 7 | Creator shifts | People in or near the Mission with a real local following (parents and family creators, neighborhood accounts, local food and lifestyle creators, newsletter writers), roughly 2,000+ followers | Web search: `"Mission District" San Francisco (mom OR dad OR family) (blogger OR creator OR influencer)`, `site:instagram.com "Mission District" San Francisco`, `site:tiktok.com "Mission District"`, local newsletters and Substacks, SF parent groups, Mission Local's contributors; confirm they live or work in or near the Mission from their own posts; contact only through an email on their bio, press page, or site (this skill sends no DMs) | creator shift offer | 2 | New channel (James's idea, 2026-09-11). No sends yet. | 0 acceptances after 20 sends |
 
-Total first touches per run at full quota: 14. Follow-ups and close-outs
+Channel 7 is James's idea: pay a local creator the normal crew rate ($30 for
+one hour of cleaning, paid the same day) in exchange for one post with a
+before-and-after of what they did and their tracked Patreon link
+(`?ref=creator-<slug>`). It costs nothing extra (the hour would be paid
+anyway) and produces genuine local social content. The skill finds and
+emails candidates and reports acceptances; James schedules the hour,
+provides supplies, and pays. The offer email never promises anything beyond
+$30 for one hour and the post; logistics come from James.
+
+Total first touches per run at full quota: 16. Follow-ups and close-outs
 are on top of that and always take priority over new first touches, because
 the reply almost always comes on the second or third email.
 
