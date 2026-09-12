@@ -27,6 +27,10 @@ behavior shifted.
 
 Overrides that beat the table, in order:
 
+0. James already starred it: never archive; flagged, with the decision it
+   holds named in the report. (Found on the first test run, 2026-09-11: a
+   grant-cohort notice was starred and would otherwise have been archived as
+   informational.)
 1. Angry, legal, or complaint language anywhere in the thread: flagged.
 2. James already replied in the thread: noted, no action.
 3. A reply from someone to a message a skill sent (ref code `CS-` in the quoted
@@ -52,3 +56,4 @@ Overrides that beat the table, in order:
 ## Changes
 
 - 2026-09-12: initial policy.
+- 2026-09-11 (PT): added override 0, starred messages are never archived.
