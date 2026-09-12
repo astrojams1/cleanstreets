@@ -1,0 +1,60 @@
+name: Update Patreon stats
+
+# Pulls active patron counts and monthly revenue (counts only, no names or
+# emails) into data/patreon_stats.json once a day, using the Patreon creator
+# token resolved from 1Password through the OP_SERVICE_ACCOUNT_TOKEN repo
+# secret. The site serves the file publicly, so any agent can read the
+# numbers without holding a credential.
+
+on:
+  schedule:
+    - cron: '20 8 * * *'  # daily, 20 minutes after the supporters update
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patreon-stats:
+    runs-on: ubuntu-latest
+    env:
+      OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+      PATREON_ACCESS_TOKEN: ${{ secrets.PATREON_ACCESS_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install 1Password SDK
+        if: env.OP_SERVICE_ACCOUNT_TOKEN != ''
+        run: pip install -q onepassword-sdk
+
+      - name: Fetch counts
+        id: fetch
+        run: |
+          if [ -z "$OP_SERVICE_ACCOUNT_TOKEN" ] && [ -z "$PATREON_ACCESS_TOKEN" ]; then
+            echo "No OP_SERVICE_ACCOUNT_TOKEN or PATREON_ACCESS_TOKEN secret set; nothing to do."
+            echo "fetched=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python3 scripts/patreon_stats.py --out data/patreon_stats.json
+          echo "fetched=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push if changed
+        if: steps.fetch.outputs.fetched == 'true'
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/patreon_stats.json
+          if git diff --staged --quiet; then
+            echo "No change in Patreon stats."
+          else
+            git commit -m "Auto-update Patreon stats"
+            git push
+          fi

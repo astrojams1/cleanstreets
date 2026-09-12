@@ -39,9 +39,12 @@ Concurrent experiments: at most 3.
 
 Sources, best first. Record which one was used in the `source=` metric.
 
-1. **Patreon API**, counts only, through the script that resolves the token
-   for you (environment variable, then 1Password via `OP_SERVICE_ACCOUNT_TOKEN`,
-   then the git-ignored config file; see the README's "Secrets" section):
+1. **Patreon counts.** First look for `data/patreon_stats.json`, written
+   daily by the "Update Patreon stats" GitHub workflow; if its `synced_at` is
+   within 36 hours, use it (`source=workflow`). Otherwise fetch live, counts
+   only, through the script that resolves the token for you (environment
+   variable, then 1Password via `OP_SERVICE_ACCOUNT_TOKEN`, then the
+   git-ignored config file; see the README's "Secrets" section):
    ```bash
    python3 scripts/patreon_stats.py
    ```
@@ -149,7 +152,7 @@ python3 scripts/ledger.py add --skill patreon-growth \
   --summary "<active patrons and delta>; <top action>; <one learning>" \
   --metric active_patrons=<n or unknown> --metric roll_total=<n> \
   --metric joined_7d=<n> --metric left_7d=<n> --metric mrr_usd=<n or unknown> \
-  --metric sends=<n> --metric experiments_running=<n> --metric source=api|csv \
+  --metric sends=<n> --metric experiments_running=<n> --metric source=workflow|api|csv \
   --detail "patron:<slug> | joined | <attributed source>" \
   --detail "experiment:<id> | started|won|lost | <one line>" \
   --detail "action | <what changed, file or email>" \
