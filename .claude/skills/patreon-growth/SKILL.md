@@ -82,8 +82,12 @@ README's persona, no-meetings, no-commitments, and signature rules, and
    "how'd you hear about Clean Streets" question). Once per patron, ever.
 4. **New first touches**, by channel order and quota in
    `references/outreach-channels.md`: win-back, referral, warm inbound,
-   block merchants, neighborhood groups, property managers. Discovery for
-   each channel is described there; do the discovery, then send.
+   block merchants, neighborhood groups, property managers, creator shifts
+   (paid hour of cleaning in exchange for a before-and-after post with a
+   tracked link). Discovery for each channel is described there; do the
+   discovery, then send. Acceptances on any channel that need James
+   (a creator's proposed block and week, a sponsorship question) go under
+   "For James" in the report.
 5. **Monthly post** once a month from `data/impact.csv` totals, put in the
    report for James to publish.
 
