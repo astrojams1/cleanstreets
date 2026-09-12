@@ -2,7 +2,7 @@
 name: skill-improver
 description: "Review how the other skills in this repository have performed, using their ledgers and files as evidence, and edit those skills to perform better: fix instructions that runs ignore, remove references to things that don't exist, trim bloat, tighten or add policy where the ledger shows repeated friction, and flag environment problems that no skill edit can fix. Use whenever the user asks to improve, tune, audit, review, or clean up the skills, says a skill 'keeps doing X', asks 'are the skills working', 'why does it keep failing', 'clean up the junk', or on the scheduled weekly review, even if they don't name the skill."
 metadata:
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Skill Improver
@@ -99,6 +99,41 @@ Apply the playbook's fix for each finding. Rules that bind every edit:
   heading at the end of that SKILL.md saying what changed and which runs
   justified it.
 
+## Step 3b: Improve yourself
+
+This skill is judged by whether its edits make other skills better, and it
+reviews itself by the same evidence. Every run:
+
+1. **Score last run's edits.** Count the `verdict:` lines from Step 2:
+   improved, no change, worse. Record them as `self_improved`, `self_no_change`,
+   `self_worse` metrics. A run whose edits were mostly `no_change` or `worse`
+   means the diagnosis was wrong, not the target skill.
+2. **Fix the diagnosis, not just the symptom.** For each `worse` or repeated
+   `no_change` verdict, update the matching row of
+   `references/diagnosis-playbook.md`: move the fix to "Did not work" and
+   write the next fix to try. If a pattern recurs three times with no fix
+   that works, add it to a "Needs James" list at the end of the playbook.
+3. **Turn repeated lint classes into code.** If the same kind of lint
+   finding appears in two runs, add a check for it to
+   `scripts/skill_stats.py` and a test to `tests/test_skill_stats.py`, so the
+   test suite catches it before it lands.
+4. **Review your own ledger with `skill_stats.py stats`** like any other
+   skill: stuck `next:` lines, zero-edit runs, `partial` from the time cap.
+   Apply the playbook to yourself: if you keep deferring the same skill,
+   raise its priority; if runs hit the time cap, read fewer files before
+   diagnosing (start from `stats`, open a skill's references only when its
+   numbers point there).
+5. **Edit this file** when a step was skipped or misread in your own last
+   run, with the same rules as any other edit: cite the run, move the
+   instruction rather than repeat it, keep the file under 250 lines, bump
+   `metadata.version`, add a Changes line. At most one self-edit per run.
+   These never change: the evidence rule, tighten-only guardrails, the
+   never-edit-a-ledger rule, the ban on running other skills, this step,
+   and the ledger requirement. If a self-edit made the following run worse
+   (tests failed, ledger entry missing, lint red), the first action of the
+   next run is `git revert` of that commit, logged as `edit:skill-improver |
+   revert`.
+
 Then validate:
 
 ```bash
@@ -118,7 +153,9 @@ python3 scripts/ledger.py add --skill skill-improver \
   --summary "<skills reviewed>; <edits made>; <top finding for James>" \
   --metric skills_reviewed=<n> --metric edits=<n> --metric lint_findings=<n> \
   --metric runs_analyzed=<n> --metric env_findings=<n> \
+  --metric self_improved=<n> --metric self_no_change=<n> --metric self_worse=<n> \
   --detail "edit:<skill> | <file> | <what changed> | runs <ids>" \
+  --detail "edit:skill-improver | <file> | <what changed in yourself and why>" \
   --detail "verdict:<skill> | <edit from last run> | improved|no_change|worse" \
   --detail "env | <finding only James can fix>" \
   --detail "proposal | <guardrail loosening or schedule change for James to decide>" \
@@ -146,6 +183,7 @@ Per skill:
   <skill>: <one-line verdict> — <edits made, or "no edit: <why>">
 Lint: <n> findings, all fixed | none
 Last run's edits: <improved / no change / worse, per edit>
+Self: <playbook rows updated, lint checks added, self-edit or "none">
 For James: <environment fixes, schedule changes, guardrail proposals>
 Ledger: run NNNN appended and committed
 ```
@@ -156,4 +194,11 @@ Ledger: run NNNN appended and committed
   edits outside `.claude/skills/`, `scripts/`, and `tests/`).
 - Does not create or change Routines.
 - Does not edit any `LEDGER.md`, ever.
-- Does not review itself; James does that, with this skill's ledger.
+- Does not exempt itself: Step 3b applies the same evidence and guardrail
+  rules to this skill, and James can audit that with this skill's ledger.
+
+## Changes
+
+- 2026-09-11 v1.1: added Step 3b (self-review: score prior edits, fix the
+  playbook, codify repeated lint classes, review own ledger, bounded
+  self-edits with revert rule). Requested by James after run 0001.
