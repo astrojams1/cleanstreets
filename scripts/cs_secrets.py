@@ -29,7 +29,7 @@ from pathlib import Path
 REGISTRY = {
     "patreon": {
         "env": "PATREON_ACCESS_TOKEN",
-        "op_ref": "op://Clean Streets Automation/Patreon creator token/credential",
+        "op_ref": "op://API tokens/Patreon creator token/credential",
         "file": ".claude/data/patreon-config.json",
         "file_key": "creator_access_token",
     },
