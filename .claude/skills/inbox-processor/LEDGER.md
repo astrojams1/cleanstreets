@@ -13,3 +13,20 @@ Format and privacy rules: `.claude/skills/README.md`.
   - note | connected mailbox also sends as hello@cleanstreets.io alias; skill assumes james@
   - policy | added override 0: starred messages are never archived
 - next: Nothing pending; confirm with James which sender identity (james@ or hello@) replies should use
+
+## 2026-09-11T23:16-07:00 | run 0002 | success
+- actions: 10
+- summary: Processed 10 messages: 0 replied, 0 drafted, 7 archived, 3 flagged
+- metrics: swept=11 replied=0 drafted=0 archived=7 flagged=3
+- details:
+  - msg:1a0943c314a8991e | automated | flagged | patreon.com
+  - msg:1a09350d8659550b | personal | flagged | accounts.google.com
+  - msg:1a07236a03efa118 | personal | flagged | accounts.google.com
+  - msg:1a08d6bec6597f70 | vendor-pitch | archived | global.metamail.com
+  - msg:1a08caf748b5ebc6 | automated | archived | grow.patreon.com
+  - msg:1a08b692b99d90c0 | vendor-pitch | archived | outtaexcuses.com
+  - msg:1a0885eed0e6b0d5 | vendor-pitch | archived | impactfundingsolutions.com
+  - msg:1a07c8ba1e0e271a | automated | archived | grow.patreon.com
+  - msg:1a0737d76e2b867f | automated | archived | paypal.com
+  - msg:1a07081e419fbf31 | automated | archived | core.patreon.com
+- next: Nothing pending
