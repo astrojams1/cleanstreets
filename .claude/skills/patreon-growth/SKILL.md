@@ -39,22 +39,22 @@ Concurrent experiments: at most 3.
 
 Sources, best first. Record which one was used in the `source=` metric.
 
-1. **Patreon API** when a creator token is available: the `PATREON_ACCESS_TOKEN`
-   environment variable (scheduled runs), or `.claude/data/patreon-config.json`
-   (git-ignored; holds `creator_access_token` and `campaign_id`). The campaign
-   id is `4769349` unless the config says otherwise. Never print the token.
-   One request:
+1. **Patreon API**, counts only, through the script that resolves the token
+   for you (environment variable, then 1Password via `OP_SERVICE_ACCOUNT_TOKEN`,
+   then the git-ignored config file; see the README's "Secrets" section):
+   ```bash
+   python3 scripts/patreon_stats.py
    ```
-   GET https://www.patreon.com/api/oauth2/v2/campaigns/<campaign_id>/members
-     ?fields[member]=full_name,patron_status,currently_entitled_amount_cents,pledge_relationship_start,last_charge_status
-     &page[count]=100
-   Authorization: Bearer <creator_access_token>
-   ```
-   Follow `meta.pagination.cursors.next` until null. Count
-   `patron_status == "active_patron"` for `active_patrons`, sum their
-   `currently_entitled_amount_cents` for `mrr_usd`, and derive joins and
-   churn against the previous ledger entry's numbers. On 401, note it in the
-   report and fall through to source 2; do not retry.
+   Exit 0 prints `active_patrons`, `mrr_usd`, `declined_patrons`,
+   `former_patrons`, `followers`, and `token_source`; use those numbers
+   directly and derive joins and churn against the previous ledger entry.
+   Exit 1 prints a WARN naming the reason (no token, HTTP status); note it
+   in the report and fall through to source 2. Never fetch the token
+   yourself and never print it. Per-patron data (emails for re-engagement)
+   needs the same token and the members endpoint with
+   `fields[member]=full_name,email,patron_status,last_charge_status`; read it
+   in memory only and write nothing but first name plus last initial to any
+   file.
 2. **Repository data** (always available):
    ```bash
    python3 scripts/patron_metrics.py --since-days 7 --json

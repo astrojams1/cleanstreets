@@ -43,8 +43,11 @@ python3 scripts/ledger.py check || fail "ledger check failed on a clean checkout
 for s in inbox-processor patreon-growth; do
   [ -f ".claude/skills/$s/SKILL.md" ] && echo "OK: skill $s present" || echo "WARN: skill $s missing"
 done
-[ -n "${PATREON_ACCESS_TOKEN:-}" ] && echo "OK: PATREON_ACCESS_TOKEN set" \
-  || echo "WARN: PATREON_ACCESS_TOKEN not set; patreon-growth will use the supporter roll only"
+if [ -n "${OP_SERVICE_ACCOUNT_TOKEN:-}" ]; then
+  python3 -c "import onepassword" 2>/dev/null || python3 -m pip install -q onepassword-sdk >/dev/null 2>&1 \
+    || echo "WARN: could not install onepassword-sdk; 1Password lookups need the op CLI"
+fi
+python3 scripts/cs_secrets.py check patreon || true
 git ls-remote -q --exit-code origin HEAD >/dev/null 2>&1 && echo "OK: remote reachable for push" \
   || echo "WARN: remote not reachable; the run will report its ledger commit as unpushed"
 rm -rf tmp-build
