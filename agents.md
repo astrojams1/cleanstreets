@@ -43,3 +43,9 @@ Guidelines for AI agents working on this codebase.
 - Supporter list is auto-updated via `scripts/update_supporters.py`
 - Impact metrics are fetched from Google Sheets
 - Do not manually edit the `#supporters` or `#top-supporters` lists
+
+## Skills and Ledgers
+- Repository skills live in `.claude/skills/<name>/`; conventions are in `.claude/skills/README.md`
+- Every skill, present or future, keeps an append-only `LEDGER.md` and ends each run by appending one entry with `python3 scripts/ledger.py add`
+- Never write personal data (email addresses, phone numbers, message bodies) to a ledger; this repository is public
+- `python3 -m pytest tests/test_skill_ledgers.py` must pass before committing skill changes
