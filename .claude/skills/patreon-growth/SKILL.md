@@ -18,7 +18,12 @@ Concurrent experiments: at most 3.
 
 ## Step 0: Preflight
 
-1. Note the start time in Pacific time.
+1. Note the start time in Pacific time. Confirm this folder is a checkout
+   (`git rev-parse --show-toplevel` succeeds and `scripts/ledger.py` exists);
+   otherwise stop and report. Then `git push` any unpushed ledger commits from
+   earlier runs and `git pull --ff-only origin master` so `data/supporters.csv`
+   is current; if either fails, continue with local data and note it. Remove
+   a stale `tmp-build/` if one exists.
 2. Read the last three ledger entries and the experiment registry:
    ```bash
    python3 scripts/ledger.py show --skill patreon-growth --last 3
@@ -128,6 +133,8 @@ Guardrails, all of them, every run:
 - No pledge amounts tied to names in any committed file.
 - Site edits keep the existing section patterns and Tailwind classes
   described in `agents.md` and must pass `python3 -m pytest tests/`.
+- Stop new work after 15 minutes. Write a `partial` entry with a `next:` line
+  and exit; measurement and ledger always complete, actions can wait.
 
 ## Step 4: Ledger and commit (every run)
 
@@ -160,6 +167,10 @@ git add .claude/skills/patreon-growth/ index.html
 git commit -m "ledger(patreon-growth): <summary>"
 git push -u origin <current branch>
 ```
+
+If the push fails (no credentials in the sandbox), do not retry in a loop.
+Report "ledger commit unpushed"; the next run's preflight pushes it. Delete
+`tmp-build/` if this run created it.
 
 If the run changed `index.html`, say so plainly in the report: a push to
 `master` deploys the site.

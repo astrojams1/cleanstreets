@@ -16,7 +16,12 @@ Ref code for this skill: `CS-IP-MMDD`. Per-run send cap: 10 emails.
 
 ## Step 0: Preflight
 
-1. Note the start time in Pacific time (it goes on the ledger entry).
+1. Note the start time in Pacific time (it goes on the ledger entry). Confirm
+   this folder is a checkout (`git rev-parse --show-toplevel` succeeds and
+   `scripts/ledger.py` exists); otherwise stop and report. Then
+   `git push` any unpushed ledger commits from earlier runs and
+   `git pull --ff-only origin master`; if either fails, continue and note it.
+   Remove a stale `tmp-build/` if one exists.
 2. Read the last three ledger entries for continuity:
    ```bash
    python3 scripts/ledger.py show --skill inbox-processor --last 3
@@ -119,6 +124,8 @@ patreon-growth skill picks it up on its next run.
 - Never unsubscribe, forward, or share a message outside this inbox.
 - If a Gmail operation fails, retry once; on the second failure, record the
   message as `error` in the details and keep going with the rest.
+- Stop new work after 15 minutes. Write a `partial` entry with a `next:` line
+  naming the first unhandled message ID and exit.
 
 ## Step 5: Ledger and commit (every run, including noop and aborted)
 
@@ -147,7 +154,9 @@ git commit -m "ledger(inbox-processor): <summary>"
 git push -u origin <current branch>
 ```
 
-If pushing is not possible in this environment, say so in the report.
+If the push fails (no credentials in the sandbox), do not retry in a loop.
+Report "ledger commit unpushed"; the next run's preflight pushes it. Delete
+`tmp-build/` if this run created it.
 
 ## Run report
 
