@@ -1,0 +1,11 @@
+{
+  "synced_at": null,
+  "campaign_id": "4769349",
+  "active_patrons": null,
+  "declined_patrons": null,
+  "former_patrons": null,
+  "followers": null,
+  "mrr_usd": null,
+  "total_members": null,
+  "note": "Placeholder until the Update Patreon stats workflow runs with the OP_SERVICE_ACCOUNT_TOKEN secret."
+}
