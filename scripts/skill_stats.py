@@ -78,8 +78,18 @@ def skill_stats(d: Path, since: datetime | None) -> dict:
     error_lines = [dl for e in entries for dl in e["details"] if dl.lower().startswith(("error", "note"))]
 
     last = entries[-1] if entries else None
+
+    # Bloat signals: how much text a run must follow, and how many things it tracks.
+    skill_md = d / "SKILL.md"
+    md_text = skill_md.read_text(encoding="utf-8") if skill_md.exists() else ""
+    ref_lines = sum(p.read_text(encoding="utf-8").count("\n") + 1 for p in (d / "references").glob("**/*.md")) if (d / "references").exists() else 0
+    metric_keys = sorted({k for e in entries for k in e["metrics"]})
     return {
         "skill": d.name,
+        "skill_md_lines": md_text.count("\n") + 1 if md_text else 0,
+        "steps": len(re.findall(r"^## Step \d", md_text, re.M)),
+        "reference_lines": ref_lines,
+        "metric_keys": len(metric_keys),
         "runs_total": all_runs,
         "runs_in_window": len(entries),
         "outcomes": dict(outcomes),
@@ -152,6 +162,8 @@ def cmd_stats(args, root: Path) -> int:
     for r in results:
         print(f"{r['skill']}: {r['runs_in_window']} runs in window ({r['runs_total']} total), "
               f"outcomes {r['outcomes']}, actions/run {r['actions_per_run']}, zero-action runs {r['zero_action_runs']}")
+        print(f"    size: SKILL.md {r['skill_md_lines']} lines, {r['steps']} steps, "
+              f"references {r['reference_lines']} lines, {r['metric_keys']} metric keys")
         for k, t in r["metric_trend"].items():
             if t["first"] is not None:
                 print(f"    {k}: {t['first']:g} -> {t['last']:g} over {t['samples']} runs")

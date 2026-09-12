@@ -2,7 +2,7 @@
 name: inbox-processor
 description: "Process the Clean Streets inbox (james@cleanstreets.io): sweep every unhandled inbound email, classify it (intake-form submission, patron or Patreon notice, service request, partner or community thread, press, vendor pitch, automated notice), reply as James where a standard reply fits, archive noise, flag the rest for James, and record every message in the skill ledger. Use this whenever the user says 'process my inbox', 'check the clean streets email', 'clear the inbox', 'any new emails', 'reply to that email', 'what came in', or on a scheduled inbox sweep, even if they don't name the skill."
 metadata:
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Inbox Processor
@@ -35,11 +35,17 @@ Ref code for this skill: `CS-IP-MMDD`. Per-run send cap: 10 emails.
 
 ## Step 1: Sweep
 
-Search for candidate messages:
+Search for candidate messages. Do not restrict to the inbox: a message
+archived by hand or by another tool is still unhandled until this ledger
+says otherwise (a September 3 new-patron notification was archived unseen
+and missed a welcome; run 0001 could not find it).
 
 ```
-in:inbox newer_than:7d -from:cleanstreets.io -in:sent
+newer_than:7d -from:cleanstreets.io -in:sent -in:draft
 ```
+
+If the previous ledger entry is older than 7 days, widen `newer_than` to
+cover the gap since that entry, up to 30 days.
 
 Then, for every result, check whether the ledger already has it:
 
@@ -180,3 +186,10 @@ Ledger: run NNNN appended and committed (or: not pushed, reason)
 - Does not delete mail, change filters, or manage labels beyond starring flags.
 - Does not create tasks for James to review drafts; the report and the draft
   itself are the hand-off.
+
+## Changes
+
+- 2026-09-11 v1.1: sweep no longer restricted to `in:inbox`, and widens to
+  the gap since the last run. Evidence: a new-patron notification from
+  September 3 sat archived and unhandled; run 0001's inbox-only sweep could
+  not see it and the patron got no welcome.

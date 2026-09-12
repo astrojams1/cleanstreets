@@ -2,7 +2,7 @@
 name: skill-improver
 description: "Review how the other skills in this repository have performed, using their ledgers and files as evidence, and edit those skills to perform better: fix instructions that runs ignore, remove references to things that don't exist, trim bloat, tighten or add policy where the ledger shows repeated friction, and flag environment problems that no skill edit can fix. Use whenever the user asks to improve, tune, audit, review, or clean up the skills, says a skill 'keeps doing X', asks 'are the skills working', 'why does it keep failing', 'clean up the junk', or on the scheduled weekly review, even if they don't name the skill."
 metadata:
-  version: "1.1"
+  version: "1.2"
 ---
 
 # Skill Improver
@@ -99,6 +99,22 @@ Apply the playbook's fix for each finding. Rules that bind every edit:
   heading at the end of that SKILL.md saying what changed and which runs
   justified it.
 
+## Step 3c: Split bloated skills
+
+A skill that keeps growing does more per run and follows less of its own
+text. `skill_stats.py stats` reports `skill_md_lines`, `steps`,
+`reference_lines`, and `metric_keys` per skill so bloat is measured, not
+felt. When two or more of the bloat signals in
+`references/split-procedure.md` hold across the last 5 runs, split the
+skill in that run following the procedure there: carve the secondary
+responsibility into a new skill with its own ledger and ref code, define
+the hand-off contract through ledger lines, shrink the parent, update the
+README tables, and **create the new skill's Routine** with the Claude Code
+Remote `create_trigger` tool (fresh session, the README prompt template,
+the parent's connectors, a staggered cron). If that tool is absent or
+denied, the exact Routine settings go in the report for James. The same
+file covers the merge rule for skills that turned out too small.
+
 ## Step 3b: Improve yourself
 
 This skill is judged by whether its edits make other skills better, and it
@@ -156,6 +172,8 @@ python3 scripts/ledger.py add --skill skill-improver \
   --metric self_improved=<n> --metric self_no_change=<n> --metric self_worse=<n> \
   --detail "edit:<skill> | <file> | <what changed> | runs <ids>" \
   --detail "edit:skill-improver | <file> | <what changed in yourself and why>" \
+  --detail "split:<parent> | <new skill> | <why, runs cited>" \
+  --detail "routine:<new skill> | created <trigger id> <cron> | needs James" \
   --detail "verdict:<skill> | <edit from last run> | improved|no_change|worse" \
   --detail "env | <finding only James can fix>" \
   --detail "proposal | <guardrail loosening or schedule change for James to decide>" \
@@ -192,13 +210,16 @@ Ledger: run NNNN appended and committed
 
 - Does not run the other skills or act on their behalf (no email, no site
   edits outside `.claude/skills/`, `scripts/`, and `tests/`).
-- Does not create or change Routines.
+- Does not change or delete existing Routines; it only creates one for a
+  skill it split out (Step 3c).
 - Does not edit any `LEDGER.md`, ever.
 - Does not exempt itself: Step 3b applies the same evidence and guardrail
   rules to this skill, and James can audit that with this skill's ledger.
 
 ## Changes
 
+- 2026-09-11 v1.2: added Step 3c (bloat signals, split procedure, Routine
+  creation for the new skill, merge rule). Requested by James.
 - 2026-09-11 v1.1: added Step 3b (self-review: score prior edits, fix the
   playbook, codify repeated lint classes, review own ledger, bounded
   self-edits with revert rule). Requested by James after run 0001.
