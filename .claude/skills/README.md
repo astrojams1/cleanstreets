@@ -151,6 +151,27 @@ Scratch files go in `tmp-build/` inside the checkout (git-ignored) and are
 removed at the end of the run. Keep the two schedules from starting within the
 same five minutes, since both push to master.
 
+### Routine prompt template
+
+Every Clean Streets Routine uses this prompt with `<skill>` filled in, so a
+new skill (added by James or split out by skill-improver) gets an identical
+run shape:
+
+```
+Run the Clean Streets <skill> skill end to end. This is an unattended scheduled run: do not ask questions; make reasonable choices and state them in the report.
+
+1. Bootstrap: `curl -fsSL https://raw.githubusercontent.com/astrojams1/cleanstreets/master/scripts/bootstrap_run.sh | bash` then work in /tmp/cleanstreets. If it prints ERROR, stop and report; note any WARN lines in the report.
+2. Read .claude/skills/README.md and .claude/skills/<skill>/SKILL.md (and its references/), then follow the SKILL.md steps exactly, including any account guard, then the ledger entry with `python3 scripts/ledger.py add`, `bash scripts/run_tests.sh`, `python3 scripts/ledger.py check`, commit, and `git push origin master`.
+3. If the push fails, report "ledger commit unpushed" once, include the full ledger entry text in the report, and stop; do not retry in a loop.
+4. Stop new work after 15 minutes; write a `partial` entry with a `next:` line.
+5. Finish with the run report structure from SKILL.md. Remove tmp-build/ if created.
+```
+
+Routine settings: fresh session per run, connectors matching the skill's
+needs (Gmail for anything that reads or sends mail), push notifications on,
+cron in `CRON_TZ=America/Los_Angeles`, staggered at least 5 minutes from
+every other Clean Streets Routine.
+
 ## Adding a new skill
 
 1. Create `.claude/skills/<name>/SKILL.md` with `name`, a pushy `description`
@@ -159,4 +180,7 @@ same five minutes, since both push to master.
 2. Run `python3 scripts/ledger.py init --skill <name>`.
 3. Give the skill a two-letter ref code and add it to the list above.
 4. Make its final step the ledger entry plus the commit.
-5. Run `python3 -m pytest tests/test_skill_ledgers.py` before committing.
+5. Run `python3 scripts/skill_stats.py lint` and `bash scripts/run_tests.sh`
+   before committing.
+6. Create its Routine from the template above and add a row to the Routines
+   table in this file.

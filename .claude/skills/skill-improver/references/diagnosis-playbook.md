@@ -22,6 +22,8 @@ new pattern appears twice.
 | Lint: path does not exist | Junk or drift from another tool or a rename | Delete the reference or point it at the real file | | |
 | Lint: SKILL.md over budget | Accreted instructions | Move detail to references; delete steps no run has exercised in 10 runs | | |
 | Hand-offs emitted but never consumed | Consumer skill doesn't read the producer's ledger | Add the read to the consumer's Measure or Sweep step with the exact grep | | |
+| Two or more bloat signals over 5 runs (size, mixed cadences, time-cap partials with actions left, unused actions, too many metrics) | One skill carrying two jobs | Split per SKILL.md Step 3c: new skill, ledger, hand-off contract, README rows, Routine | | |
+| A sweep or search misses items that were handled elsewhere (archived, labeled, read) | Query filters on mailbox state instead of the ledger | Remove the state filter; the ledger is the only dedup gate (inbox-processor v1.1, 2026-09-11) | | |
 
 ## Facts about this repository the reviewer should know
 
