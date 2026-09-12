@@ -133,6 +133,13 @@ is the only consumer of the Patreon key today and emits counts only.
 `bash scripts/bootstrap_run.sh` reports whether a secret is resolvable and
 from which source.
 
+The simplest deployment needs no token on any agent platform: the
+"Update Patreon stats" GitHub workflow (`.github/workflows/patreon_stats.yml`)
+runs daily with `OP_SERVICE_ACCOUNT_TOKEN` as a repository secret and commits
+`data/patreon_stats.json`, which the site serves at
+`https://www.cleanstreets.io/data/patreon_stats.json`. patreon-growth reads
+that file first and only calls the API when the file is older than 36 hours.
+
 ## Running on a schedule (Claude Code Routines)
 
 The skills run as Routines in Claude Code on the web (claude.ai/code, Routines).
