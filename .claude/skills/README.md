@@ -97,7 +97,8 @@ Secrets and caches belong in `.claude/data/`, which is git-ignored.
   this topic, do not reply again.
 - **Ref codes.** Every outbound email carries a ref code in the signature so a
   reply can be routed back to the skill that sent it: `CS-<XX>-<MMDD>` where
-  `XX` is the skill code (inbox-processor `IP`, patreon-growth `PG`) and
+  `XX` is the skill code (inbox-processor `IP`, patreon-growth `PG`,
+  skill-improver `SI`, which sends no email) and
   `MMDD` is the send date. Every Patreon link we share carries `?ref=<source>`
   (see the patreon-growth playbook for the registry).
 - **Signature.** Send as `text/html`. End the body with the signature and a
@@ -123,6 +124,7 @@ committed. Two Routines exist:
 |---|---|---|
 | Clean Streets: inbox-processor | hourly, 7:00 to 17:00 | inbox-processor |
 | Clean Streets: patreon-growth | daily, 9:15 | patreon-growth |
+| Clean Streets: skill-improver | weekly, Sunday 8:00 | skill-improver |
 
 Each Routine's prompt does the same four things:
 
