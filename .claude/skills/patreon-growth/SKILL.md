@@ -58,7 +58,9 @@ Concurrent experiments: at most 3. Touches per contact, ever: 3.
 
 - Decide every experiment whose window has ended (`won`, `lost`,
   `inconclusive`) against its kill criterion; update
-  `references/experiments.md`.
+  `references/experiments.md`. A new experiment must clear the four-part
+  bar in that file (new people, an asset we already have, a tracked
+  channel, scales if it works); the creator shift is the model.
 - Update the evidence column in `references/outreach-channels.md` for every
   channel that had sends or replies since the last run: sends, replies,
   conversions. A channel that hits its kill signal is paused in that file
