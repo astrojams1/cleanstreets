@@ -12,10 +12,14 @@ to the bottom with the reason they were retired.
   mentioned on the site. Use these as the concrete-outcome anchors.
 - Impact totals come from `data/impact.csv` (hours funded, pounds removed,
   miles cleaned). The site shows the running totals.
-- Patreon page: `https://www.patreon.com/cleanstreets`. The site currently
-  links `https://www.patreon.com/join/cleanstreets?` (hero, nav, mobile,
-  JSON-LD) and `https://www.patreon.com/bePatron?u=7366223` (footer) with no
-  ref codes. First sweep target.
+- Patreon page: `https://www.patreon.com/cleanstreets`. On-site buttons use
+  the checkout path `https://www.patreon.com/join/cleanstreets?ref=<source>`
+  (it lands on the pledge flow, not the profile); the JSON-LD `sameAs` entry
+  is the bare profile URL because it states identity, not a call to action.
+  Ref codes were added to every on-site link on 2026-09-11 (exp-001).
+- The public Patreon page returns 403 to unauthenticated fetches, so the
+  active patron count needs the API token; without it the skill reports the
+  supporter roll only.
 - Mission Local profiled Clean Streets in 2021; that article is the best
   third-party credibility link.
 

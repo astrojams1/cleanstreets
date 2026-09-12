@@ -58,8 +58,9 @@ def test_ledger_parses(skill_dir):
 def test_ledger_has_no_email_addresses(skill_dir):
     text = (skill_dir / "LEDGER.md").read_text(encoding="utf-8")
     hits = re.findall(r"[\w.+-]+@[\w-]+\.[\w.]+", text)
-    allowed = {"james@cleanstreets.io"}
-    assert not [h for h in hits if h not in allowed], f"{skill_dir.name}: ledger contains email addresses: {hits}"
+    # Our own mailboxes are not correspondent data; everything else is.
+    foreign = [h for h in hits if not h.lower().endswith("@cleanstreets.io")]
+    assert not foreign, f"{skill_dir.name}: ledger contains email addresses: {foreign}"
 
 
 def test_ledger_check_command_passes():

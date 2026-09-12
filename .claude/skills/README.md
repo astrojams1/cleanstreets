@@ -78,8 +78,8 @@ write into a ledger: full email addresses, phone numbers, street addresses,
 message bodies, pledge amounts tied to a named person, or anything a
 correspondent would not expect to see on a public page. Identify people by
 first name plus last initial (`Dana R`), senders by domain (`gmail.com`), and
-messages by Gmail ID. Secrets and caches belong in `.claude/data/`, which is
-git-ignored.
+messages by Gmail ID. Our own `@cleanstreets.io` addresses are fine to name.
+Secrets and caches belong in `.claude/data/`, which is git-ignored.
 
 ## Shared conventions for skills that touch email
 
