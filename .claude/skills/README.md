@@ -112,43 +112,42 @@ Clean Streets<br>
 - **Send caps.** Each skill states its own per-run cap. Beyond the cap, leave a
   draft instead of sending, and note it in the ledger.
 
-## Running on a schedule (Claude Cowork)
+## Running on a schedule (Claude Code Routines)
 
-These skills are run as Cowork scheduled tasks from a project folder that is a
-git clone of `astrojams1/cleanstreets`. What that implies:
+The skills run as Routines in Claude Code on the web (claude.ai/code, Routines).
+Each firing starts a fresh session in the environment that has this repository
+and the Gmail connector, so nothing persists between runs except what is
+committed. Two Routines exist:
 
-- **The folder must be a checkout.** Preflight runs `git rev-parse --show-toplevel`
-  and checks that `scripts/ledger.py` exists. If either fails, stop and report;
-  there is no ledger to write to.
-- **Sync before measuring.** Preflight runs `git pull --ff-only origin master`
-  so the run sees the daily supporter update. If the pull fails (offline, no
-  credentials), continue with local data and say so in the report.
-- **Commits always, pushes when possible.** Every run commits its ledger. If
-  `git push` fails because the sandbox has no GitHub credentials, do not
-  retry in a loop: report "N ledger commit(s) unpushed" and let the next run's
-  preflight try `git push` again first. James can also push from his machine.
-- **Scratch files go in `tmp-build/` inside the project**, never `/tmp` (not
-  writable in the Cowork sandbox) and never under `.claude/data/`. Delete
-  `tmp-build/` at the end of the run and, defensively, at the start.
-- **Gmail tools.** In Cowork the Clean Streets Gmail MCP exposes
-  `cleanstreets_gmail_get_profile`, `cleanstreets_gmail_search`,
-  `cleanstreets_gmail_read_message`, `cleanstreets_gmail_read_thread`,
-  `cleanstreets_gmail_create_draft`, `cleanstreets_gmail_send_draft`, and
-  `cleanstreets_gmail_apply_label`. Arguments are nested under a single
-  `params` object. If a differently named Gmail tool is connected, use it
-  with the same operations.
-- **Time cap.** A scheduled run stops after 15 minutes of work, writes a
-  `partial` ledger entry with a `next:` line, and exits. Unfinished items are
-  not lost; the next run starts from that line.
-- **Do not overlap.** Both skills commit to the same repository. Stagger the
-  schedules so they never start within the same five minutes.
-
-Suggested schedules and task prompts:
-
-| Skill | Cadence | Task prompt |
+| Routine | Schedule (PT) | Skill |
 |---|---|---|
-| inbox-processor | every 30 minutes, 7:00 to 17:00 PT | "Run the inbox-processor skill in this folder (.claude/skills/inbox-processor/SKILL.md) end to end, including the ledger entry and commit." |
-| patreon-growth | daily at 09:15 PT | "Run the patreon-growth skill in this folder (.claude/skills/patreon-growth/SKILL.md) end to end, including the ledger entry and commit." |
+| Clean Streets: inbox-processor | hourly, 7:00 to 17:00 | inbox-processor |
+| Clean Streets: patreon-growth | daily, 9:15 | patreon-growth |
+
+Each Routine's prompt does the same four things:
+
+1. **Bootstrap.** `curl -fsSL https://raw.githubusercontent.com/astrojams1/cleanstreets/master/scripts/bootstrap_run.sh | bash`
+   clones or updates a clean checkout of master at `/tmp/cleanstreets`,
+   installs test dependencies, validates the ledgers, and prints `OK`, `WARN`,
+   or `ERROR` lines. The run stops on `ERROR` and reports any `WARN`.
+2. **Run the skill** from that checkout, following SKILL.md exactly, using
+   whichever Gmail tool the session has (the account guard still applies).
+3. **Ledger, tests, commit, push** to master with `scripts/ledger.py add`,
+   `scripts/run_tests.sh`, `scripts/ledger.py check`, then `git push origin master`.
+   A failed push is reported once as "ledger commit unpushed" with the full
+   entry text in the report, never retried in a loop.
+4. **Time cap** of 15 minutes; past it the run writes a `partial` entry with a
+   `next:` line and exits.
+
+Requirements the Routine itself must satisfy (set in the Routine's settings,
+not in this repository): the Gmail connector attached, and, for active patron
+counts, `PATREON_ACCESS_TOKEN` as an environment variable. Without Gmail the
+inbox skill writes an `aborted` entry and stops; without the token the growth
+skill reports the supporter roll only.
+
+Scratch files go in `tmp-build/` inside the checkout (git-ignored) and are
+removed at the end of the run. Keep the two schedules from starting within the
+same five minutes, since both push to master.
 
 ## Adding a new skill
 
