@@ -115,15 +115,16 @@ Clean Streets<br>
 
 ## Secrets
 
-Secrets live in 1Password, in the vault **Clean Streets Automation**, and
-nowhere in this repository. `scripts/cs_secrets.py` resolves a named secret in
+Secrets live in 1Password, in the vault **API tokens**, and nowhere in this
+repository. `scripts/cs_secrets.py` resolves a named secret in
 this order and never prints it:
 
 1. An environment variable (`PATREON_ACCESS_TOKEN`).
 2. 1Password, when the platform running the skill holds
    `OP_SERVICE_ACCOUNT_TOKEN` for a read-only service account on that vault.
    The reference for the Patreon key is
-   `op://Clean Streets Automation/Patreon creator token/credential`.
+   `op://API tokens/Patreon creator token/credential`. The service account
+   must have read access to that vault.
 3. A git-ignored file under `.claude/data/` (`patreon-config.json`).
 
 So each platform (a Claude Routine, an OpenAI environment, a GitHub Actions
