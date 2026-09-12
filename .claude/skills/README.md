@@ -113,6 +113,26 @@ Clean Streets<br>
 - **Send caps.** Each skill states its own per-run cap. Beyond the cap, leave a
   draft instead of sending, and note it in the ledger.
 
+## Secrets
+
+Secrets live in 1Password, in the vault **Clean Streets Automation**, and
+nowhere in this repository. `scripts/cs_secrets.py` resolves a named secret in
+this order and never prints it:
+
+1. An environment variable (`PATREON_ACCESS_TOKEN`).
+2. 1Password, when the platform running the skill holds
+   `OP_SERVICE_ACCOUNT_TOKEN` for a read-only service account on that vault.
+   The reference for the Patreon key is
+   `op://Clean Streets Automation/Patreon creator token/credential`.
+3. A git-ignored file under `.claude/data/` (`patreon-config.json`).
+
+So each platform (a Claude Routine, an OpenAI environment, a GitHub Actions
+workflow) is given only the service-account token as an environment
+variable, and the same scripts work everywhere. `scripts/patreon_stats.py`
+is the only consumer of the Patreon key today and emits counts only.
+`bash scripts/bootstrap_run.sh` reports whether a secret is resolvable and
+from which source.
+
 ## Running on a schedule (Claude Code Routines)
 
 The skills run as Routines in Claude Code on the web (claude.ai/code, Routines).
@@ -143,9 +163,9 @@ Each Routine's prompt does the same four things:
 
 Requirements the Routine itself must satisfy (set in the Routine's settings,
 not in this repository): the Gmail connector attached, and, for active patron
-counts, `PATREON_ACCESS_TOKEN` as an environment variable. Without Gmail the
-inbox skill writes an `aborted` entry and stops; without the token the growth
-skill reports the supporter roll only.
+counts, `OP_SERVICE_ACCOUNT_TOKEN` (or `PATREON_ACCESS_TOKEN` directly) as an
+environment variable. Without Gmail the inbox skill writes an `aborted` entry
+and stops; without a token the growth skill reports the supporter roll only.
 
 Scratch files go in `tmp-build/` inside the checkout (git-ignored) and are
 removed at the end of the run. Keep the two schedules from starting within the
