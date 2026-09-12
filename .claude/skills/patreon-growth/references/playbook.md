@@ -22,6 +22,13 @@ to the bottom with the reason they were retired.
   supporter roll only.
 - Mission Local profiled Clean Streets in 2021; that article is the best
   third-party credibility link.
+- 2026-09-12: in the Claude Routine sandbox, `OP_SERVICE_ACCOUNT_TOKEN` was
+  present but the 1Password SDK resolve call raised (auth or network), and no
+  `op` CLI binary was on PATH, so `scripts/cs_secrets.py` fell through to
+  WARN with no Patreon token. Both `patreon_stats.py` and per-patron email
+  lookups need this fixed platform-side (valid token, network egress to
+  1Password, or the `op` CLI installed) before this skill can measure active
+  counts or email specific patrons from that environment.
 
 ## Ref-code registry
 
