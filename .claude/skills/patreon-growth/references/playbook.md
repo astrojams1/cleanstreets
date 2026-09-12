@@ -28,6 +28,21 @@ here.
   of it is in this ledger. The prior-correspondence check must search the
   contact's address regardless of which of our addresses sent, and it
   caught five duplicates on 2026-09-11 before any send.
+- **Win-back and referral pools are already fully swept.** Run 0004
+  (2026-09-12) checked all 17 former patrons with a resolvable email
+  against Gmail: every one had already been win-back'd by `jane@` and/or
+  `james@`/`hello@` between March and July 2026, most to the 3-touch
+  limit. Separately, essentially every active patron who joined before
+  2026-06-29 got a referral ask that day from `james@`/`hello@` (a mass
+  "thank you + one ask" send). Net effect: this skill will find almost no
+  fresh win-back or referral candidates until either new patrons lapse or
+  new patrons join after the last mass-send date. Check the join/lapse
+  date against 2026-06-29 (referral) before spending time on a candidate
+  who's probably already covered.
+- **A chiropractic-office contact on Valencia St is dead**: they replied
+  2026-08-30 that they've been closed at that address for six years. Stop
+  contacting that business; the outreach-channels merchant list has no way
+  to self-correct this, so future runs should recognize it on sight.
 - The website gets a couple dozen visitors a month. It cannot produce a
   readable experiment signal and is not a growth lever (James, 2026-09-11).
 

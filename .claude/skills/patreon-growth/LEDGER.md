@@ -45,3 +45,31 @@ Format and privacy rules: `.claude/skills/README.md`.
   - candidate:stephaniec | skipped | already sent a referral ask (2026-06-26 and 2026-07-24)
   - handoffs | none from inbox-processor this run
 - next: Find and coordinate with whichever skill sends from jane@cleanstreets.io (likely patron-reactivation or cold-lead-followup) so patron outreach shares one dedup record; once that's resolved, patreon-growth can safely pick re-engagement/referral targets from live API data. On 2026-09-25 decide exp-001, on 2026-09-26 decide exp-002 and exp-004.
+
+## 2026-09-12T09:16-07:00 | run 0004 | success
+- actions: 21
+- summary: 26 active patrons (unchanged, source=api); win-back pool fully exhausted (all 17 former patrons w/ email already touched by jane@/james@); replied to a live HOA daily-service lead; sent 1 referral ask to the one active patron never yet asked
+- metrics: active_patrons=26 mrr_usd=1111 joined_7d=0 left_7d=0 source=api sends=2 first_touches=1 followups=0 replies=1 converted=0 prospects_open=0
+- details:
+  - prospect:karenh | referral | first_touch | 2026-09-12 | active patron since Jul, never asked; ref referral-karenh
+  - prospect:samm | warm-inbound | replied | 2026-09-12 | HOA exploring daily paid service in the Hub; escalated to James, no price/date committed
+  - candidate:benb | skipped | already win-backed by jane@, 3 touches, closed
+  - candidate:daves | skipped | already contacted by james@ on this topic, 2026-01-23
+  - candidate:bernardom | skipped | explicitly cancelled and confirmed closed with james@, 2025-03
+  - candidate:kaii | skipped | already win-backed by jane@, 3 touches, closed
+  - candidate:tobiasw | skipped | already win-backed by jane@, 3 touches, closed
+  - candidate:scottb | skipped | already win-backed by jane@, 3 touches, closed
+  - candidate:beckiew | skipped | already win-backed by jane@ and rejoined, closed
+  - candidate:nattyc | skipped | already contacted by james@, 2 touches
+  - candidate:rebekab | skipped | already win-backed by jane@, 2 touches
+  - candidate:traceys | skipped | already contacted by jane@ and james@
+  - candidate:elizabethb | skipped | already win-backed by jane@, 2 touches
+  - candidate:danielg | skipped | already win-backed by jane@, 2 touches
+  - candidate:mikeo | skipped | already win-backed by jane@, 3 touches, closed
+  - candidate:vellab | skipped | already win-backed by jane@, 2 touches
+  - candidate:hartfordproperties | skipped | already win-backed by jane@ and james@, 3 touches, closed
+  - candidate:jamesf,zigc,alexandriab,davec,caroline,livm | skipped | all already sent a referral ask in the 2026-06-29 mass send
+  - note | jane@/hello@/james@ mass-swept win-back (Mar-Jul) and referral asks (2026-06-29) across nearly every named contact; playbook and outreach-channels updated so future runs check join/lapse date against those dates before spending time
+  - note | a merchant contact on sfcustomchiro.com replied the business closed 6 years ago at that address; flagged as a dead merchant contact in the playbook
+  - handoffs | none from inbox-processor this run
+- next: For James: follow up on the Hub HOA's daily-service interest (prospect:samm, gmail.com) with real numbers -- this is outside Patreon-growth's scope and time-sensitive (their reply was 8 days old before this run answered it to hold the thread). Otherwise: win-back and referral channels have almost nothing left until new lapses/joins occur; next run should try channels 4-7 (merchants, neighborhood groups, property managers, creator shifts) which weren't worked this run.
