@@ -129,7 +129,9 @@ Guardrails, every run:
   events. No site copy or layout changes; only ref-code repair when a
   Patreon link on the site has lost its `?ref=`.
 - **Close paid-service leads yourself** from `.claude/skills/service-policy.md`:
-  qualify, quote, take payment or note the invoice, confirm the start.
+  qualify, quote, take payment (Patreon link, or a PayPal invoice you create
+  and send with the PayPal connector), confirm payment from the Patreon
+  API or PayPal transactions, confirm the start.
   Ledger `service:<slug> | closed | <amount> | <block> | <start>`. James is
   notified by that line, not asked. A lead is never "escalated"; the only
   thing that goes to him is a physical task (scheduling the crew, paying a

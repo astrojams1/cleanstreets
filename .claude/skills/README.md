@@ -176,8 +176,10 @@ Each Routine's prompt does the same four things:
    `next:` line and exits.
 
 Requirements the Routine itself must satisfy (set in the Routine's settings,
-not in this repository): the Gmail connector attached, and, for active patron
-counts, `OP_SERVICE_ACCOUNT_TOKEN` (or `PATREON_ACCESS_TOKEN` directly) as an
+not in this repository): the Gmail connector attached; the PayPal connector
+attached for invoicing and payment confirmation (see
+`.claude/skills/service-policy.md`); and, for active patron counts,
+`OP_SERVICE_ACCOUNT_TOKEN` (or `PATREON_ACCESS_TOKEN` directly) as an
 environment variable. Without Gmail the inbox skill writes an `aborted` entry
 and stops; without a token the growth skill reports the supporter roll only.
 
