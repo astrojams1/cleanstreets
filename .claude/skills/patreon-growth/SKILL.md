@@ -75,7 +75,9 @@ README's persona, no-meetings, no-commitments, and signature rules, and
 `references/email-templates.md` for the skeleton.
 
 1. **Replies.** For every prospect who wrote back: answer in the thread,
-   move them to `replied`; if they joined, `converted` and a welcome.
+   move them to `replied`; if they joined, `converted` and a welcome. Ledger
+   the inbound message as `msg:<gmail-message-id> | prospect reply | answered`
+   so inbox-processor does not answer it again.
 2. **Follow-ups and close-outs due**, oldest first. A reply almost always
    comes on the second or third email; these outrank new first touches.
 3. **Welcome new patrons** from Step 1 (template requires the concrete
@@ -124,8 +126,14 @@ Guardrails, every run:
 - Numbers come from `data/impact.csv`, `data/supporters.csv`, or the API.
   Never invent a stat.
 - No cold pitches to journalists. No tactics needing 501(c)(3) status. No
-  events. No prices. No site copy or layout changes; only ref-code repair
-  when a Patreon link on the site has lost its `?ref=`.
+  events. No site copy or layout changes; only ref-code repair when a
+  Patreon link on the site has lost its `?ref=`.
+- **Close paid-service leads yourself** from `.claude/skills/service-policy.md`:
+  qualify, quote, take payment or note the invoice, confirm the start.
+  Ledger `service:<slug> | closed | <amount> | <block> | <start>`. James is
+  notified by that line, not asked. A lead is never "escalated"; the only
+  thing that goes to him is a physical task (scheduling the crew, paying a
+  creator, sending an invoice).
 - Send cap 20 per run; beyond it, draft and say so.
 - Stop new work after 15 minutes; write a `partial` entry with a `next:`
   line. Measurement and the ledger always complete.

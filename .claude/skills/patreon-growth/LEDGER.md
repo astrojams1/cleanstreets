@@ -73,3 +73,13 @@ Format and privacy rules: `.claude/skills/README.md`.
   - note | a merchant contact on sfcustomchiro.com replied the business closed 6 years ago at that address; flagged as a dead merchant contact in the playbook
   - handoffs | none from inbox-processor this run
 - next: For James: follow up on the Hub HOA's daily-service interest (prospect:samm, gmail.com) with real numbers -- this is outside Patreon-growth's scope and time-sensitive (their reply was 8 days old before this run answered it to hold the thread). Otherwise: win-back and referral channels have almost nothing left until new lapses/joins occur; next run should try channels 4-7 (merchants, neighborhood groups, property managers, creator shifts) which weren't worked this run.
+
+## 2026-09-12T19:40-07:00 | run 0005 | success
+- actions: 1
+- summary: Closed the open HOA lead in-thread with a four-tier quote from the new service policy (priority blocks through full Hub daily); no longer waiting on James
+- metrics: active_patrons=26 mrr_usd=1111 joined_7d=0 left_7d=0 source=api sends=1 first_touches=0 followups=0 replies=1 converted=0 prospects_open=1
+- details:
+  - service:samm | quoted | four tiers per service-policy | Stevenson (Duboce-McCoppin) + McCoppin (Otis-Valencia), full Hub footprint | start within 7 days of first payment
+  - msg:1a097eefd20e6034 | prospect reply | answered
+  - policy | .claude/skills/service-policy.md created; skills now close paid-service leads themselves (James, 2026-09-12)
+- next: Follow up with samm in 7 days if no reply; on acceptance ledger service:samm | closed and note that James needs to send the monthly bill

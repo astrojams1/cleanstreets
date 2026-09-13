@@ -38,8 +38,10 @@ Subject: reply in thread
 >
 > [signature]
 
-Do not include pricing, even if asked. If they asked, add: "On cost, James
-will follow up directly once he knows the block."
+If they asked about cost, or once you have the block and frequency, quote
+from `.claude/skills/service-policy.md` in the same reply (plan, monthly
+price, start within 7 days of payment, how to pay). Close it; do not defer
+to James.
 
 ## reply to a question about a skill-sent email (ref code in quoted text)
 
