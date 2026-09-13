@@ -83,19 +83,22 @@ Follow-up (10+ days): one new fact (a recent cleanup nearby, a number from
 
 ## Block merchant (channel 4)
 
-First touch, dated and specific. Subject: `We cleaned your block this week`
+First touch. No dated cleanup claim — the skill has no block-level, dated
+record to cite, so don't invent one. Subject: `A paid cleaning crew for
+your block`
 
-> Hi there, I run Clean Streets, a small crew paid a living wage to clean
-> sidewalks in the Mission, funded by neighbors and businesses. We were on
-> [street] between [cross] and [cross] on [day] and cleared [what, briefly]
-> near [Business]. Wanted you to know, and to ask: is there a stretch by
-> your door you'd want us to keep after? Some businesses back the block at
+> Hi there, I run Clean Streets, a small crew paid a living wage to keep
+> sidewalks clean in the Mission, funded by neighbors and businesses.
+> [Street] between [cross] and [cross] is one of the stretches we cover.
+> Is there a corner by your door you'd want us to keep after? Some
+> businesses back their block at
 > https://www.patreon.com/cleanstreets?ref=merchant.
 
-Follow-up (10+ days): a second dated cleanup on their block plus the same
-question. Close-out (21+ days): "one more note, then I'll leave your inbox
-in peace" and an offer to share a card by the register or a line in their
-newsletter.
+Follow-up (10+ days): one real, undated fact from `data/impact.csv`
+(total hours funded, pounds picked up) plus the same question — never a
+specific date or street claim we can't back. Close-out (21+ days): "one
+more note, then I'll leave your inbox in peace" and an offer to share a
+card by the register or a line in their newsletter.
 
 ## Neighborhood group (channel 5)
 
@@ -108,18 +111,20 @@ Zero-ask first touch. Subject: `Hi from a Mission neighbor near [location]`
 > action: https://missionlocal.org/2021/09/the-people-taking-san-franciscos-trash-into-their-own-hands/
 > and https://www.cleanstreets.io. No ask, just glad you're out there.
 
-Follow-up (10+ days): one dated cleanup near their blocks, then "if it'd
-ever be useful to mention us to your members, this is the link:
+Follow-up (10+ days): one real, undated fact about the crew (total hours
+funded, pounds picked up, from `data/impact.csv`), then "if it'd ever be
+useful to mention us to your members, this is the link:
 https://www.patreon.com/cleanstreets?ref=neighborhood." Close-out: one
 line.
 
 ## Property manager or HOA (channel 6)
 
-Subject: `Sidewalks on [street]: a neighbor-funded option`
+No claim of already covering their street — the skill has no block-level
+record to cite. Subject: `Sidewalks on [street]: a neighbor-funded option`
 
-> Hi [name or team], I run Clean Streets, a paid crew funded by Mission
-> residents and businesses that cleans sidewalks block by block. We've been
-> covering [street] recently and [building] is on the stretch. If clean
+> Hi [name or team], I run Clean Streets, a paid crew that keeps Mission
+> sidewalks clean, funded directly by neighbors and businesses rather than
+> the city. [Building] on [street] is in the area we work. If clean
 > frontage matters to your residents, some buildings back their block at
 > https://www.patreon.com/cleanstreets?ref=property; happy to answer
 > questions by email.
