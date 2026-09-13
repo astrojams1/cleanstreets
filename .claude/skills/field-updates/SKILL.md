@@ -76,7 +76,11 @@ expired: ledger the post as `drafted` with the full text and report the
 cookie for James. Exit 3 means Patreon's editor changed: read the
 screenshot, fix the selectors in `scripts/patreon_post.mjs` if the fix is
 obvious, otherwise ledger `drafted` and describe what the screenshot shows
-so the next run (or skill-improver) can fix it.
+so the next run (or skill-improver) can fix it. Exit 1 with
+`ERR_CONNECTION_RESET` means the sandbox is not letting the browser reach
+Patreon at all (seen 2026-09-12 in the Claude Code sandbox: curl passes
+through the proxy, Chromium does not); ledger `drafted` with the full
+text, say so in the report, and do not retry in the same run.
 
 Once a month, the growth skill's impact post is also published this way;
 if `.claude/skills/patreon-growth/references/posts/` has a draft newer
