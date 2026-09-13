@@ -112,8 +112,9 @@ Reply composition rules (all of them, every time):
    email is fastest and ask the question that a call would have answered.
 4. Prices, coverage, start dates, and payment come from
    `.claude/skills/service-policy.md`. A service request is closed in the
-   thread from that file: qualify, quote, take payment or note the invoice,
-   confirm. Never "James will follow up on cost"; the skill is James here.
+   thread from that file: qualify, quote, take payment (Patreon link or a
+   PayPal invoice sent with the PayPal connector), confirm. Never "James
+   will follow up on cost"; the skill is James here.
 5. Signature block from the README with ref code `CS-IP-MMDD` (today's date),
    body ends with `</p>`, no scaffolding text of any kind in the body.
 6. Reread the draft as the recipient before sending. If it reads like a form

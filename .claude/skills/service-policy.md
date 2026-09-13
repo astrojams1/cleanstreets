@@ -49,10 +49,10 @@ the same rates and say the start may take an extra week for routing.
    a one-time cleanup.
 3. **Take payment.** Default is a Patreon monthly pledge at the plan
    amount (`https://www.patreon.com/cleanstreets?ref=service`), which
-   also lists them as a supporter. PayPal and Zelle are accepted too; ask
-   which they prefer and give the details from the Payment section below.
-   No invoices unless the payer's accounting requires one; then ledger
-   `service:<slug> | invoice-needed | <amount> | <block>` so James sends it.
+   also lists them as a supporter. For an HOA, property manager, or
+   business, or anyone who prefers PayPal, the skill sends a PayPal invoice
+   itself with the PayPal connector (see Payment below); Zelle on request.
+   Nothing about payment waits on James.
 4. **Confirm** in one line once they pay or accept, with the first service
    day, and ledger `service:<slug> | closed | <monthly amount> | <block> |
    <start date>`. The crew schedule is James's to arrange; the ledger line
@@ -72,14 +72,27 @@ the same rates and say the start may take an extra week for routing.
 
 ## Payment
 
-| Method | Details | Notes |
+| Method | How the skill does it | Notes |
 |---|---|---|
-| Patreon | `https://www.patreon.com/cleanstreets?ref=service`, custom pledge at the plan amount | Default; recurring; lists them as a supporter |
-| PayPal | James to fill in the PayPal address here | One-time or monthly |
-| Zelle | James to fill in the Zelle contact here | One-time or monthly |
+| Patreon | Link `https://www.patreon.com/cleanstreets?ref=service`, custom pledge at the plan amount | Default; recurring; lists them as a supporter |
+| PayPal invoice | PayPal connector: `create_bulk_invoices` (one invoice: product name = the plan, amount = the monthly price, due date = 7 days out, recipient = the payer's email and name, `business_name` = `Clean Streets`, `business_email` = the PayPal business email below), then `send_bulk_invoices` with the returned invoice id | Used for HOAs, property managers, businesses, or on request; one invoice per month of service |
+| PayPal payment link | Only James can create these (the tool opens a form for him); reuse an existing link from `list_payment_links` if one matches the plan | Optional |
+| Zelle | James to fill in the Zelle contact here | On request; until filled in, say the details follow in a reply |
 
-Until the PayPal and Zelle lines are filled in, offer them by name and
-say the details follow in a reply; ledger `service:<slug> | payment-details-needed`.
+PayPal business email for invoices: James to fill in here (the email on the
+Clean Streets PayPal account). Until it is filled in, use Patreon and
+ledger `service:<slug> | payment-details-needed`.
+
+**Confirming payment.** Patreon: the members API shows the new pledge.
+PayPal: `list_invoices` shows the invoice as PAID, or `list_transactions`
+for the last 31 days shows the amount. Zelle: James's bank, so ask him
+only when a Zelle payer says they paid. On confirmation, ledger
+`service:<slug> | paid | <amount> | <method>` and send the one-line
+confirmation with the first service day.
+
+The Routines must have the PayPal connector attached (Routine settings, same
+as Gmail) for the invoice and confirmation steps to work; without it the
+skill falls back to Patreon and ledgers `payment-details-needed`.
 - Asks for a service we don't sell: say so plainly and offer what we do.
 
 ## Who to notify
