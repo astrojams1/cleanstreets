@@ -47,13 +47,14 @@ newer_than:7d -from:cleanstreets.io -in:sent -in:draft
 If the previous ledger entry is older than 7 days, widen `newer_than` to
 cover the gap since that entry, up to 30 days.
 
-Then, for every result, check whether the ledger already has it:
+Then, for every result, check whether any skill's ledger already has it
+(patreon-growth records `msg:<id>` for every prospect reply it answers):
 
 ```bash
-python3 scripts/ledger.py seen --skill inbox-processor --key msg:<message-id>
+grep -q "msg:<message-id>" .claude/skills/*/LEDGER.md
 ```
 
-Exit 0 means handled on a previous run; skip it. The ledger is the only dedup
+Exit 0 means handled on a previous run or by another skill; skip it. The ledger is the only dedup
 gate. Do not rely on read state, labels, or inbox presence, since James reads
 mail on his phone and any of those can change without anything being handled.
 
@@ -109,7 +110,10 @@ Reply composition rules (all of them, every time):
    (`https://www.patreon.com/cleanstreets?ref=inbox-<category>`).
 3. No meetings or calls proposed or accepted. If they ask for one, reply that
    email is fastest and ask the question that a call would have answered.
-4. No prices, no service commitments, no dates. Those are James's to give.
+4. Prices, coverage, start dates, and payment come from
+   `.claude/skills/service-policy.md`. A service request is closed in the
+   thread from that file: qualify, quote, take payment or note the invoice,
+   confirm. Never "James will follow up on cost"; the skill is James here.
 5. Signature block from the README with ref code `CS-IP-MMDD` (today's date),
    body ends with `</p>`, no scaffolding text of any kind in the body.
 6. Reread the draft as the recipient before sending. If it reads like a form

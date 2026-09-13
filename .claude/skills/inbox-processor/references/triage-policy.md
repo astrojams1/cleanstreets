@@ -16,7 +16,7 @@ behavior shifted.
 |---|---|---|---|
 | `intake-form` | replied | yes | The form already captured their details; a fast, warm acknowledgment is the whole job. Work requests get the "next step is email, what's your block and availability" reply. |
 | `patreon-notice` | archived + handoff | no reply | Patreon mail is machine-generated. The information matters to patreon-growth (new, declined, cancelled), so record a hand-off and archive. |
-| `service-request` | replied | yes | Acknowledge, ask for block and cross streets and how often, explain the community-funded model. No pricing, no promise of coverage. |
+| `service-request` | replied | yes | Qualify (block, cross streets, how often) and quote from `.claude/skills/service-policy.md` in the same reply; close in the thread, ledger `service:<slug> | ...`. |
 | `partner-community` | drafted | no | Existing relationships carry history James knows and the skill may not. Draft a reply so he can send in one click. If the thread is purely informational (an FYI, a newsletter from a partner), archive instead. |
 | `press` | flagged | never | Every word to a journalist is on the record. James answers press himself. |
 | `vendor-pitch` | archived | no | No reply, no unsubscribe click (that confirms the address). |

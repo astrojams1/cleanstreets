@@ -8,7 +8,10 @@ Ground rules that apply to every channel: the prior-correspondence check
 (`from:<address> OR to:<address>`, any of our senders: james@, hello@,
 jane@); at most 3 touches per contact ever (first touch, follow-up at
 10 days or more, close-out at 21 days or more); never two contacts in one
-run from the same household or business; no meetings proposed; no prices.
+run from the same household or business; no meetings proposed. Prices,
+coverage, and start dates come from `.claude/skills/service-policy.md`;
+when a prospect asks for paid service, close it in the thread per that file
+rather than handing it to James.
 
 ## Channel table
 

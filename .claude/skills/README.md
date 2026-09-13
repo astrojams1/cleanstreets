@@ -90,8 +90,14 @@ Secrets and caches belong in `.claude/data/`, which is git-ignored.
   corporate gratitude phrases, no jargon, nothing a neighbor would not say.
 - **No meetings.** Never propose, accept, or confirm a call or in-person
   meeting. Move the conversation forward over email instead.
-- **No commitments James has not made.** Do not quote prices, promise service
-  on a block, promise dates, or speak for partners. Flag those for James.
+- **Close it yourself.** The skills run autonomously. Prices, coverage,
+  start dates, and how to pay come from `.claude/skills/service-policy.md`;
+  quote from it and close in the thread. James is notified after a close or
+  when an invoice must be sent, never asked to decide. The only things that
+  go to James are physical-world actions no skill can perform (paying a
+  creator, scheduling the crew, signing something) and anything the policy
+  file does not cover, and even then the skill sends the best answer it can
+  and notes the gap.
 - **Prior-correspondence check.** Before replying to anyone, search
   `from:<address> OR to:<address>`. If James (or a skill) already replied on
   this topic, do not reply again.
