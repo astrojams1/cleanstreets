@@ -40,6 +40,16 @@ def test_check_command_never_prints_the_secret(monkeypatch, capsys):
     assert "super-secret-value" not in out and "env" in out
 
 
+def test_get_prints_value_for_programs_only(monkeypatch, capsys):
+    monkeypatch.setenv("PATREON_SESSION_COOKIE", "cookie-value")
+    assert cs_secrets.main(["get", "patreon_session"]) == 0
+    assert capsys.readouterr().out == "cookie-value"
+    monkeypatch.delenv("PATREON_SESSION_COOKIE")
+    monkeypatch.delenv("OP_SERVICE_ACCOUNT_TOKEN", raising=False)
+    monkeypatch.setattr(cs_secrets, "repo_root", lambda: Path("/nonexistent"))
+    assert cs_secrets.main(["get", "patreon_session"]) == 1
+
+
 def test_patreon_stats_summarize_counts_only():
     members = [
         {"patron_status": "active_patron", "currently_entitled_amount_cents": 500},

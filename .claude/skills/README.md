@@ -104,7 +104,7 @@ Secrets and caches belong in `.claude/data/`, which is git-ignored.
 - **Ref codes.** Every outbound email carries a ref code in the signature so a
   reply can be routed back to the skill that sent it: `CS-<XX>-<MMDD>` where
   `XX` is the skill code (inbox-processor `IP`, patreon-growth `PG`,
-  skill-improver `SI`, which sends no email) and
+  skill-improver `SI` and field-updates `FU`, which send no email) and
   `MMDD` is the send date. Every Patreon link we share carries `?ref=<source>`
   (see the patreon-growth playbook for the registry).
 - **Signature.** Send as `text/html`. End the body with the signature and a
@@ -133,6 +133,15 @@ this order and never prints it:
    must have read access to that vault.
 3. A git-ignored file under `.claude/data/` (`patreon-config.json`).
 
+A second secret, `patreon_session`, is the logged-in browser cookie that
+lets `scripts/patreon_post.mjs` publish Patreon posts (Patreon's API cannot
+create posts). Reference `op://API Tokens/Patreon session cookie/credential`,
+environment variable `PATREON_SESSION_COOKIE`. It is the value of the
+`session_id` cookie on patreon.com from a browser where James is logged in
+(browser developer tools, Application or Storage, Cookies, patreon.com).
+It expires every few weeks; a run that finds it expired says so in its
+report and James pastes a fresh one into the same 1Password item.
+
 So each platform (a Claude Routine, an OpenAI environment, a GitHub Actions
 workflow) is given only the service-account token as an environment
 variable, and the same scripts work everywhere. `scripts/patreon_stats.py`
@@ -159,6 +168,7 @@ committed. Two Routines exist:
 | Clean Streets: inbox-processor | hourly, 7:00 to 17:00 | inbox-processor |
 | Clean Streets: patreon-growth | daily, 9:15 | patreon-growth |
 | Clean Streets: skill-improver | weekly, Sunday 8:00 | skill-improver |
+| Clean Streets: field-updates | Tuesday and Friday, 10:30 | field-updates |
 
 Each Routine's prompt does the same four things:
 
