@@ -8,9 +8,9 @@ does, these are the terms, and a quote given from this file is honored.
 
 ## What we sell
 
-Paid sidewalk cleaning by the Clean Streets crew (living-wage staff, not
-volunteers) on a fixed block or frontage in and around the Mission
-District, San Francisco. Litter, sweeping, and bagging on the sidewalk and
+Paid sidewalk cleaning by the Clean Streets crew (independent contractors
+paid a living-wage hourly rate, not volunteers and not employees) on a
+fixed block or frontage in and around the Mission District, San Francisco. Litter, sweeping, and bagging on the sidewalk and
 curb line. Not sold: large-item hauling (we report those to SF311), power
 washing, graffiti removal, or anything inside a property line.
 
@@ -47,13 +47,12 @@ the same rates and say the start may take an extra week for routing.
 2. **Quote from the table**, in the thread, with the start date: crew
    starts within 7 days of payment for a monthly plan, within 3 days for
    a one-time cleanup.
-3. **Take payment** by pointing to the Patreon custom pledge at the monthly
-   amount (`https://www.patreon.com/cleanstreets?ref=service`) for
-   individuals and small groups, or say an invoice will follow for an HOA,
-   property manager, or business that needs one; the ledger line
-   `service:<slug> | invoice-needed | <amount> | <block>` tells James to
-   send it (that is the only part that needs him, and it is a task, not a
-   decision).
+3. **Take payment.** Default is a Patreon monthly pledge at the plan
+   amount (`https://www.patreon.com/cleanstreets?ref=service`), which
+   also lists them as a supporter. PayPal and Zelle are accepted too; ask
+   which they prefer and give the details from the Payment section below.
+   No invoices unless the payer's accounting requires one; then ledger
+   `service:<slug> | invoice-needed | <amount> | <block>` so James sends it.
 4. **Confirm** in one line once they pay or accept, with the first service
    day, and ledger `service:<slug> | closed | <monthly amount> | <block> |
    <start date>`. The crew schedule is James's to arrange; the ledger line
@@ -65,8 +64,22 @@ the same rates and say the start may take an extra week for routing.
   a discount below the rate.
 - Wants a walk-through or a call: say email is fastest and ask for the one
   fact the call was for (cross streets, a photo of the frontage).
-- Asks about liability or a contract: crew is insured and W-2 staff of
-  Clean Streets LLC; month-to-month, cancel any time by email.
+- Asks about liability or a contract: the crew are independent contractors
+  working for Clean Streets LLC; service is month to month, cancel any
+  time by email. Do not claim insurance coverage; if they need a
+  certificate of insurance or a signed agreement, say James will send what
+  he has and ledger `service:<slug> | paperwork-needed | <what>`.
+
+## Payment
+
+| Method | Details | Notes |
+|---|---|---|
+| Patreon | `https://www.patreon.com/cleanstreets?ref=service`, custom pledge at the plan amount | Default; recurring; lists them as a supporter |
+| PayPal | James to fill in the PayPal address here | One-time or monthly |
+| Zelle | James to fill in the Zelle contact here | One-time or monthly |
+
+Until the PayPal and Zelle lines are filled in, offer them by name and
+say the details follow in a reply; ledger `service:<slug> | payment-details-needed`.
 - Asks for a service we don't sell: say so plainly and offer what we do.
 
 ## Who to notify
@@ -80,3 +93,6 @@ a quote, choose a plan, or decide whether to take the work.
 - 2026-09-13: created after James's instruction that skills close leads
   themselves. Prices derived from the public $40-per-hour figure; James
   edits this table to change them.
+- 2026-09-13: corrected per James: workers are independent contractors
+  (not employees); payment is Patreon, PayPal, or Zelle, not invoices by
+  default. No insurance claims.
