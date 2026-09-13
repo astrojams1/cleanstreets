@@ -2,7 +2,7 @@
 name: patreon-growth
 description: "Grow the number of monthly contributors on the Clean Streets Patreon (patreon.com/cleanstreets) through outreach: win back former patrons, ask current patrons for referrals, follow up with everyone who ever wrote in, and reach merchants, neighborhood groups, and property managers on the blocks the crew cleans. Each run measures active patrons, works the prospect pipeline (follow-ups first, then new first touches by channel), attributes joins to their source, and records every contact in the ledger. Use whenever the user mentions Patreon, patrons, contributors, supporters, monthly donors, membership growth, outreach, prospects, win-back, referrals, 'how many patrons', 'grow the patreon', 'why aren't we growing', or on the scheduled growth run, even if they don't name the skill."
 metadata:
-  version: "2.0"
+  version: "2.1"
 ---
 
 # Patreon Growth
@@ -70,9 +70,16 @@ Concurrent experiments: at most 3. Touches per contact, ever: 3.
 
 ## Step 3: Execute (the outreach engine)
 
-Work in this order until the send cap is reached. Every email follows the
-README's persona, no-meetings, no-commitments, and signature rules, and
-`references/email-templates.md` for the skeleton.
+Work in this order until the send cap is reached. Finishing the reactive
+items (replies, follow-ups, a service lead) does not end the run: continue
+down the list to new first touches while any channel in
+`references/outreach-channels.md` still has quota this run. Win-back and
+referral are frequently exhausted (touched contacts, no new lapses or
+joins) — a quick "0 candidates" check on those costs almost nothing, so
+exhaustion there is never a reason to skip channels 4-7 (merchants,
+neighborhood groups, property managers, creator shifts). Every email
+follows the README's persona, no-meetings, no-commitments, and signature
+rules, and `references/email-templates.md` for the skeleton.
 
 1. **Replies.** For every prospect who wrote back: answer in the thread,
    move them to `replied`; if they joined, `converted` and a welcome. Ledger
@@ -158,9 +165,14 @@ python3 scripts/ledger.py add --skill patreon-growth \
   --next "<follow-ups due tomorrow, channel to open next, anything for James>"
 ```
 
-`success` needs a measured patron count and at least five sends or a full
-pipeline sweep with nothing due; `partial` if the time cap or the send cap
-stopped work; `noop` should not happen while any channel has quota.
+`success` needs a measured patron count and either five or more sends, or
+every channel that still had quota this run attempted (first touches,
+follow-ups, close-outs) with genuinely nothing left to do. `partial` if the
+time cap, the send cap, or an unresolved reactive item stopped the run
+before every channel with quota was attempted — this includes a run that
+closes one service lead or reply and stops without touching channels 4-7
+while they still have quota. `noop` should not happen while any channel has
+quota.
 
 Then:
 
@@ -199,6 +211,14 @@ Ledger: run NNNN appended and committed
 
 ## Changes
 
+- 2026-09-13 v2.1: Step 3 now says explicitly that finishing reactive items
+  does not end the run while channel quota remains, and the `success`
+  outcome bar requires every channel with quota to have been attempted.
+  Evidence: runs 0004-0006 left all 16 first-touch slots (channels 4-7)
+  unworked for three consecutive runs after win-back/referral came up
+  exhausted and a service lead was handled, while active_patrons stayed
+  flat at 26 across all 6 runs — all three logged (or would have logged)
+  `success` under the old bar. Skill-improver run 0003.
 - 2026-09-11 v2.0: refocused from site experiments to outreach on James's
   instruction. Added the prospect pipeline, channel quotas and order of
   work (`references/outreach-channels.md`), the cross-sender
