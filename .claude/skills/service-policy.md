@@ -75,13 +75,12 @@ the same rates and say the start may take an extra week for routing.
 | Method | How the skill does it | Notes |
 |---|---|---|
 | Patreon | Link `https://www.patreon.com/cleanstreets?ref=service`, custom pledge at the plan amount | Default; recurring; lists them as a supporter |
-| PayPal invoice | PayPal connector: `create_bulk_invoices` (one invoice: product name = the plan, amount = the monthly price, due date = 7 days out, recipient = the payer's email and name, `business_name` = `Clean Streets`, `business_email` = the PayPal business email below), then `send_bulk_invoices` with the returned invoice id | Used for HOAs, property managers, businesses, or on request; one invoice per month of service |
+| PayPal invoice | PayPal connector: `create_bulk_invoices` (one invoice: product name = the plan, amount = the monthly price, due date = 7 days out, recipient = the payer's email and name, `business_name` = `Clean Streets`, `business_email` = `hello@cleanstreets.io`), then `send_bulk_invoices` with the returned invoice id | Used for HOAs, property managers, businesses, or on request; one invoice per month of service |
 | PayPal payment link | Only James can create these (the tool opens a form for him); reuse an existing link from `list_payment_links` if one matches the plan | Optional |
 | Zelle | James to fill in the Zelle contact here | On request; until filled in, say the details follow in a reply |
 
-PayPal business email for invoices: James to fill in here (the email on the
-Clean Streets PayPal account). Until it is filled in, use Patreon and
-ledger `service:<slug> | payment-details-needed`.
+PayPal business email for invoices: `hello@cleanstreets.io`, business name
+`Clean Streets`.
 
 **Confirming payment.** Patreon: the members API shows the new pledge.
 PayPal: `list_invoices` shows the invoice as PAID, or `list_transactions`
@@ -109,3 +108,5 @@ a quote, choose a plan, or decide whether to take the work.
 - 2026-09-13: corrected per James: workers are independent contractors
   (not employees); payment is Patreon, PayPal, or Zelle, not invoices by
   default. No insurance claims.
+- 2026-09-13: PayPal connector wired in; business email
+  `hello@cleanstreets.io` (James). Zelle contact still blank.
