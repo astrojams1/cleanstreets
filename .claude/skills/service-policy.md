@@ -77,7 +77,7 @@ the same rates and say the start may take an extra week for routing.
 | Patreon | Link `https://www.patreon.com/cleanstreets?ref=service`, custom pledge at the plan amount | Default; recurring; lists them as a supporter |
 | PayPal invoice | PayPal connector: `create_bulk_invoices` (one invoice: product name = the plan, amount = the monthly price, due date = 7 days out, recipient = the payer's email and name, `business_name` = `Clean Streets`, `business_email` = `hello@cleanstreets.io`), then `send_bulk_invoices` with the returned invoice id | Used for HOAs, property managers, businesses, or on request; one invoice per month of service |
 | PayPal payment link | Only James can create these (the tool opens a form for him); reuse an existing link from `list_payment_links` if one matches the plan | Optional |
-| Zelle | James to fill in the Zelle contact here | On request; until filled in, say the details follow in a reply |
+| Zelle | Send to `cleanstreets` (the Zelle handle on the Clean Streets account); ask them to put the block in the memo | On request; one-time or monthly; James's bank shows receipt, so a Zelle payer's word plus the memo is the confirmation |
 
 PayPal business email for invoices: `hello@cleanstreets.io`, business name
 `Clean Streets`.
@@ -109,4 +109,4 @@ a quote, choose a plan, or decide whether to take the work.
   (not employees); payment is Patreon, PayPal, or Zelle, not invoices by
   default. No insurance claims.
 - 2026-09-13: PayPal connector wired in; business email
-  `hello@cleanstreets.io` (James). Zelle contact still blank.
+  `hello@cleanstreets.io` (James). Zelle handle `cleanstreets` (James).
