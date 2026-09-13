@@ -83,3 +83,13 @@ Format and privacy rules: `.claude/skills/README.md`.
   - msg:1a097eefd20e6034 | prospect reply | answered
   - policy | .claude/skills/service-policy.md created; skills now close paid-service leads themselves (James, 2026-09-12)
 - next: Follow up with samm in 7 days if no reply; on acceptance ledger service:samm | closed and note that James needs to send the monthly bill
+
+## 2026-09-12T19:20-07:00 | run 0006 | success
+- actions: 1
+- summary: Corrected the Hub HOA thread per James: crew are independent contractors, no insurance claim, Patreon or PayPal or Zelle for payment; service policy updated to match
+- metrics: active_patrons=26 mrr_usd=1111 joined_7d=0 left_7d=0 source=api sends=1 first_touches=0 followups=0 replies=0 converted=0 prospects_open=1
+- details:
+  - service:samm | corrected | contractors not employees, no insurance claim, payment by Patreon, PayPal, or Zelle
+  - service:samm | payment-details-needed | PayPal and Zelle details are blank in service-policy.md until James fills them in
+  - policy | service-policy.md: contractors, payment methods table, paperwork-needed rule
+- next: Follow up with samm in 7 days if no reply; James to fill in PayPal and Zelle details in service-policy.md
