@@ -65,6 +65,17 @@ if [ -n "${OP_SERVICE_ACCOUNT_TOKEN:-}" ]; then
     || echo "WARN: could not install onepassword-sdk"
 fi
 python3 scripts/cs_secrets.py check patreon || true
+python3 scripts/cs_secrets.py check patreon_session || true
+
+# Playwright (for scripts/patreon_post.mjs) is installed globally; make it
+# resolvable from the checkout and confirm Chromium is present.
+if command -v npm >/dev/null 2>&1; then
+  export NODE_PATH="$(npm root -g 2>/dev/null)"
+  echo "export NODE_PATH=$NODE_PATH" >> "$HOME/.bashrc" 2>/dev/null || true
+  [ -d "$NODE_PATH/playwright" ] && echo "OK: playwright available (NODE_PATH=$NODE_PATH)" \
+    || echo "WARN: playwright not installed globally; Patreon posting will fail"
+fi
+python3 -c "import PIL" 2>/dev/null || python3 -m pip install -q pillow >/dev/null 2>&1 || echo "WARN: pillow missing; album photos stay full size"
 git ls-remote -q --exit-code origin HEAD >/dev/null 2>&1 && echo "OK: remote reachable for push" \
   || echo "WARN: remote not reachable; the run will report its ledger commit as unpushed"
 rm -rf tmp-build

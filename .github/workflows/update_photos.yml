@@ -1,0 +1,63 @@
+name: Update crew photos
+
+# Pulls new photos from the crew's public iCloud Shared Album into
+# images/album/, refreshes data/photos.json and the #photos gallery in
+# index.html, and deploys. No credentials: the album's public link is enough.
+
+on:
+  schedule:
+    - cron: '10 8 * * *'  # daily, ten minutes after the supporters update
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-photos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -q pillow
+
+      - name: Sync album and render gallery
+        run: |
+          python3 scripts/shared_album.py sync --keep 48
+          python3 scripts/update_photos.py --count 12
+
+      - name: Commit and push if changed
+        id: commit
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add images/album data/photos.json index.html
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Auto-update crew photos"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build Site
+        if: steps.commit.outputs.changed == 'true'
+        run: bash scripts/build_site.sh
+
+      - name: Deploy to GitHub Pages
+        if: steps.commit.outputs.changed == 'true'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site
+          branch: gh-pages
+          clean: true
+          clean-exclude: pr-preview
+          force: false

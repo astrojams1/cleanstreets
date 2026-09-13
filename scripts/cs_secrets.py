@@ -33,6 +33,14 @@ REGISTRY = {
         "file": ".claude/data/patreon-config.json",
         "file_key": "creator_access_token",
     },
+    # The logged-in browser session cookie (session_id on .patreon.com) used
+    # by scripts/patreon_post.mjs, since Patreon's API cannot create posts.
+    "patreon_session": {
+        "env": "PATREON_SESSION_COOKIE",
+        "op_ref": "op://API Tokens/Patreon session cookie/credential",
+        "file": ".claude/data/patreon-session.json",
+        "file_key": "session_id",
+    },
 }
 
 
@@ -108,9 +116,17 @@ def resolve(name: str, with_source: bool = False):
 
 def main(argv: list[str] | None = None) -> int:
     args = argv if argv is not None else sys.argv[1:]
-    if len(args) != 2 or args[0] != "check" or args[1] not in REGISTRY:
-        print(f"usage: cs_secrets.py check <{'|'.join(REGISTRY)}>", file=sys.stderr)
+    if len(args) != 2 or args[0] not in ("check", "get") or args[1] not in REGISTRY:
+        print(f"usage: cs_secrets.py check|get <{'|'.join(REGISTRY)}>", file=sys.stderr)
         return 2
+    if args[0] == "get":
+        # Prints the raw value for a calling program (stdout only, never logged).
+        # Only for process-to-process use; a skill never echoes this to a report.
+        value = resolve(args[1])
+        if not value:
+            return 1
+        sys.stdout.write(value)
+        return 0
     _, source = resolve(args[1], with_source=True)
     if source:
         print(f"OK: {args[1]} secret available from {source}")
