@@ -84,3 +84,13 @@ Format and privacy rules: `.claude/skills/README.md`.
 - summary: Swept 8 candidate messages, all already recorded by prior runs; nothing new to process
 - metrics: swept=8 replied=0 drafted=0 archived=0 flagged=0
 - next: Nothing pending
+
+## 2026-09-13T09:05-07:00 | run 0012 | success
+- actions: 3
+- summary: Processed 3 new messages: 1 archived (already out of inbox), 1 flagged (security notice, already starred), 1 noted (already answered by patreon-growth)
+- metrics: swept=3 replied=0 drafted=0 archived=1 flagged=1 noted=1
+- details:
+  - msg:1a09897d084f7c1e | automated | archived | chase.com
+  - msg:1a0988a7cb139401 | automated | flagged | paypal.com
+  - msg:1a06e56e3bc775c3 | service-request | noted | gmail.com
+- next: Nothing pending
