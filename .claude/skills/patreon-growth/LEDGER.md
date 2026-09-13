@@ -93,3 +93,18 @@ Format and privacy rules: `.claude/skills/README.md`.
   - service:samm | payment-details-needed | PayPal and Zelle details are blank in service-policy.md until James fills them in
   - policy | service-policy.md: contractors, payment methods table, paperwork-needed rule
 - next: Follow up with samm in 7 days if no reply; James to fill in PayPal and Zelle details in service-policy.md
+
+## 2026-09-13T09:17-07:00 | run 0007 | partial
+- actions: 8
+- summary: 26 active patrons (unchanged, source=api), MRR $1111; win-back and referral pools remain exhausted; channel 5 (neighborhood groups) found fully exhausted by an earlier, unlogged sweep across all 5 discoverable orgs; channels 4 and 6 blocked by a real gap (no block-level dated cleanup log to cite); one channel-7 lead (Mission Parents groups.io) found but no verifiable public contact; 0 sends this run
+- metrics: active_patrons=26 mrr_usd=1111 joined_7d=0 left_7d=0 source=api sends=0 first_touches=0 followups=0 replies=0 converted=0 prospects_open=1
+- details:
+  - candidate:missiondna | skipped | already win-backed to 3-touch cap by james@ Jun 2026 (older, unlogged sweep), plus a reply thread
+  - candidate:doloresheights | skipped | already contacted to 3-touch cap by james@ Apr 2026 (older, unlogged sweep), no reply
+  - candidate:bhnc | skipped | already contacted (4 sends) by james@/hello@ Apr and Jun 2026 (older, unlogged sweep), no reply
+  - candidate:dtna | skipped | already contacted to 3-touch cap by james@ Apr 2026 (older, unlogged sweep), no reply
+  - candidate:missionhousing | skipped | already contacted to 3-touch cap by hello@ Apr-May 2026 (older, unlogged sweep), no reply
+  - candidate:missionparents | identified | groups.io parent list, ~1000-2000 members, matches exp-008; contact/owner page gated (HTTP 402), no public email found this run
+  - gap | channels 4 (merchants) and 6 (property managers) need a dated, block-level cleanup record the skill does not have; impact.csv is monthly totals only; no claim invented, no send made
+  - playbook | outreach-channels.md updated: channel 5 evidence (exhausted), channel 6 evidence (blocked reason), channel 7 evidence (Mission Parents lead)
+- next: Channel 3 (warm inbound) was not worked this run (time went to channels 4-7 discovery); try it next. If James can point to specific streets/dates the crew covered recently (or field-updates starts logging blocks from Travis's photos), channels 4 and 6 open up. samm: follow up around 2026-09-19 if still no reply to the service quote.
