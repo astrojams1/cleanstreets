@@ -181,3 +181,12 @@ Format and privacy rules: `.claude/skills/README.md`.
 - summary: Swept 12 candidate messages, all already recorded by prior runs; nothing new to process
 - metrics: swept=12 replied=0 drafted=0 archived=0 flagged=0
 - next: Nothing pending
+
+## 2026-09-14T15:06-07:00 | run 0027 | success
+- actions: 2
+- summary: Processed 2 new messages: 0 replied, 0 drafted, 0 archived, 2 flagged
+- metrics: swept=14 replied=0 drafted=0 archived=0 flagged=2
+- details:
+  - msg:1a0a1eedd5c15f87 | personal | flagged | accounts.google.com
+  - msg:1a0a1ef570892f96 | personal | flagged | github.com
+- next: Nothing pending
