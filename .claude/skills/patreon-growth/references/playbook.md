@@ -45,6 +45,14 @@ here.
   to self-correct this, so future runs should recognize it on sight.
 - The website gets a couple dozen visitors a month. It cannot produce a
   readable experiment signal and is not a growth lever (James, 2026-09-11).
+- **Some platforms block direct sends even with Gmail connected.** Run 0008
+  (2026-09-14) had a working Gmail connection (replies and reads worked) but
+  `reply` was blocked by the platform's own auto-mode permission classifier
+  ("Real-World Transactions") on 2 of 3 sends, while `create_draft` for the
+  same content succeeded both times. This is different from "no Gmail" in
+  the README's account-guard fallback: don't abort the run, don't skip the
+  send entirely — write the draft in-thread instead, ledger it as drafted,
+  and note it under "For James" so he can send it himself.
 
 ## Ref-code registry
 

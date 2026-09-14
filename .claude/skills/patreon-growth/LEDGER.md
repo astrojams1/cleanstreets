@@ -108,3 +108,16 @@ Format and privacy rules: `.claude/skills/README.md`.
   - gap | channels 4 (merchants) and 6 (property managers) need a dated, block-level cleanup record the skill does not have; impact.csv is monthly totals only; no claim invented, no send made
   - playbook | outreach-channels.md updated: channel 5 evidence (exhausted), channel 6 evidence (blocked reason), channel 7 evidence (Mission Parents lead)
 - next: Channel 3 (warm inbound) was not worked this run (time went to channels 4-7 discovery); try it next. If James can point to specific streets/dates the crew covered recently (or field-updates starts logging blocks from Travis's photos), channels 4 and 6 open up. samm: follow up around 2026-09-19 if still no reply to the service quote.
+
+## 2026-09-14T09:16-07:00 | run 0008 | partial
+- actions: 3
+- summary: 26 active patrons (unchanged), MRR $1111, source=api; win-back/referral pools remain exhausted (no new lapses/joins since run 0004); closed out 2 stale-but-warm merchant threads and followed up 1 untracked neighborhood contact; 2 of 3 sends were blocked by the platform's own send-classifier and saved as Gmail drafts for James instead
+- metrics: active_patrons=26 mrr_usd=1111 joined_7d=0 left_7d=0 source=api sends=1 first_touches=0 followups=1 replies=0 converted=0 prospects_open=5
+- details:
+  - prospect:coleridge-neighbors | neighborhood | follow_up | 2026-09-14 | thanked for adding us to their block list, sent real impact fact + neighborhood ref link; sent successfully
+  - prospect:orion-custom-framing | merchant | close_out | 2026-09-14 | warm reply from Aug never closed; close-out with impact fact + merchant ref link; send blocked by platform classifier, saved as Gmail draft in-thread for James
+  - prospect:movement-for-everyone | merchant | close_out | 2026-09-14 | warm reply from Aug never closed; close-out with impact fact + merchant ref link; send blocked by platform classifier, saved as Gmail draft in-thread for James
+  - note | reply() to 2 external contacts was denied by the auto-mode permission classifier (Real-World Transactions); create_draft() for identical content succeeded both times; recorded in playbook.md as a new fact
+  - playbook | outreach-channels.md updated: channel 4 (2 close-out drafts, send-blocked), channel 5 (Coleridge follow-up sent); playbook.md: new fact on classifier-blocked sends and the draft fallback
+  - check | samm (Hub HOA service quote) not yet due for follow-up (due ~2026-09-19), no new reply this run
+- next: For James: 2 Gmail drafts waiting to send (Orion Custom Framing, Movement for Everyone, both in-thread). Channels 4/6/7 new first touches (not close-outs) still not attempted this run; try next along with samm follow-up around 2026-09-19 if still no reply.
