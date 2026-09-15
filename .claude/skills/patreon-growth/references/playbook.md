@@ -52,7 +52,21 @@ here.
   same content succeeded both times. This is different from "no Gmail" in
   the README's account-guard fallback: don't abort the run, don't skip the
   send entirely — write the draft in-thread instead, ledger it as drafted,
-  and note it under "For James" so he can send it himself.
+  and note it under "For James" so he can send it himself. Run 0009
+  (2026-09-15) confirms the pattern is specific to cold first contact with a
+  new external address: `send_message` to a person we'd already emailed
+  before (a reactivating patron) went through fine, but `send_message` to a
+  brand-new merchant contact was blocked and had to fall back to
+  `create_draft`. Expect every brand-new first-touch send this run to need
+  the draft fallback; don't waste a retry on `send_message` for those.
+- **A Patreon "New member!" notification can mean a reactivation, not a
+  first join.** Run 0009 found a "New $5.00 member!" email (2026-09-03) for
+  Oliver Zhou, a patron since 2021 per an earlier thank-you note — Patreon
+  sends this event on any pledge (re)start, not just a first-ever join.
+  Check the person's email against prior threads before assuming "new"; if
+  they have history, it's a reactivation and gets the "Welcome back"
+  template (once per patron, ever), not the four-required-elements
+  first-time welcome.
 
 ## Ref-code registry
 

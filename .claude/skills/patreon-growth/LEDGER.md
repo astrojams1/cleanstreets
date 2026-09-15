@@ -121,3 +121,23 @@ Format and privacy rules: `.claude/skills/README.md`.
   - playbook | outreach-channels.md updated: channel 4 (2 close-out drafts, send-blocked), channel 5 (Coleridge follow-up sent); playbook.md: new fact on classifier-blocked sends and the draft fallback
   - check | samm (Hub HOA service quote) not yet due for follow-up (due ~2026-09-19), no new reply this run
 - next: For James: 2 Gmail drafts waiting to send (Orion Custom Framing, Movement for Everyone, both in-thread). Channels 4/6/7 new first touches (not close-outs) still not attempted this run; try next along with samm follow-up around 2026-09-19 if still no reply.
+
+## 2026-09-15T09:16-07:00 | run 0009 | partial
+- actions: 10
+- summary: Active patrons unknown this run (no Patreon token; CSV roll=106, upper bound); found and welcomed back a reactivated patron (Oliver Zhou, 5yr history) who never got a rejoin note; 2 new merchant first touches (channels 4) drafted after send-classifier blocked direct sends to brand-new contacts; channel 6 (property managers) confirmed exhausted by the old unlogged system, same as channels 1/2/5; learned the classifier block is specific to brand-new external contacts, not returning ones
+- metrics: active_patrons=unknown mrr_usd=unknown joined_7d=1 left_7d=0 source=csv sends=1 first_touches=2 followups=0 replies=0 converted=0 prospects_open=7
+- details:
+  - patron:oliverz | joined | organic
+  - prospect:bernal-beast | merchant | first_touch | 2026-09-15 | no prior contact; first touch drafted, send blocked by platform classifier, saved as Gmail draft for James
+  - prospect:parker-potrero | merchant | first_touch | 2026-09-15 | no prior contact; first touch drafted, send blocked by platform classifier, saved as Gmail draft for James
+  - candidate:gordonpm | skipped | already contacted to 3-touch cap by james@/hello@ Mar-Apr 2026 (older, unlogged sweep), no reply
+  - candidate:fsresidential | skipped | already contacted (bounced once, 2 later sends) by james@ Apr and Jul 2026 (older, unlogged sweep), no reply
+  - candidate:chandlerproperties | skipped | already contacted to 3-touch cap by james@/hello@ Mar-Apr 2026 (older, unlogged sweep), no reply
+  - candidate:cafedeolla | skipped | no public email found, channel cannot reach this business
+  - candidate:valenciastreetvintage | skipped | already contacted to touch cap by james@/hello@ Mar-Apr 2026, reply received and closed
+  - candidate:afterlifeboutique | skipped | already contacted to 3-touch cap by hello@ Apr 2026 (older, unlogged sweep), no reply
+  - playbook | outreach-channels.md updated: channel 4 (2 new first-touch drafts, both send-blocked), channel 6 (3 candidates found exhausted by old sweep, EBMC new-address lead noted); playbook.md: classifier block is new-contact-specific, and a Patreon 'new member' notice can mean reactivation not first join
+  - gap | channel 3 (warm inbound) and channel 7 (creator shifts) not worked this run; time went to channel 4/6 discovery and the Oliver Zhou reactivation
+  - check | samm (Hub HOA quote) follow-up not due until ~2026-09-19; karenh (referral) follow-up not due until ~2026-09-22; no action taken on either
+  - note | Orion Custom Framing and Movement for Everyone close-out drafts from run 0008 still unsent in Gmail, waiting on James
+- next: Channel 3 (warm inbound) and channel 7 (creator shifts) still unworked; try next. New lead: EBMC/Hanford Freund's updated contact (ebmc.com, see outreach-channels.md channel 6) was never actually written to. 2 merchant close-out drafts (Orion, Movement) plus 2 new first-touch drafts (Bernal Beast, Parker Potrero) waiting in Gmail for James to send. samm follow-up due ~2026-09-19, karenh follow-up due ~2026-09-22 if still no reply.
