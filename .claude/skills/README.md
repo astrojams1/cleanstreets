@@ -83,9 +83,12 @@ Secrets and caches belong in `.claude/data/`, which is git-ignored.
 
 ## Shared conventions for skills that touch email
 
-- **Account guard.** Before the first Gmail action, fetch the connected
-  account's profile and confirm it is `james@cleanstreets.io`. Any other
-  address: stop, ledger `aborted`, report.
+- **Account guard.** Before the first Gmail action, confirm the connected
+  account is on the `@cleanstreets.io` domain. `james@`, `hello@`, and
+  `jane@cleanstreets.io` are aliases of the same mailbox, so any of them
+  passes; the connector may report whichever alias it authenticated as. If
+  the Gmail tool has no profile call, check the `from` of the newest
+  `in:sent` message. Any other domain: stop, ledger `aborted`, report.
 - **Persona.** Replies are from James, first person, warm, plain, short. No
   corporate gratitude phrases, no jargon, nothing a neighbor would not say.
 - **No meetings.** Never propose, accept, or confirm a call or in-person

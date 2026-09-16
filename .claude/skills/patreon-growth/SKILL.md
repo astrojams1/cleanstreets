@@ -27,7 +27,8 @@ Concurrent experiments: at most 3. Touches per contact, ever: 3.
 2. Read `references/outreach-channels.md` (channels, quotas, order of work)
    and `references/experiments.md`.
 3. Apply the account guard from the README before any send: the connected
-   Gmail account must be `james@cleanstreets.io`. Without Gmail, the run
+   Gmail account must be on `@cleanstreets.io` (`james@`, `hello@`, and
+   `jane@` are aliases of one mailbox). Without Gmail, the run
    still measures and plans; emails are written out in full in the run
    report and ledgered as `drafted`.
 

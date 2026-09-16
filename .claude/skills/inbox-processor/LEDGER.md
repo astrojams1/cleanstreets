@@ -300,3 +300,14 @@ Format and privacy rules: `.claude/skills/README.md`.
 - summary: Account guard failed: connected Gmail account is hello@cleanstreets.io, not james@cleanstreets.io; no inbox actions taken
 - metrics: swept=0 replied=0 drafted=0 archived=0 flagged=0
 - next: Confirm which mailbox the Gmail connector should authenticate as (james@cleanstreets.io per SKILL.md vs hello@cleanstreets.io currently connected) before the next run; this is the fourth consecutive run blocked by this (see runs 0041, 0042, 0043)
+
+## 2026-09-16T14:02-07:00 | run 0045 | success
+- actions: 1
+- summary: Processed 1 message: 0 replied, 0 drafted, 1 archived, 0 flagged; account guard now accepts any @cleanstreets.io alias (james@, hello@, jane@ are one mailbox) per James, SKILL v1.2
+- metrics: swept=19 already_in_ledger=18 replied=0 drafted=0 archived=1 flagged=0
+- details:
+  - msg:1a0abeb5a06fec00 | automated | archived | techsoup.org
+  - guard:alias-fix | runs 0041-0044 aborted on a false mismatch; hello@cleanstreets.io is an alias of james@cleanstreets.io; README, inbox-processor and patreon-growth SKILL.md now check the domain
+  - service:samm | correction-misaddressed | the 2026-09-13 corrections note (contractors not employees, no insurance claim) went to hello@cleanstreets.io, not to Sam M; Sam has the uncorrected quote
+  - handoff:patreon-growth | Sam M (HOA, Hub footprint) 7-day follow-up due 2026-09-20; carry the 2026-09-13 corrections in that follow-up since the original went to our own address
+- next: On the 2026-09-20 follow-up to Sam M, include the contractor and insurance corrections that never reached them
