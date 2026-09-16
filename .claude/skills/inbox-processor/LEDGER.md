@@ -276,3 +276,9 @@ Format and privacy rules: `.claude/skills/README.md`.
 - summary: Swept 18 candidate messages, all already recorded by prior runs; nothing new to process
 - metrics: swept=18 replied=0 drafted=0 archived=0 flagged=0
 - next: Nothing pending
+
+## 2026-09-16T11:03-07:00 | run 0041 | aborted
+- actions: 0
+- summary: Account guard failed: connected Gmail account is hello@cleanstreets.io, not james@cleanstreets.io; no inbox actions taken
+- metrics: swept=0 replied=0 drafted=0 archived=0 flagged=0
+- next: Confirm which mailbox the Gmail connector should authenticate as (james@cleanstreets.io per SKILL.md vs hello@cleanstreets.io currently connected) before the next run
