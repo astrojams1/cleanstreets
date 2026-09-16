@@ -2,7 +2,7 @@
 name: inbox-processor
 description: "Process the Clean Streets inbox (james@cleanstreets.io): sweep every unhandled inbound email, classify it (intake-form submission, patron or Patreon notice, service request, partner or community thread, press, vendor pitch, automated notice), reply as James where a standard reply fits, archive noise, flag the rest for James, and record every message in the skill ledger. Use this whenever the user says 'process my inbox', 'check the clean streets email', 'clear the inbox', 'any new emails', 'reply to that email', 'what came in', or on a scheduled inbox sweep, even if they don't name the skill."
 metadata:
-  version: "1.1"
+  version: "1.2"
 ---
 
 # Inbox Processor
@@ -27,11 +27,14 @@ Ref code for this skill: `CS-IP-MMDD`. Per-run send cap: 10 emails.
    python3 scripts/ledger.py show --skill inbox-processor --last 3
    ```
    Anything on a `next:` line is the first thing this run does.
-3. Account guard: fetch the connected Gmail account's profile. If it is not
-   `james@cleanstreets.io`, stop here, write an `aborted` ledger entry, and
-   report which account was connected. Use whichever Gmail tool is connected
-   in this session (the Clean Streets Gmail MCP or a Gmail connector); the
-   steps below name operations, not tool names.
+3. Account guard: confirm the connected Gmail account is on the
+   `@cleanstreets.io` domain (`james@`, `hello@`, and `jane@` are aliases of
+   the same mailbox; any of them passes). If the tool has no profile call,
+   read the `from` of the newest `in:sent` message. Any other domain: stop
+   here, write an `aborted` ledger entry, and report which account was
+   connected. Use whichever Gmail tool is connected in this session (the
+   Clean Streets Gmail MCP or a Gmail connector); the steps below name
+   operations, not tool names.
 
 ## Step 1: Sweep
 
@@ -194,6 +197,10 @@ Ledger: run NNNN appended and committed (or: not pushed, reason)
 
 ## Changes
 
+- 2026-09-16 v1.2: account guard checks the `@cleanstreets.io` domain, not
+  the exact `james@` address. Evidence: runs 0041 to 0044 aborted because
+  the connector authenticated as `hello@cleanstreets.io`, an alias of the
+  same mailbox; four hours of inbox went unprocessed over a false mismatch.
 - 2026-09-11 v1.1: sweep no longer restricted to `in:inbox`, and widens to
   the gap since the last run. Evidence: a new-patron notification from
   September 3 sat archived and unhandled; run 0001's inbox-only sweep could
