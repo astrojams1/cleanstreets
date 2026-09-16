@@ -141,3 +141,17 @@ Format and privacy rules: `.claude/skills/README.md`.
   - check | samm (Hub HOA quote) follow-up not due until ~2026-09-19; karenh (referral) follow-up not due until ~2026-09-22; no action taken on either
   - note | Orion Custom Framing and Movement for Everyone close-out drafts from run 0008 still unsent in Gmail, waiting on James
 - next: Channel 3 (warm inbound) and channel 7 (creator shifts) still unworked; try next. New lead: EBMC/Hanford Freund's updated contact (ebmc.com, see outreach-channels.md channel 6) was never actually written to. 2 merchant close-out drafts (Orion, Movement) plus 2 new first-touch drafts (Bernal Beast, Parker Potrero) waiting in Gmail for James to send. samm follow-up due ~2026-09-19, karenh follow-up due ~2026-09-22 if still no reply.
+
+## 2026-09-16T09:16-07:00 | run 0010 | partial
+- actions: 6
+- summary: 26 active patrons (unchanged), MRR $1111, source=api; closed out 2 stale merchant threads and sent 2 pending first-touch merchant drafts held over from runs 0008-0009; opened the EBMC/Stefan Calic lead in channel 6; a manual HTML-escaping error on the first send put garbled markup in front of one merchant, caught and corrected same-thread within a minute; time budget spent before channels 3/7 or new discovery could be worked
+- metrics: active_patrons=26 mrr_usd=1111 joined_7d=0 left_7d=0 source=api sends=5 first_touches=3 followups=0 replies=0 converted=0 prospects_open=7
+- details:
+  - prospect:orion-custom-framing | merchant | close_out | 2026-09-16 | held-over close-out draft from run 0008 sent successfully; a formatting glitch on the first attempt was corrected with a same-thread follow-up
+  - prospect:movement-for-everyone | merchant | close_out | 2026-09-16 | held-over close-out draft from run 0008 sent successfully
+  - prospect:bernal-beast | merchant | first_touch | 2026-09-16 | held-over first-touch draft from run 0009 sent successfully
+  - prospect:parker-potrero | merchant | first_touch | 2026-09-16 | held-over first-touch draft from run 0009 sent successfully
+  - prospect:ebmc-stefancalic | property | first_touch | 2026-09-16 | new contact at ebmc.com referencing the earlier Hanford Freund thread that only ever reached an auto-reply
+  - note | manual error: first send used HTML-entity-escaped tags instead of real markup, producing garbled HTML in the recipient's inbox; corrected same-thread within a minute; playbook.md updated with the fix (use real <p>/<a> tags or plain body, never escaped entities)
+  - check | samm (Hub HOA quote) follow-up not due until ~2026-09-19; karenh (referral) follow-up not due until ~2026-09-22; no action taken on either
+- next: Channel 3 (warm inbound) and channel 7 (creator shifts) still unworked, same as runs 0007-0009; try next. Watch for a reply from the new EBMC contact (ebmc.com domain). samm follow-up due ~2026-09-19, karenh follow-up due ~2026-09-22 if still no reply.
