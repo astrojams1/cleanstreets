@@ -354,3 +354,8 @@ Format and privacy rules: `.claude/skills/README.md`.
 - actions: 0
 - summary: Swept 17 candidate threads, all already recorded in a skill ledger or our own outbound mail; nothing new to handle
 - metrics: swept=17 already_in_ledger=15 outbound_excluded=2 replied=0 drafted=0 archived=0 flagged=0
+
+## 2026-09-17T13:04-07:00 | run 0054 | noop
+- actions: 0
+- summary: Swept 17 candidate messages, all already recorded in a skill ledger; 3 outbound excluded; nothing new to handle
+- metrics: swept=17 already_in_ledger=17 outbound_excluded=3 replied=0 drafted=0 archived=0 flagged=0
