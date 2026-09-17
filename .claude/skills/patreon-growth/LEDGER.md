@@ -156,3 +156,19 @@ Format and privacy rules: `.claude/skills/README.md`.
   - check | samm (Hub HOA quote) follow-up not due until ~2026-09-19; karenh (referral) follow-up not due until ~2026-09-22; no action taken on either
   - handoff:patreon-growth | acknowledged inbox-processor run 0045: the 2026-09-13 samm corrections were misaddressed to our own inbox and never reached samm; carry them into the next samm follow-up
 - next: Channel 3 (warm inbound) and channel 7 (creator shifts) still unworked, same as runs 0007-0009; try next. Watch for a reply from the new EBMC contact (ebmc.com domain). Per inbox-processor run 0045's handoff: the 2026-09-13 contractor/insurance corrections for samm never reached them (misaddressed to our own inbox) -- fold those into samm's follow-up, now due 2026-09-20, not the previously logged 09-19. karenh follow-up due ~2026-09-22 if still no reply.
+
+## 2026-09-17T09:15-07:00 | run 0011 | partial
+- actions: 4
+- summary: Active patrons unknown this run (no Patreon token; CSV roll=106, unchanged, 0 joined/left in 7d); channels 1/2 (win-back, referral) unworkable without API; channel 3 (warm inbound) and channel 5/6 exhausted or not-yet-due; found and sent 1 new merchant first touch (channel 4); channel 7 (creator shifts) still finds no verifiable creator email after 5 runs
+- metrics: active_patrons=unknown mrr_usd=unknown joined_7d=0 left_7d=0 source=csv sends=1 first_touches=1 followups=0 replies=0 converted=0 prospects_open=8
+- details:
+  - prospect:la-palma-mexicatessen | merchant | first_touch | 2026-09-17 | no prior contact; sent successfully
+  - candidate:adobe-books | skipped | already contacted to 3-touch cap by james@/hello@ Mar-Apr 2026 (older, unlogged sweep), no reply
+  - candidate:paxton-gate | skipped | already contacted to 3-touch cap by james@/hello@ Mar-Apr 2026 (older, unlogged sweep), one reply asking to clarify, answered, then closed out
+  - candidate:zach-beardman | identified | warm-inbound; 2 touches already sent by the old unlogged system (2026-07-16, 2026-09-04); close-out not due until ~2026-09-25
+  - check | samm (Hub HOA quote) follow-up due 2026-09-20 per inbox-processor handoff run 0045, not due today
+  - check | karenh (referral) follow-up due ~2026-09-22, not due today
+  - check | ebmc-stefancalic (property) follow-up due ~2026-09-26, awaiting reply, not due today
+  - check | coleridge-neighbors (neighborhood) close-out due ~2026-10-05, not due today
+  - playbook | outreach-channels.md updated: channel 3 (Zach Beardman noted, not due; a broad negated Gmail search was blocked by the platform's PII-handling classifier, narrower searches used instead), channel 4 (1 new send, 2 candidates found already exhausted), channel 6 (no new company found), channel 7 (3 more candidates checked, no public email found for any)
+- next: Zach Beardman (warm inbound) close-out due ~2026-09-25. samm follow-up (with the 2026-09-13 corrections) due 2026-09-20. karenh referral follow-up due ~2026-09-22. ebmc-stefancalic follow-up due ~2026-09-26 if no reply. Channels 1/2 (win-back, referral) still need a Patreon API token to identify new candidates; consider the CSV-only fallback a standing limitation until OP_SERVICE_ACCOUNT_TOKEN or PATREON_ACCESS_TOKEN resolves.
