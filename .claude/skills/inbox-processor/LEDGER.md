@@ -374,3 +374,12 @@ Format and privacy rules: `.claude/skills/README.md`.
 - actions: 0
 - summary: Swept 15 candidate threads (19 messages), all already recorded in a skill ledger or our own outbound mail; nothing new to handle
 - metrics: swept=19 already_in_ledger=16 outbound_excluded=3 replied=0 drafted=0 archived=0 flagged=0
+
+## 2026-09-18T07:05-07:00 | run 0058 | success
+- actions: 2
+- summary: Processed 2 new messages: 0 replied, 0 drafted, 0 archived, 2 flagged (Google security alert chain on James's personal account)
+- metrics: swept=21 already_in_ledger=16 outbound_excluded=3 replied=0 drafted=0 archived=0 flagged=2
+- details:
+  - msg:1a0b42e01774ddc2 | automated | flagged | accounts.google.com
+  - msg:1a0b45c834367785 | automated | flagged | accounts.google.com
+- next: Nothing pending
