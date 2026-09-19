@@ -187,3 +187,24 @@ Format and privacy rules: `.claude/skills/README.md`.
   - channel7 | checked | no verifiable creator email found; sixth consecutive run with this result
   - playbook | outreach-channels.md updated (channels 4/5/6/7 evidence); playbook.md: documented onepassword-sdk fallback works without op CLI (fixes runs 0009/0011's 'no token' limitation), and that bootstrap_run.sh's curl\|bash is blocked by this platform's classifier and must be replicated step by step
 - next: No follow-ups due until samm 2026-09-20. Karenh (referral) ~09-22, ebmc-stefancalic/bernal-beast/parker-potrero/pinhole-coffee/la-palma-mexicatessen follow-ups in the 09-26 to 09-27 window, zach-beardman close-out ~09-25, coleridge-neighbors close-out ~10-05. patreon_session cookie (browser login for Patreon posting) still unresolved in 1Password -- no item matched the reference; James needs to refresh it. Channel 7 (creator shifts) has found nothing reachable in 6 runs; consider retiring or changing its discovery method.
+
+## 2026-09-19T09:16-07:00 | run 0013 | success
+- actions: 12
+- summary: 26 active patrons (unchanged), MRR $1111, source=api; found 2 new clean merchant leads on 18th St Potrero Hill (Collage Gallery sent, Le Marche Cezanne drafted after send-classifier block); channels 1/2/3/5/6/7 checked, every candidate found (incl. a real channel-7 lead, Bernalwood, 2083 subscribers) already touch-capped or bounced from the old unlogged system
+- metrics: active_patrons=26 mrr_usd=1111 joined_7d=0 left_7d=0 source=api sends=1 first_touches=2 followups=0 replies=0 converted=0 prospects_open=11
+- details:
+  - prospect:collage-gallery | merchant | first_touch | 2026-09-19 | no prior contact; sent successfully
+  - prospect:marche-cezanne | merchant | first_touch | 2026-09-19 | no prior contact; send blocked by platform classifier, saved as Gmail draft for James
+  - candidate:farleys-coffee | skipped | no public email found
+  - candidate:gaelan-boutique | skipped | business closed, no email found
+  - candidate:potrero-boosters | skipped | already contacted to 3-touch cap by james@/hello@ Apr-Jun 2026 (older, unlogged sweep), no reply
+  - candidate:noe-valley-association | skipped | contacted once by hello@ Apr 2026, bounced (undeliverable), address appears dead
+  - candidate:upper-noe-neighbors | skipped | already contacted to 3-touch cap by james@ Apr 2026 (older, unlogged sweep), no reply
+  - candidate:utopia-management | skipped | already contacted to 3-touch cap by james@ Mar-Apr 2026 (older, unlogged sweep), no reply
+  - candidate:missionhousing-caritas | skipped | already contacted to 3-touch cap by hello@ Apr-May 2026 (older, unlogged sweep), no reply
+  - candidate:bernalwood | skipped | already contacted to 3-touch cap by james@ Apr 2026 (older, unlogged sweep), no reply; 2083 subscribers, would have cleared channel 7's bar
+  - channel1-2 | checked | active_patrons (26) and former_patrons (82) unchanged from baseline; no new lapses or joins to work
+  - channel3 | checked | no new inbound handoffs since run 0012; zach-beardman close-out not due until ~2026-09-25
+  - check | samm follow-up due 2026-09-20 (not today); karenh referral ~2026-09-22; ebmc-stefancalic/bernal-beast/parker-potrero/pinhole-coffee/la-palma-mexicatessen follow-ups in 09-26 to 09-27 window; coleridge-neighbors close-out ~10-05; none due today
+  - playbook | outreach-channels.md updated: channel 4 (2 new candidates), 5 (3 candidates checked, exhausted/bounced), 6 (2 candidates checked, exhausted), 7 (1 verifiable candidate found, already exhausted)
+- next: No follow-ups due until samm 2026-09-20 (fold in the misaddressed 2026-09-13 corrections per inbox-processor run 0045). Send or discard the marche-cezanne draft; its follow-up window opens ~09-29 if sent. collage-gallery follow-up ~09-29 if no reply. karenh ~09-22; ebmc-stefancalic/bernal-beast/parker-potrero/pinhole-coffee/la-palma-mexicatessen follow-ups 09-26 to 09-27; zach-beardman close-out ~09-25; coleridge-neighbors close-out ~10-05. patreon_session cookie for Patreon posting still unresolved in 1Password (no item matched the reference) -- James needs to refresh it; not needed this run (no post was due). Flag for skill-improver: repeated runs now show nearly every channel 4/5/6/7 candidate already 3-touch-capped by an old unlogged system (Mar-Jun 2026) with zero replies -- worth a policy decision on whether/when a months-old, never-replied contact can be re-touched, since fresh candidates are getting scarce.
